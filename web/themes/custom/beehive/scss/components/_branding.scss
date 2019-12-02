@@ -1,0 +1,45 @@
+// Mobile (up to 567px) ---------------------------------
+// ------------------------------------------------------
+.block-system-branding-block {
+  margin: 0 0.75rem 0 0;
+}
+
+.site-logo {
+  display: block;
+  width: 26px;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+// Tablet (768px to 1023px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $tab) {
+  .site-logo {
+    width: 40px;
+  }
+}
+
+// Desktop (1024px to 1339px) ---------------------------
+// ------------------------------------------------------
+@media (min-width: $desk) {
+  .block-system-branding-block-home {
+    background: #fff;
+    border: 3px solid $orange;
+    border-radius: 5px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.15);
+    margin-bottom: -8em;
+    padding: 1.5em;
+  }
+
+  .site-logo {
+    width: 80px;
+  }
+}
+
+// Wide (over 1340px) -----------------------------------
+// ------------------------------------------------------
+@media (min-width: $wide) {
+}

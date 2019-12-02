@@ -1,0 +1,58 @@
+// Mobile (up to 567px) ---------------------------------
+// ------------------------------------------------------
+.responsive-menu-toggle-icon {
+  height: 40px;
+  margin: 0 0 0 0.5rem;
+  width: 40px;
+
+  span.label {
+    display: none;
+  }
+
+  span.icon,
+  &:before,
+  &:after {
+    background: $gray-3;
+    left: 10px;
+    top: 18px;
+  }
+
+  &:before {
+    top: 12px;
+  }
+
+  &:after {
+    top: 24px;
+  }
+}
+
+.block-responsive-menu-toggle {
+  display: block;
+}
+
+.block-responsive-menu-horizontal-menu {
+  display: none;
+}
+
+// Tablet (768px to 1023px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $tab) {
+  .block-responsive-menu-toggle {
+    display: none;
+  }
+
+  .responsive-menu-block-wrapper,
+  .block-responsive-menu-horizontal-menu {
+    display: block;
+  }
+}
+
+// Desktop (1024px to 1339px) ---------------------------
+// ------------------------------------------------------
+@media (min-width: $desk) {
+}
+
+// Wide (over 1340px) -----------------------------------
+// ------------------------------------------------------
+@media (min-width: $wide) {
+}

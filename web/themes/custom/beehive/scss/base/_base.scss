@@ -1,0 +1,176 @@
+// Mobile (up to 567px) ---------------------------------
+// ------------------------------------------------------
+html {
+  background: $tan url(../../images/paper_bg.jpg);
+  box-sizing: border-box;
+  color: $black;
+  font-family: $font-main;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+body {
+  background: $tan url(../../images/paper_bg.jpg);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a {
+  color: $orange;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: lighten($orange, 10%);
+  }
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-header;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.75em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.375em;
+}
+
+h5 {
+  font-size: 1.25em;
+}
+
+h6 {
+  font-size: 1.125em;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+ul {
+  margin: 0 0 1rem;
+  padding-inline-start: 1.25rem;
+}
+
+ol {
+  margin: 0 0 1rem;
+  padding-inline-start: 1.25rem;
+}
+
+table {
+  border: 1px solid $gray-e6;
+  margin-bottom: 1rem;
+
+  caption {
+    font-family: $font-header;
+    font-size: 1.25em;
+    font-weight: 400;
+    margin-bottom: 0.25em;
+  }
+
+  thead {
+    background: $gray-f1;
+    border-bottom: 1px solid $gray-e6;
+    text-align: left;
+
+    tr {
+      th {
+        border-right: 1px solid $gray-e6;
+        font-size: 0.875em;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        padding: 0.5em 0.75em;
+        text-transform: uppercase;
+
+        &:last-child {
+          border: 0;
+        }
+      }
+
+      td {
+        padding: 0.5em 0.75em;
+      }
+    }
+  }
+
+  tbody {
+    text-align: left;
+
+    tr {
+      th {
+        font-size: 0.875em;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        padding: 0.5em 0.75em;
+        text-align: right;
+        text-transform: uppercase;
+      }
+
+      td {
+        padding: 0.5em 0.75em;
+      }
+    }
+  }
+
+  tfoot {
+    text-align: left;
+
+    tr {
+      th {
+        font-size: 0.875em;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        padding: 0.5em 0.75em;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      td {
+        padding: 0.5em 0.75em;
+      }
+    }
+  }
+}
+
+// Tablet (768px to 1023px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $tab) {
+}
+
+// Desktop (1024px to 1339px) ---------------------------
+// ------------------------------------------------------
+@media (min-width: $desk) {
+}
+
+// Wide (over 1340px) -----------------------------------
+// ------------------------------------------------------
+@media (min-width: $wide) {
+}

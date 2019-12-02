@@ -1,0 +1,168 @@
+// Mobile (up to 567px) ---------------------------------
+// ------------------------------------------------------
+$form-height: 30px;
+$form-height-tab: 34px;
+$form-height-desk: 40px;
+
+.region-header {
+  .search-block-form {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    .contextual {
+      left: 1rem;
+      right: auto;
+    }
+
+    > form {
+      align-items: center;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .form-item {
+      height: $form-height;
+      margin: 0;
+      width: 100%;
+    }
+
+    .form-search {
+      border: 1px solid $gray-c;
+      border-radius: 20px 0 0 20px;
+      border-right: 0;
+      color: $gray-6;
+      height: $form-height;
+      margin: 0;
+      padding: 0 1rem;
+      width: 100%;
+    }
+
+    .form-actions {
+      border-radius: 0 20px 20px 0;
+      color: $gray-3;
+      position: relative;
+
+      &:before {
+        border-left: 1px solid $gray-c;
+        bottom: 0;
+        color: inherit;
+        content: '\f002';
+        display: block;
+        font-family: 'Font Awesome 5 Free';
+        font-size: 0.75em;
+        font-weight: 900;
+        height: $form-height;
+        left: 0;
+        line-height: $form-height;
+        padding-right: 5px;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: 0;
+        width: $form-height;
+        z-index: 0;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        background: $orange;
+        color: #fff;
+      }
+    }
+
+    .form-submit {
+      background: transparent;
+      border: 1px solid $gray-c;
+      border-left: 0;
+      border-radius: 0 20px 20px 0;
+      box-shadow: none;
+      height: $form-height;
+      margin: 0;
+      overflow: hidden;
+      padding: 0;
+      position: relative;
+      text-indent: $form-height;
+      width: $form-height;
+      z-index: 1;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background: transparent;
+      }
+    }
+  }
+}
+
+// Tablet (768px to 1023px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $tab) {
+  .region-header {
+    .search-block-form {
+      width: 200px;
+
+      .form-item {
+        height: $form-height-tab;
+      }
+
+      .form-search {
+        height: $form-height-tab;
+      }
+
+      .form-actions {
+        &:before {
+          font-size: 0.875em;
+          height: $form-height-tab;
+          line-height: $form-height-tab;
+          width: $form-height-tab;
+        }
+      }
+
+      .form-submit {
+        height: $form-height-tab;
+        text-indent: $form-height-tab;
+        width: $form-height-tab;
+      }
+    }
+  }
+}
+
+// Desktop (1024px to 1339px) ---------------------------
+// ------------------------------------------------------
+@media (min-width: $desk) {
+  .region-header {
+    .search-block-form {
+      .form-item {
+        height: $form-height-desk;
+      }
+
+      .form-search {
+        height: $form-height-desk;
+      }
+
+      .form-actions {
+        &:before {
+          font-size: 1em;
+          height: $form-height-desk;
+          line-height: $form-height-desk;
+          width: $form-height-desk;
+        }
+      }
+
+      .form-submit {
+        height: $form-height-desk;
+        text-indent: $form-height-desk;
+        width: $form-height-desk;
+      }
+    }
+  }
+}
+
+// Wide (over 1340px) -----------------------------------
+// ------------------------------------------------------
+@media (min-width: $wide) {
+}

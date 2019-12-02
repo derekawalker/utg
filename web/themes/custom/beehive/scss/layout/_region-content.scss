@@ -1,0 +1,61 @@
+// Mobile (up to 567px) ---------------------------------
+// ------------------------------------------------------
+.region-content {
+  font-size: 1rem;
+
+  .page-title {
+    color: $blue-dark;
+    font-family: $font-block;
+    font-size: 7vw;
+    letter-spacing: 0.05em;
+    margin-top: 0;
+  }
+}
+
+// Phablet (568px to 767px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $phab) {
+  .region-content {
+    font-size: 1rem;
+
+    .page-title {
+      font-size: 4vw;
+    }
+  }
+}
+
+// Tablet (768px to 1023px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $tab) {
+  .region-content {
+    font-size: 1.1rem;
+
+    .page-title {
+      font-size: 4vw;
+    }
+  }
+}
+
+// Desktop (1024px to 1339px) ---------------------------
+// ------------------------------------------------------
+@media (min-width: $desk) {
+  .region-content {
+    font-size: 1.15rem;
+
+    .page-title {
+      font-size: 3.5vw;
+    }
+  }
+}
+
+// Wide (over 1340px) -----------------------------------
+// ------------------------------------------------------
+@media (min-width: $wide) {
+  .region-content {
+    font-size: 1.25rem;
+
+    .page-title {
+      font-size: 2em;
+    }
+  }
+}

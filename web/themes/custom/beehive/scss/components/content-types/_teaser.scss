@@ -1,0 +1,78 @@
+// Mobile (up to 567px) ---------------------------------
+// ------------------------------------------------------
+.node--view-mode-teaser {
+  background: #fff;
+  background-position: center center;
+  background-size: cover;
+  border-radius: 5px;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+  display: block;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.25s ease-out;
+
+  &:hover {
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.25);
+    transform: scale(1.01);
+    transition: all 0.5s ease-out;
+
+    .teaser-title {
+      text-decoration: underline;
+    }
+  }
+
+  .teaser-image {
+    .field--name-field-image {
+      border-radius: 0;
+      margin-bottom: 0;
+
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+
+  .node__content {
+    color: #000;
+    padding: 1.5em;
+  }
+
+  .teaser-title {
+    color: $orange;
+    font-size: 1.25em;
+    font-weight: 900;
+  }
+
+  .field--name-body {
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Phablet (568px to 767px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $phab) {
+  .node--view-mode-teaser {
+    .teaser-title {
+      font-size: 1.35em;
+    }
+  }
+}
+
+// Tablet (768px to 1023px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $tab) {
+}
+
+// Desktop (1024px to 1339px) ---------------------------
+// ------------------------------------------------------
+@media (min-width: $desk) {
+}
+
+// Wide (over 1340px) -----------------------------------
+// ------------------------------------------------------
+@media (min-width: $wide) {
+}

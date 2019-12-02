@@ -1,0 +1,36 @@
+{
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "env": {
+    "node": true,
+    "browser": true,
+    "amd": true,
+    "mocha": true,
+    "es6": true
+  },
+  "globals": {
+    "Chart": true,
+    "Drupal": true,
+    "jQuery": true,
+    "React": true,
+    "ReactDOM": true
+  },
+  "extends": ["react-app", "plugin:prettier/recommended"],
+  "parser": "babel-eslint",
+  "plugins": ["prettier", "react"],
+  "rules": {
+    "prettier/prettier": 1,
+
+    // Customizations to replace linting errors with warnings in legacy code.
+    "no-undef": 1,
+    "react/react-in-jsx-scope": 1,
+    "no-restricted-globals": 1,
+    "import/first": 1,
+
+    // Additional customizations.
+    "prefer-const": 1
+  }
+}

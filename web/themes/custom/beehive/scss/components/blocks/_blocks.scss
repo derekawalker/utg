@@ -1,0 +1,119 @@
+// Mobile (up to 567px) ---------------------------------
+// ------------------------------------------------------
+.region-sidebar-first {
+  .block {
+    border-bottom: 1px solid $gray-c;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+
+    &:last-child {
+      border: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .block-title {
+      margin-bottom: 0.5em;
+
+      h2 {
+        font-size: 0.875em;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        margin-top: 0;
+        text-transform: uppercase;
+      }
+    }
+
+    .block-content {
+      > *:first-child {
+        margin-top: 0;
+
+        > *:first-child {
+          margin-top: 0;
+        }
+      }
+
+      > *:last-child {
+        margin-bottom: 0;
+
+        > *:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.region-sidebar-second {
+  .block {
+    background: $white;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+
+    .block-title {
+      margin-bottom: 0.5em;
+
+      h2 {
+        font-size: 0.675em;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        margin-top: 0;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .block-menu {
+    background: $white;
+    margin: 0 0 1.5rem;
+    padding: 1.5rem;
+
+    > h2 {
+      font-size: 0.675em;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      margin-top: 0;
+      text-transform: uppercase;
+    }
+
+    .menu {
+      margin: 0;
+    }
+
+    .menu-item {
+      padding: 0;
+
+      a {
+        display: block;
+        text-decoration: none;
+
+        &:before {
+          content: '\f0da';
+          font-family: 'Font Awesome 5 Free';
+          font-weight: 900;
+          margin-right: 0.5em;
+        }
+      }
+    }
+  }
+}
+
+// Phablet (568px to 767px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $phab) {
+}
+
+// Tablet (768px to 1023px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $tab) {
+}
+
+// Desktop (1024px to 1339px) ---------------------------
+// ------------------------------------------------------
+@media (min-width: $desk) {
+}
+
+// Wide (over 1340px) -----------------------------------
+// ------------------------------------------------------
+@media (min-width: $wide) {
+}

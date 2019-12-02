@@ -1,0 +1,67 @@
+// Mobile (up to 567px) ---------------------------------
+// ------------------------------------------------------
+.region-subbanner {
+  .breadcrumb {
+    padding: 0;
+
+    ol {
+      display: flex;
+      flex-flow: row wrap;
+
+      li {
+        color: $gray-c;
+        display: block;
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 0.1em;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:before {
+          color: $gray-9;
+          padding-left: 3px;
+          padding-right: 2px;
+        }
+
+        &:last-child {
+          &:after {
+            color: $gray-9;
+            content: '\BB';
+            padding-left: 2px;
+            padding-right: 3px;
+          }
+        }
+      }
+
+      a {
+        color: $gray-c;
+        display: inline-block;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+// Tablet (768px to 1023px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $tab) {
+}
+
+// Desktop (1024px to 1339px) ---------------------------
+// ------------------------------------------------------
+@media (min-width: $desk) {
+}
+
+// Wide (over 1340px) -----------------------------------
+// ------------------------------------------------------
+@media (min-width: $wide) {
+}

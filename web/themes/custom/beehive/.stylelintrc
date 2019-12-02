@@ -1,0 +1,14 @@
+{
+    "extends": "stylelint-config-recommended",
+    "plugins": ["stylelint-order", "stylelint-scss"],
+    "rules": {
+        "at-rule-no-unknown": null,
+        "no-descending-specificity": null,
+        "no-duplicate-selectors": null,
+        "font-family-no-missing-generic-family-keyword": null,
+        "order/properties-alphabetical-order": true,
+        "selector-pseudo-class-no-unknown": null,
+        "block-no-empty": null,
+        "declaration-empty-line-before": never
+    }
+}

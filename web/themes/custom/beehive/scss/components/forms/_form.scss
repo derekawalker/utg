@@ -1,0 +1,76 @@
+// Mobile (up to 567px) ---------------------------------
+// ------------------------------------------------------
+.form-item {
+  label {
+    display: block;
+    font-size: 0.675rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  input {
+    border: 1px solid $gray-d;
+    border-radius: $rad-inner;
+    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    width: 100%;
+
+    &[type='text'] {
+    }
+  }
+
+  textarea {
+    border: 1px solid $gray-d;
+    border-radius: $rad-inner;
+    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.05);
+    padding: 0.5em 1em;
+    width: 100%;
+  }
+}
+
+.container-inline {
+  align-items: flex-end;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  padding: 1rem 0;
+
+  > div {
+    display: inline-block;
+  }
+
+  .form-item {
+    margin: 0 1rem 1rem 0;
+
+    input {
+      width: auto;
+    }
+  }
+
+  .button {
+    margin: 0 1rem 1rem 0;
+  }
+}
+
+// Phablet (568px to 767px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $phab) {
+}
+
+// Tablet (768px to 1023px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $tab) {
+}
+
+// Desktop (1024px to 1339px) ---------------------------
+// ------------------------------------------------------
+@media (min-width: $desk) {
+}
+
+// Wide (over 1340px) -----------------------------------
+// ------------------------------------------------------
+@media (min-width: $wide) {
+}

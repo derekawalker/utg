@@ -1,0 +1,105 @@
+// Mobile (up to 567px) ---------------------------------
+// ------------------------------------------------------
+.node--view-mode-teaser.node--type-park {
+  &:hover,
+  &:focus,
+  &:active {
+    .teaser-title {
+      background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.75));
+      text-decoration: none;
+      transition: 'background' 0.25s ease-out;
+    }
+  }
+
+  article {
+    background-position: center center;
+    background-size: cover;
+  }
+
+  .teaser-inner {
+    align-items: flex-end;
+    display: flex;
+
+    &.has-background {
+      height: 40vw;
+    }
+  }
+
+  .teaser-title {
+    align-items: center;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.35));
+    color: #fff;
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: 1.1em;
+    font-weight: 100;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0.75em 1em;
+    transition: 'background' 0.25s ease-out;
+    width: 100%;
+
+    &:after {
+      content: '\f054';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+    }
+  }
+
+  .field--name-title {
+    padding-right: 1em;
+  }
+}
+
+// Lanscape (568px to 1023px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $phab) and (max-width: $desk - 1) and (orientation: landscape) {
+  .node--view-mode-teaser.node--type-park {
+    .teaser-inner {
+      &.has-background {
+        height: 20vw;
+      }
+    }
+  }
+}
+
+// Phablet (568px to 767px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $phab) {
+}
+
+// Tablet (768px to 1023px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $tab) {
+  .node--view-mode-teaser.node--type-park {
+    .teaser-title {
+      font-size: 1.25em;
+    }
+  }
+}
+
+// Desktop (1024px to 1339px) ---------------------------
+// ------------------------------------------------------
+@media (min-width: $desk) {
+  .node--view-mode-teaser.node--type-park {
+    .teaser-title {
+      font-size: 1.7em;
+    }
+
+    .teaser-inner {
+      &.has-background {
+        height: 30vw;
+      }
+    }
+  }
+}
+
+// Wide (over 1340px) -----------------------------------
+// ------------------------------------------------------
+@media (min-width: $wide) {
+  .node--view-mode-teaser.node--type-park {
+    .teaser-title {
+      font-size: 2em;
+    }
+  }
+}

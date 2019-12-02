@@ -1,0 +1,155 @@
+// Mobile (up to 567px) ---------------------------------
+// ------------------------------------------------------
+.mm-page {
+  background: $tan url(../../images/paper_bg.jpg);
+}
+
+.layout-container {
+  background: $tan url(../../images/paper_bg.jpg);
+}
+
+.region-inner {
+  margin: 0 auto;
+  max-width: $max-width;
+  padding: 1.5rem;
+
+  &:empty {
+    padding: 0;
+  }
+}
+
+.layout-columns {
+  margin: 0 auto;
+  max-width: $max-width;
+}
+
+// Phablet (568px to 767px) ---------------------------
+// ------------------------------------------------------
+@media (min-width: $phab) {
+  .both-sidebars {
+    .layout-columns {
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    .layout-content {
+      order: 1;
+      width: 60%;
+    }
+
+    .layout-sidebar-second {
+      order: 3;
+      width: 100%;
+    }
+
+    .layout-sidebar-first {
+      order: 2;
+      width: 40%;
+    }
+  }
+
+  .has-sidebar:not(.both-sidebars) {
+    .layout-columns {
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    .layout-content {
+      width: 60%;
+    }
+
+    .layout-sidebar-first,
+    .layout-sidebar-second {
+      width: 40%;
+    }
+  }
+}
+
+// Tablet (768px to 1023px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $tab) {
+  .both-sidebars {
+    .layout-content {
+      width: 65%;
+    }
+
+    .layout-sidebar-second {
+      width: 100%;
+    }
+
+    .layout-sidebar-first {
+      width: 35%;
+    }
+  }
+
+  .has-sidebar:not(.both-sidebars) {
+    .layout-content {
+      width: 65%;
+    }
+
+    .layout-sidebar-first,
+    .layout-sidebar-second {
+      width: 35%;
+    }
+  }
+}
+
+// Desktop (1024px to 1339px) ---------------------------
+// ------------------------------------------------------
+@media (min-width: $desk) {
+  .both-sidebars {
+    .layout-content {
+      width: 70%;
+    }
+
+    .layout-sidebar-second {
+      width: 100%;
+    }
+
+    .layout-sidebar-first {
+      width: 30%;
+    }
+  }
+
+  .has-sidebar:not(.both-sidebars) {
+    .layout-content {
+      width: 70%;
+    }
+
+    .layout-sidebar-first,
+    .layout-sidebar-second {
+      width: 30%;
+    }
+  }
+}
+
+// Wide (over 1340px) -----------------------------------
+// ------------------------------------------------------
+@media (min-width: $wide) {
+  .both-sidebars {
+    .layout-content {
+      width: 55%;
+    }
+
+    .layout-sidebar-first {
+      order: 2;
+      width: 25%;
+    }
+
+    .layout-sidebar-second {
+      order: 3;
+      width: 20%;
+    }
+  }
+
+  .has-sidebar:not(.both-sidebars) {
+    .layout-content {
+      width: 75%;
+    }
+
+    .layout-sidebar-first,
+    .layout-sidebar-second {
+      width: 25%;
+    }
+  }
+}

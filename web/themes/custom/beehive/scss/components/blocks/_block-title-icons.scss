@@ -1,0 +1,25 @@
+.block-views-blockarticles-block-1 {
+  .block-title {
+    h2 {
+      &:before {
+        content: '\f1ea';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        margin-right: 0.25em;
+      }
+    }
+  }
+}
+
+.block-views-blockhikes-block-1 {
+  .block-title {
+    h2 {
+      &:before {
+        content: '\f6ec';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        margin-right: 0.25em;
+      }
+    }
+  }
+}

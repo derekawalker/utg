@@ -1,0 +1,71 @@
+// Mobile (up to 567px) ---------------------------------
+// ------------------------------------------------------
+.region-banner {
+  background: linear-gradient(to bottom, lighten($blue-dark, 10%), $blue-dark);
+
+  .region-inner {
+    max-width: none;
+    overflow: hidden;
+    padding: 0;
+
+    .block-content {
+      .field--name-field-image {
+        align-items: center;
+        display: flex;
+        height: 40vw;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+
+        > img {
+          display: block;
+          flex-shrink: 0;
+          min-height: 100%;
+          min-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+// Tablet (768px to 1023px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $tab) {
+  .region-banner {
+    .region-inner {
+      .block-content {
+        .field--name-field-image {
+          height: 30vw;
+        }
+      }
+    }
+  }
+}
+
+// Desktop (1024px to 1339px) ---------------------------
+// ------------------------------------------------------
+@media (min-width: $desk) {
+  .region-banner {
+    .region-inner {
+      .block-content {
+        .field--name-field-image {
+          height: 25vw;
+        }
+      }
+    }
+  }
+}
+
+// Wide (over 1340px) -----------------------------------
+// ------------------------------------------------------
+@media (min-width: $wide) {
+  .region-banner {
+    .region-inner {
+      .block-content {
+        .field--name-field-image {
+          height: 20vw;
+        }
+      }
+    }
+  }
+}

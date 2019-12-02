@@ -1,0 +1,57 @@
+// Mobile (up to 567px) ---------------------------------
+// ------------------------------------------------------
+.node--type-hike {
+  .field--name-field-difficulty {
+    .field__item {
+      &:before {
+        content: '\f111';
+        display: inline-block;
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        margin-right: 0.25em;
+      }
+    }
+    .field--value-0 {
+      color: $teal;
+
+      &:before {
+        content: '\f111';
+      }
+    }
+    .field--value-1 {
+      color: $blue;
+
+      &:before {
+        content: '\f0c8';
+      }
+    }
+    .field--value-2 {
+      color: #000;
+
+      &:before {
+        content: '\f0c8';
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+// Tablet (768px to 1023px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $tab) {
+}
+
+// Desktop (1024px to 1339px) ---------------------------
+// ------------------------------------------------------
+@media (min-width: $desk) {
+}
+
+// Wide (over 1340px) -----------------------------------
+// ------------------------------------------------------
+@media (min-width: $wide) {
+}
+
+// Extra Wide (over 1340px + 3rem) -----------------------------------
+// ------------------------------------------------------
+@media (min-width: $max-width) {
+}

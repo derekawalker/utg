@@ -1,0 +1,15 @@
+base:
+  css:
+    base:
+      dist/css/styles.css: {}
+      '//use.fontawesome.com/releases/v5.7.2/css/all.css': { type: external, minified: true }
+beehive-layouts:
+  version: 1.x
+  css:
+    theme:
+      dist/css/beehive-layouts.css: {}
+  js:
+    dist/js/beehive-layouts.js: {}
+beehive-places:
+  version: 1.x
+  js: ../../../../beehive-react/src/

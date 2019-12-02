@@ -1,0 +1,156 @@
+// Mobile (up to 567px) ---------------------------------
+// ------------------------------------------------------
+.field--name-comment {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  margin-top: 2rem;
+  padding: 1em 1em 1px;
+
+  h2.title {
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+
+  .indented {
+    margin-left: 0.5rem;
+
+    .comment {
+      background: linear-gradient(to bottom, $gray-f1, $white 5%);
+      border-radius: 0 0 $rad $rad;
+      border-top: 0;
+      margin-top: -1rem;
+    }
+  }
+
+  .comment {
+    background: $white;
+    border: 1px solid $gray-e6;
+    border-radius: $rad;
+    margin-bottom: 1rem;
+    padding: 1rem 1rem 0.5rem;
+    position: relative;
+
+    mark {
+      align-items: center;
+      background: $orange-med;
+      border-radius: 20px;
+      box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25);
+      color: $white;
+      display: block;
+      display: flex;
+      font-weight: 700;
+      height: 40px;
+      justify-content: center;
+      left: -1em;
+      position: absolute;
+      text-transform: lowercase;
+      top: -1em;
+      width: 40px;
+
+      &:empty,
+      &.hidden {
+        height: 0;
+        width: 0;
+      }
+    }
+
+    .comment-permalink {
+      font-size: 10px;
+      position: absolute;
+      right: 1em;
+      text-transform: uppercase;
+      top: 1em;
+
+      a {
+        opacity: 0.5;
+        text-decoration: none;
+
+        &:hover,
+        &:focus,
+        &:active {
+          opacity: 1;
+        }
+
+        &:after {
+          content: '\f0c1';
+          display: inline-block;
+          font-family: 'Font Awesome 5 Free';
+          font-weight: 900;
+          margin-left: 3px;
+        }
+      }
+    }
+
+    .comment__submitted {
+      margin-bottom: 0;
+
+      span,
+      a {
+        font-size: 1.125em;
+        font-weight: 400;
+        text-decoration: none;
+        text-transform: capitalize;
+
+        &:after {
+          content: ':';
+        }
+      }
+    }
+
+    .content {
+      .field--name-field-comment {
+        font-style: italic;
+        margin-bottom: 0.5em;
+
+        &:before,
+        &:after {
+          content: '"';
+          font-weight: bold;
+        }
+      }
+
+      .links {
+        border-top: 1px dotted $gray-e6;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-end;
+        margin: 0;
+        padding: 0.5em 0 0;
+
+        li {
+          display: block;
+          margin-left: 0.5em;
+          padding: 0;
+
+          a {
+            display: block;
+            font-size: 10px;
+            padding: 0;
+            text-decoration: none;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Phablet (568px to 767px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $phab) {
+}
+
+// Tablet (768px to 1023px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $tab) {
+}
+
+// Desktop (1024px to 1339px) ---------------------------
+// ------------------------------------------------------
+@media (min-width: $desk) {
+}
+
+// Wide (over 1340px) -----------------------------------
+// ------------------------------------------------------
+@media (min-width: $wide) {
+}

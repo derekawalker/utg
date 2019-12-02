@@ -1,0 +1,224 @@
+// Mobile (up to 567px) ---------------------------------
+// ------------------------------------------------------
+.node--type-post {
+  .field--name-field-post-date {
+    color: $gray-9;
+    font-size: 0.75em;
+    letter-spacing: 0.1em;
+    margin: 0.25rem 0 0.5rem;
+    text-transform: uppercase;
+  }
+
+  .field--name-field-image {
+    margin-bottom: 1rem;
+
+    img {
+      display: block;
+    }
+  }
+
+  .field--name-body {
+    img {
+      display: block;
+    }
+
+    picture {
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    > div {
+      align-items: center;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+
+      picture {
+        &:first-child {
+          margin-right: 0.5rem;
+        }
+
+        &:last-child {
+          margin-left: 0.5rem;
+        }
+      }
+    }
+  }
+
+  .field--name-field-signature {
+    border-bottom: 1px solid $gray-e6;
+    font-family: $font-script;
+    font-size: 2em;
+    font-style: italic;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+
+    &:before {
+      content: '- ';
+    }
+  }
+
+  .field--name-field-sponsored {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+
+  .field--name-field-hours {
+    margin-bottom: 1.5rem;
+  }
+
+  .field--name-field-entrance-fees {
+    margin-bottom: 1.5rem;
+  }
+
+  .field--name-field-phone {
+    margin-bottom: 1.5rem;
+
+    a {
+      background: $blue-light;
+      border-radius: 25px;
+      box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+      color: $white;
+      display: block;
+      font-size: 1.25rem;
+      font-weight: 400;
+      height: 50px;
+      line-height: 50px;
+      padding: 0 1em;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.5s ease-out;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background: lighten($blue-light, 10%);
+        box-shadow: inset 2px 4px 4px rgba(0, 0, 0, 0.25);
+        transition: all 0.25s ease-out;
+      }
+    }
+  }
+
+  .field--name-field-address {
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .field--name-field-location {
+    margin-bottom: 1.5rem;
+  }
+
+  .field--name-field-tags {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    .field__item {
+      a {
+        background: $white;
+        border: 1px solid $blue-light;
+        border-radius: $rad * 3;
+        color: $blue-light;
+        display: block;
+        font-size: 0.6875em;
+        font-weight: 400;
+        letter-spacing: 0.05em;
+        margin: 0.25em;
+        padding: 0.35em 1.25em 0.25em;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover,
+        &:active,
+        &:focus {
+          background: $blue-light;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .node__links {
+    background: $gray-f1;
+    border-radius: $rad;
+    margin: 1em 0;
+    padding: 1em;
+  }
+}
+
+// Tablet (768px to 1023px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $tab) {
+  .node--type-post {
+    .field--name-body {
+      img {
+        display: block;
+      }
+
+      > div {
+        align-items: center;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+
+        picture {
+          &:first-child {
+            margin-right: 0.5rem;
+          }
+
+          &:last-child {
+            margin-left: 0.5rem;
+          }
+        }
+      }
+    }
+
+    .field--name-field-phone {
+      a {
+        background: none;
+        border-radius: 0;
+        box-shadow: none;
+        color: $blue-light;
+        display: inline;
+        font-size: 1em;
+        font-weight: 300;
+        line-height: 1.5;
+        padding: 0;
+        text-align: left;
+        transition: none;
+
+        &:hover,
+        &:active,
+        &:focus {
+          background: none;
+          box-shadow: none;
+          transition: none;
+        }
+      }
+    }
+
+    .field--name-field-address {
+      text-align: left;
+    }
+
+    .field--name-field-tags {
+      justify-content: flex-start;
+    }
+  }
+}
+
+// Desktop (1024px to 1339px) ---------------------------
+// ------------------------------------------------------
+@media (min-width: $desk) {
+}
+
+// Wide (over 1340px) -----------------------------------
+// ------------------------------------------------------
+@media (min-width: $wide) {
+}
