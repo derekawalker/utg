@@ -1,0 +1,52 @@
+utg.layout.mobile:
+  group: utg.layout
+  label: mobile
+  mediaQuery: ''
+  weight: 4
+  multipliers:
+    - 1x
+utg.layout.phablet:
+  group: utg.layout
+  label: phablet
+  mediaQuery: '(min-width: 568px) and (max-width: 767px)'
+  weight: 3
+  multipliers:
+    - 1x
+utg.layout.tablet:
+  group: utg.layout
+  label: tablet
+  mediaQuery: '(min-width: 768px) and (max-width: 1023px)'
+  weight: 2
+  multipliers:
+    - 1x
+utg.layout.desktop:
+  group: utg.layout
+  label: dekstop
+  mediaQuery: '(min-width: 1024px) and (max-width: 1364px)'
+  weight: 1
+  multipliers:
+    - 1x
+utg.layout.wide:
+  group: utg.layout
+  label: wide
+  mediaQuery: '(min-width: 1365px)'
+  weight: 0
+  multipliers:
+    - 1x
+
+utg.images.mobile:
+  group: utg.images
+  label: mobile
+  mediaQuery: ''
+  weight: 3
+  multipliers:
+    - 1x
+    - 2x
+utg.images.desktop:
+  group: utg.images
+  label: desktop
+  mediaQuery: '(min-width: 1024px)'
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x

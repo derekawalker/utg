@@ -1,0 +1,67 @@
+// Mobile (up to 567px) ---------------------------------
+// ------------------------------------------------------
+header {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.region-header {
+  background: $white;
+
+  .region-inner {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 0.75rem;
+  }
+}
+
+// Phablet (568px to 767px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $phab) {
+  .region-header {
+    .region-inner {
+      padding: 0.5rem 0.75rem;
+    }
+  }
+}
+
+// Tablet (768px to 1023px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $tab) {
+  .region-header {
+    .region-inner {
+      padding: 1rem 1.5rem;
+
+      .block-utg-branding {
+        order: 1;
+      }
+
+      .search-block-form {
+        order: 3;
+      }
+
+      .block-responsive-menu-horizontal-menu {
+        order: 2;
+      }
+    }
+  }
+}
+
+// Desktop (1024px to 1339px) ---------------------------
+// ------------------------------------------------------
+@media (min-width: $desk) {
+  .region-header {
+    .region-inner {
+      padding: 1.5rem;
+    }
+  }
+}
+
+// Wide (over 1340px) -----------------------------------
+// ------------------------------------------------------
+@media (min-width: $wide) {
+}

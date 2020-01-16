@@ -1,0 +1,42 @@
+{% if content %}
+  <ul data-tabs>
+    <li><a data-tabby-default href="#layout-tab1">About</a></li>
+    <li><a href="#layout-tab2">Photos</a></li>
+    <li><a href="#layout-tab3">Coupons</a></li>
+    <li><a href="#layout-tab4">Map</a></li>
+    <li><a href="#layout-tab5">Gear</a></li>
+  </ul>
+
+  <div id="layout-tabs" class="utg-layout--five-column">
+
+    {% if content.first %}
+      <div id="layout-tab1" {{ region_attributes.first.addClass('utg-layout--region', 'utg-layout--first-region') }}>
+        {{ content.first }}
+      </div>
+    {% endif %}
+
+    {% if content.second %}
+      <div id="layout-tab2" {{ region_attributes.second.addClass('utg-layout--region', 'utg-layout--second-region') }}>
+        {{ content.second }}
+      </div>
+    {% endif %}
+
+    {% if content.third %}
+      <div id="layout-tab3" {{ region_attributes.third.addClass('utg-layout--region', 'utg-layout--third-region') }}>
+        {{ content.third }}
+      </div>
+    {% endif %}
+
+    {% if content.fourth %}
+      <div id="layout-tab4" {{ region_attributes.fourth.addClass('utg-layout--region', 'utg-layout--fourth-region') }}>
+        {{ content.fourth }}
+      </div>
+    {% endif %}
+
+    {% if content.fifth %}
+      <div id="layout-tab5" {{ region_attributes.fifth.addClass('utg-layout--region', 'utg-layout--fifth-region') }}>
+        {{ content.fifth }}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

@@ -1,0 +1,6 @@
+utg_places.admin:
+  title: "Places"
+  description: "Places to visit."
+  parent: main
+  route_name: utg_places.places_controller_places
+  menu_name: main

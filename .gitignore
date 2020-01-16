@@ -32,7 +32,7 @@ web/profiles/contrib/
 web/libraries/
 
 # Ignore node modules
-web/themes/custom/*/node_modules
+node_modules
 
 # Ignore sensitive information
 web/sites/*/settings.php

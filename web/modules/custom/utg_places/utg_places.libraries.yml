@@ -1,0 +1,8 @@
+react-utg:
+  version: 1.0.0
+  footer: true
+  css:
+    theme:
+      ../../../utg-react/build/static/css/main.css: {}
+  js:
+    ../../../utg-react/build/static/js/main.js: {}

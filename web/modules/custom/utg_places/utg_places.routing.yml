@@ -1,0 +1,7 @@
+utg_places.places_controller_places:
+  path: "/places"
+  defaults:
+    _controller: '\Drupal\utg_places\Controller\PlacesController::content'
+    _title: "Places"
+  requirements:
+    _permission: "access content"

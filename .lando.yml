@@ -1,5 +1,18 @@
-name: beehive
+name: utg
 recipe: drupal8
+services:
+  node:
+    type: node
+  database:
+    portforward: 3020
 config:
   webroot: web
   php: "7.2"
+
+# Add `lando <name>` commands for use inside lando.
+tooling:
+  # Node commands
+  npm:
+    service: node
+  yarn:
+    service: node

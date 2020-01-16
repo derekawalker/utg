@@ -1,0 +1,7 @@
+{
+    "name": "utg_places",
+    "type": "drupal-module",
+    "description": "Loads react on the the /places route.",
+    "keywords": [],
+    "minimum-stability": "dev"
+}

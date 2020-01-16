@@ -1,0 +1,13 @@
+{% extends 'views-view.html.twig' %}
+
+{% block content %}
+  {% if rows %}
+    <div class="view-content owl-carousel">
+      {{ rows }}
+    </div>
+  {% elseif empty %}
+    <div class="view-empty">
+      {{ empty }}
+    </div>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * @file
+ * Contains utg_places.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function utg_places_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the utg_places module.
+    case 'help.page.utg_places':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Loads react on the the /places route.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function utg_places_theme() {
+  return [
+    'utg_places' => [
+      'variables' => [
+        'title' => NULL,
+        'description' => NULL,
+      ]
+    ],
+    'utg_places_block' => [
+      'variables' => [
+        'title' => NULL,
+        'description' => NULL,
+      ],
+      'template' => 'block--utg-places',
+    ],
+  ];
+}

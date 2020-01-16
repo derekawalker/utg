@@ -1,0 +1,35 @@
+base:
+  css:
+    base:
+      dist/css/styles.css: {}
+      '//use.fontawesome.com/releases/v5.7.2/css/all.css': { type: external, minified: true }
+utg-layouts:
+  version: 1.x
+  css:
+    theme:
+      dist/css/utg-layouts.css: {}
+  js:
+    dist/js/utg-layouts.js: {}
+react-utg:
+  version: 1.0.0
+  footer: true
+  css:
+    theme:
+      ../../../utg-react/build/static/css/main.css: {}
+  js:
+    ../../../utg-react/build/static/js/main.js: {}
+owl-carousel:
+  version: 2.x
+  css:
+    component:
+      '../../../libraries/owl-carousel/dist/assets/owl.carousel.min.css': {}
+  js:
+    '../../../libraries/owl-carousel/dist/owl.carousel.min.js': {}
+    js/homepage-carousels.js: {}
+  dependencies:
+    - core/jquery
+tabby:
+  version: 12.x
+  js:
+    '../../../libraries/tabby/dist/js/tabby.polyfills.min.js': {}
+    js/node-tabs.js: {}
