@@ -1,0 +1,87 @@
+// Mobile (up to 567px) ---------------------------------
+// ------------------------------------------------------
+[role='tablist'] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  border-top: 1px solid $color-gray-c;
+  border-left: 1px solid $color-gray-c;
+  border-right: 1px solid $color-gray-c;
+  font-size: 0.6em;
+
+  li {
+    flex: 1;
+    text-align: center;
+    border-right: 1px solid $color-gray-c;
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+}
+
+[role='tab'] {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  flex: 1;
+  padding: 1.25em 0 0.75em 0;
+  text-decoration: none;
+  background: linear-gradient(to top, $color-gray-10 0%, transparent 8%);
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: $color-gray-6;
+
+  i {
+    margin-bottom: 0.25em;
+    font-size: 2em;
+    color: $color-gray-9;
+  }
+
+  &[aria-selected='true'] {
+    background: transparent;
+
+    i {
+      color: $color-orange-dark;
+    }
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color-gray-6;
+
+    &:not([aria-selected='true']) {
+      background: linear-gradient(to top, $color-gray-10 0%, transparent 8%);
+      color: $color-gray-6;
+
+      i {
+        color: $color-orange-dark;
+      }
+    }
+  }
+}
+
+// Phablet (568px to 767px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $phab) {
+}
+
+// Tablet (768px to 1023px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $tab) {
+}
+
+// Desktop (1024px to 1339px) ---------------------------
+// ------------------------------------------------------
+@media (min-width: $desk) {
+}
+
+// Wide (over 1340px) -----------------------------------
+// ------------------------------------------------------
+@media (min-width: $wide) {
+}

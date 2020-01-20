@@ -2,7 +2,7 @@
 // ------------------------------------------------------
 .region-sidebar-first {
   .block {
-    border-bottom: 1px solid $gray-c;
+    border-bottom: 1px solid $color-gray-c;
     margin-bottom: 1.5rem;
     padding-bottom: 1.5rem;
 
@@ -46,7 +46,7 @@
 
 .region-sidebar-second {
   .block {
-    background: $white;
+    background: $color-white;
     margin-bottom: 1.5rem;
     padding: 1.5rem;
 
@@ -64,7 +64,7 @@
   }
 
   .block-menu {
-    background: $white;
+    background: $color-white;
     margin: 0 0 1.5rem;
     padding: 1.5rem;
 

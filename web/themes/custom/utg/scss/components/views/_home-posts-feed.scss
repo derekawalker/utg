@@ -11,7 +11,7 @@
 }
 
 .home-post-item {
-  background: $white;
+  background: $color-white;
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
   margin-bottom: 1.5rem;
   transition: all 0.25s ease-out;
@@ -36,19 +36,19 @@
     margin: 0;
 
     a {
-      color: $orange;
+      color: $color-orange-dark;
       text-decoration: none;
 
       &:hover,
       &:active,
       &:focus {
-        color: lighten($orange, 10%);
+        color: lighten($color-orange-dark, 10%);
       }
     }
   }
 
   &--date {
-    color: $gray-9;
+    color: $color-gray-9;
     font-size: 10px;
     letter-spacing: 0.1em;
     margin: 1em 0;
@@ -56,12 +56,12 @@
   }
 
   &--body {
-    color: $gray-3;
+    color: $color-gray-3;
   }
 
   &--link {
     a {
-      background: $blue-light;
+      background: $color-teal-light;
       border-radius: 15px;
       color: #fff;
       display: block;
@@ -80,7 +80,7 @@
       &:hover,
       &:active,
       &:focus {
-        background: lighten($blue-light, 10%);
+        background: lighten($color-teal-light, 10%);
         transition: all 0.5s ease-out;
       }
     }

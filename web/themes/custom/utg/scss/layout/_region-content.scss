@@ -2,13 +2,17 @@
 // ------------------------------------------------------
 .region-content {
   font-size: 1rem;
+  background: $color-white;
+
+  .region-inner {
+    position: relative;
+  }
 
   .page-title {
-    color: $blue-dark;
-    font-family: $font-block;
-    font-size: 7vw;
-    letter-spacing: 0.05em;
-    margin-top: 0;
+    font-family: $font-main;
+    font-size: 0.9em;
+    margin: 0;
+    padding: 1em 1rem;
   }
 }
 
@@ -17,10 +21,6 @@
 @media (min-width: $phab) {
   .region-content {
     font-size: 1rem;
-
-    .page-title {
-      font-size: 4vw;
-    }
   }
 }
 
@@ -29,10 +29,6 @@
 @media (min-width: $tab) {
   .region-content {
     font-size: 1.1rem;
-
-    .page-title {
-      font-size: 4vw;
-    }
   }
 }
 
@@ -41,10 +37,6 @@
 @media (min-width: $desk) {
   .region-content {
     font-size: 1.15rem;
-
-    .page-title {
-      font-size: 3.5vw;
-    }
   }
 }
 
@@ -53,9 +45,5 @@
 @media (min-width: $wide) {
   .region-content {
     font-size: 1.25rem;
-
-    .page-title {
-      font-size: 2em;
-    }
   }
 }

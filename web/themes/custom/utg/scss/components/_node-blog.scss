@@ -2,7 +2,7 @@
 // ------------------------------------------------------
 .node--type-post {
   .field--name-field-post-date {
-    color: $gray-9;
+    color: $color-gray-9;
     font-size: 0.75em;
     letter-spacing: 0.1em;
     margin: 0.25rem 0 0.5rem;
@@ -50,7 +50,7 @@
   }
 
   .field--name-field-signature {
-    border-bottom: 1px solid $gray-e6;
+    border-bottom: 1px solid $color-gray-e6;
     font-family: $font-script;
     font-size: 2em;
     font-style: italic;
@@ -80,10 +80,10 @@
     margin-bottom: 1.5rem;
 
     a {
-      background: $blue-light;
+      background: $color-teal-light;
       border-radius: 25px;
       box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
-      color: $white;
+      color: $color-white;
       display: block;
       font-size: 1.25rem;
       font-weight: 400;
@@ -97,7 +97,7 @@
       &:hover,
       &:active,
       &:focus {
-        background: lighten($blue-light, 10%);
+        background: lighten($color-teal-light, 10%);
         box-shadow: inset 2px 4px 4px rgba(0, 0, 0, 0.25);
         transition: all 0.25s ease-out;
       }
@@ -120,10 +120,10 @@
 
     .field__item {
       a {
-        background: $white;
-        border: 1px solid $blue-light;
+        background: $color-white;
+        border: 1px solid $color-teal-light;
         border-radius: $rad * 3;
-        color: $blue-light;
+        color: $color-teal-light;
         display: block;
         font-size: 0.6875em;
         font-weight: 400;
@@ -136,15 +136,15 @@
         &:hover,
         &:active,
         &:focus {
-          background: $blue-light;
-          color: $white;
+          background: $color-teal-light;
+          color: $color-white;
         }
       }
     }
   }
 
   .node__links {
-    background: $gray-f1;
+    background: $color-gray-f1;
     border-radius: $rad;
     margin: 1em 0;
     padding: 1em;
@@ -184,7 +184,7 @@
         background: none;
         border-radius: 0;
         box-shadow: none;
-        color: $blue-light;
+        color: $color-teal-light;
         display: inline;
         font-size: 1em;
         font-weight: 300;

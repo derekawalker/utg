@@ -9,7 +9,7 @@
       flex-flow: row wrap;
 
       li {
-        color: $gray-c;
+        color: $color-white;
         display: block;
         font-size: 10px;
         font-weight: 400;
@@ -18,14 +18,14 @@
         text-transform: uppercase;
 
         &:before {
-          color: $gray-9;
+          color: $color-gray-c;
           padding-left: 3px;
           padding-right: 2px;
         }
 
         &:last-child {
           &:after {
-            color: $gray-9;
+            color: $color-gray-c;
             content: '\BB';
             padding-left: 2px;
             padding-right: 3px;
@@ -34,7 +34,7 @@
       }
 
       a {
-        color: $gray-c;
+        color: $color-white;
         display: inline-block;
         font-size: 10px;
         letter-spacing: 0.1em;
@@ -44,7 +44,7 @@
         &:hover,
         &:focus,
         &:active {
-          color: $white;
+          color: $color-white;
         }
       }
     }

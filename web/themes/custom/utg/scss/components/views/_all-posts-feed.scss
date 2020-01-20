@@ -11,25 +11,25 @@
       margin-top: 0;
 
       a {
-        color: $orange;
+        color: $color-orange-dark;
         text-decoration: none;
 
         &:hover {
-          color: lighten($orange, 10%);
+          color: lighten($color-orange-dark, 10%);
         }
       }
     }
 
     .views-field-nothing-1 {
       .field-content {
-        border: 1px solid $gray-f1;
+        border: 1px solid $color-gray-f1;
         box-shadow: 0 0 100px rgba(0, 0, 0, 0.05);
         display: flex;
         flex-flow: row wrap;
         overflow: hidden;
 
         .posts--content-img {
-          background: $gray-e6;
+          background: $color-gray-e6;
           position: relative;
           width: 25%;
           z-index: 1;
@@ -48,7 +48,7 @@
         }
 
         .posts--content-text {
-          background: $white;
+          background: $color-white;
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
           padding: 1.5rem;
           position: relative;
@@ -57,7 +57,7 @@
         }
 
         .posts--content-city {
-          color: $gray-9;
+          color: $color-gray-9;
           font-size: 10px;
           letter-spacing: 0.1em;
           padding: 0.5em 0 0;

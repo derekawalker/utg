@@ -15,7 +15,7 @@
     margin-left: 0.5rem;
 
     .comment {
-      background: linear-gradient(to bottom, $gray-f1, $white 5%);
+      background: linear-gradient(to bottom, $color-gray-f1, $color-white 5%);
       border-radius: 0 0 $rad $rad;
       border-top: 0;
       margin-top: -1rem;
@@ -23,8 +23,8 @@
   }
 
   .comment {
-    background: $white;
-    border: 1px solid $gray-e6;
+    background: $color-white;
+    border: 1px solid $color-gray-e6;
     border-radius: $rad;
     margin-bottom: 1rem;
     padding: 1rem 1rem 0.5rem;
@@ -32,10 +32,10 @@
 
     mark {
       align-items: center;
-      background: $orange-med;
+      background: $color-orange-dark;
       border-radius: 20px;
       box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25);
-      color: $white;
+      color: $color-white;
       display: block;
       display: flex;
       font-weight: 700;
@@ -110,7 +110,7 @@
       }
 
       .links {
-        border-top: 1px dotted $gray-e6;
+        border-top: 1px dotted $color-gray-e6;
         display: flex;
         flex-flow: row wrap;
         justify-content: flex-end;

@@ -1,0 +1,9 @@
+{% extends 'field.html.twig' %}
+
+{% block content %}
+  {% for item in items %}
+    <div{{ attributes.addClass(classes, 'field__item') }}>
+      <span class="price-{{ item.key }}">{{ item.content }}</span>
+    </div>
+  {% endfor %}
+{% endblock %}

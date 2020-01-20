@@ -3,13 +3,14 @@
 .region-content-top {
   ul.tabs {
     align-items: center;
-    background: $gray-05;
+    background: $color-gray-05;
     border-radius: $rad;
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
     padding: 0.125em;
+    margin: 0;
 
     > li {
       display: block;
@@ -17,7 +18,7 @@
 
       a {
         border-radius: $rad-inner;
-        color: $gray-6;
+        color: $color-gray-6;
         font-size: 10px;
         letter-spacing: 0.1em;
         padding: 0.35em 0.75em;
@@ -28,13 +29,13 @@
         &:focus {
           background: rgba(255, 255, 255, 1);
           box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-          color: $orange;
-          color: $gray-3;
+          color: $color-orange-dark;
+          color: $color-gray-3;
         }
 
         &.is-active {
-          background: $white;
-          color: $orange;
+          background: $color-white;
+          color: $color-orange-dark;
         }
       }
     }

@@ -1,5 +1,11 @@
-<div class="utg-layout--one-column">
-  <div class="utg-layout--main-region">
-    {{ content.main }}
-  </div>
+{% if content %}
+<div class="utg-layout--one-column" {{ region_attributes.first.addClass('utg-layout--one-column') }}>
+
+  {% if content.main %}
+    <div class="utg-layout--main-region" {{ region_attributes.first.addClass('utg-layout--region', 'utg-layout--main-region') }}>
+      {{ content.main }}
+    </div>
+  {% endif %}
+
 </div>
+{% endif %}

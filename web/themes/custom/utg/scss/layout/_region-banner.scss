@@ -1,7 +1,12 @@
 // Mobile (up to 567px) ---------------------------------
 // ------------------------------------------------------
 .region-banner {
-  background: linear-gradient(to bottom, lighten($blue-dark, 10%), $blue-dark);
+  background: linear-gradient(
+    to bottom,
+    darken($color-teal-dark, 10%),
+    $color-teal-dark,
+    darken($color-teal-dark, 10%)
+  );
 
   .region-inner {
     max-width: none;

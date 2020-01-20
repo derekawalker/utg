@@ -1,5 +1,14 @@
 // Mobile (up to 567px) ---------------------------------
 // ------------------------------------------------------
+#layout-tabs {
+  border-bottom: 1px solid $color-gray-c;
+  border-left: 1px solid $color-gray-c;
+  border-right: 1px solid $color-gray-c;
+
+  > div {
+    padding: 1em;
+  }
+}
 
 // Phablet (568px to 767px) -----------------------------
 // ------------------------------------------------------

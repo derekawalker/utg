@@ -8,14 +8,14 @@ header {
 }
 
 .region-header {
-  background: $white;
+  background: $color-white;
 
   .region-inner {
     align-items: center;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    padding: 0.75rem;
+    padding: 0.35rem 0.75rem;
   }
 }
 

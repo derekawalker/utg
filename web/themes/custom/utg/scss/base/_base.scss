@@ -1,9 +1,9 @@
 // Mobile (up to 567px) ---------------------------------
 // ------------------------------------------------------
 html {
-  background: $tan url(../../images/paper_bg.jpg);
+  background: $color-white;
   box-sizing: border-box;
-  color: $black;
+  color: $color-black;
   font-family: $font-main;
   font-size: 16px;
   font-weight: 300;
@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  background: $tan url(../../images/paper_bg.jpg);
+  background: $color-white;
 }
 
 *,
@@ -21,12 +21,12 @@ body {
 }
 
 a {
-  color: $orange;
+  color: $color-orange-dark;
 
   &:hover,
   &:focus,
   &:active {
-    color: lighten($orange, 10%);
+    color: lighten($color-orange-dark, 10%);
   }
 }
 
@@ -86,7 +86,7 @@ ol {
 }
 
 table {
-  border: 1px solid $gray-e6;
+  border: 1px solid $color-gray-e6;
   margin-bottom: 1rem;
 
   caption {
@@ -97,13 +97,13 @@ table {
   }
 
   thead {
-    background: $gray-f1;
-    border-bottom: 1px solid $gray-e6;
+    background: $color-gray-f1;
+    border-bottom: 1px solid $color-gray-e6;
     text-align: left;
 
     tr {
       th {
-        border-right: 1px solid $gray-e6;
+        border-right: 1px solid $color-gray-e6;
         font-size: 0.875em;
         font-weight: 700;
         letter-spacing: 0.1em;

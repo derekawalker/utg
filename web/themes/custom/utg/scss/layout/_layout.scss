@@ -1,17 +1,17 @@
 // Mobile (up to 567px) ---------------------------------
 // ------------------------------------------------------
 .mm-page {
-  background: $tan url(../../images/paper_bg.jpg);
+  background: $color-gray-c;
 }
 
 .layout-container {
-  background: $tan url(../../images/paper_bg.jpg);
+  background: $color-gray-c;
 }
 
 .region-inner {
   margin: 0 auto;
   max-width: $max-width;
-  padding: 1.5rem;
+  padding: 1.5rem 1rem;
 
   &:empty {
     padding: 0;
