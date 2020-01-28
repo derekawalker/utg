@@ -1,11 +1,12 @@
 // Mobile (up to 567px) ---------------------------------
 // ------------------------------------------------------
-.mm-page {
-  background: $color-gray-c;
-}
 
 .layout-container {
-  background: $color-gray-c;
+  background: $site-background;
+}
+
+.layout-content {
+  background: $color-white;
 }
 
 .region-inner {

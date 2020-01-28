@@ -29,15 +29,22 @@
     'vocabulary-' ~ term.bundle|clean_class,
   ]
 %}
+{# {{ kint(content) }} #}
 <div{{ attributes.setAttribute('id', 'taxonomy-term-' ~ term.id).addClass(classes) }}>
-  {{ title_prefix }}
+
+
   {% block title %}
-    {% if not page %}
-      <h2><a href="{{ url }}">{{ name }}</a></h2>
-    {% endif %}
+    {{ title_prefix }}
+      {% if not page %}
+        <h2><a href="{{ url }}">{{ name }}</a></h2>
+      {% endif %}
+    {{ title_suffix }}
   {% endblock %}
-  {{ title_suffix }}
+
+
   <div class="content">
-    {{ content }}
+    {% block content %}
+      {{ content }}
+    {% endblock %}
   </div>
 </div>

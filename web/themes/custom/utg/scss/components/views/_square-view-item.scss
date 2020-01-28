@@ -1,14 +1,44 @@
 // Mobile (up to 567px) ---------------------------------
 // ------------------------------------------------------
-.view {
-  .views-row {
-    .node--view-mode-teaser {
-      margin-bottom: 1.5rem;
+.view-content {
+  &.owl-carousel {
+    margin: 0 -1rem;
+    width: calc(100% + 2rem);
+
+    .owl-item {
+      padding-left: 1rem;
+    }
+  }
+}
+.square-view-item {
+  a {
+    display: block;
+    position: relative;
+    border-radius: $rad;
+
+    h4 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 0.65em 1em;
+      font-weight: 900;
+      color: $color-white;
+      background: $gradient-teal-transparent;
+      margin: 0;
+      font-size: 1.1em;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      border-radius: 0 0 $rad $rad;
     }
 
-    &:last-child {
-      .node--view-mode-teaser {
-        margin-bottom: 0;
+    div {
+      border-radius: $rad;
+
+      img {
+        display: block;
+        border-radius: $rad;
       }
     }
   }

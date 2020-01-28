@@ -29,10 +29,28 @@ $color-gray-3: #333;
 $color-gray-6: #666;
 $color-gray-9: #999;
 $color-gray-50: rgba(0, 0, 0, 0.5);
+$color-gray-25: rgba(0, 0, 0, 0.1);
 $color-gray-10: rgba(0, 0, 0, 0.1);
 $color-gray-075: rgba(0, 0, 0, 0.075);
 $color-gray-05: rgba(0, 0, 0, 0.05);
 $color-gray-0: rgba(0, 0, 0, 0);
+
+/* Gradients */
+$gradient-orange: linear-gradient(to bottom right, $color-orange-light, $color-orange-dark);
+$gradient-teal: linear-gradient(to bottom right, $color-teal-light, $color-teal-dark);
+$gradient-orange-transparent: linear-gradient(
+  to bottom right,
+  transparentize($color-orange-light, 0.15),
+  transparentize($color-orange-dark, 0.15)
+);
+$gradient-teal-transparent: linear-gradient(
+  to bottom right,
+  transparentize($color-teal-light, 0.15),
+  transparentize($color-teal-dark, 0.15)
+);
+
+/* Layout */
+$site-background: $color-gray-e6;
 
 /* Decorations */
 $rad-inner: 3px;

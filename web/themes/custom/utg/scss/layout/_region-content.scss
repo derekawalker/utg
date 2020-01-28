@@ -2,17 +2,17 @@
 // ------------------------------------------------------
 .region-content {
   font-size: 1rem;
-  background: $color-white;
 
   .region-inner {
     position: relative;
+    padding: 0;
   }
 
   .page-title {
     font-family: $font-main;
-    font-size: 0.9em;
+    font-size: 1.25em;
     margin: 0;
-    padding: 1em 1rem;
+    padding: 1em 1rem 0;
   }
 }
 

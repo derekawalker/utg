@@ -1,3 +1,15 @@
 {% extends 'taxonomy-term.html.twig' %}
 
 {% block title %}{% endblock %}
+
+{% block content %}
+  <a href="{{ content.field_link.0['#url'] }}">
+    {% if content.field_main_photo %}
+      <div>{{ content.field_main_photo }}</div>
+    {% endif %}
+    <div>
+      <h4>{{ content.field_link.0['#title'] }}</h4>
+      {{ content.description }}
+    </div>
+  </a>
+{% endblock %}

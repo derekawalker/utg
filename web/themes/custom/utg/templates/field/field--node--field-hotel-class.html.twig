@@ -1,0 +1,15 @@
+{% extends 'field.html.twig' %}
+
+{% block content %}
+  {% for item in items %}
+    <div{{ attributes.addClass(classes, 'field__item') }}>
+      <span class="hotel-class-{{ item.key }}">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </span>
+    </div>
+  {% endfor %}
+{% endblock %}

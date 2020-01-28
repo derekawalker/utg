@@ -3,14 +3,16 @@
   $(document).ready(function() {
     $('.owl-carousel').owlCarousel({
       loop: true,
-      margin: 10,
+      margin: 0,
       nav: true,
+      dots: false,
+      navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
       responsiveClass: true,
       responsive: {
         0: {
           items: 1.5
         },
-        375: {
+        480: {
           items: 2.5
         },
         768: {

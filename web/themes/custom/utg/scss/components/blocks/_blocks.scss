@@ -1,5 +1,25 @@
 // Mobile (up to 567px) ---------------------------------
 // ------------------------------------------------------
+.block-title {
+  h2 {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+  }
+}
+
+.region-content {
+  .block {
+    border-bottom: 1rem $site-background solid;
+    padding: 1rem;
+    background: $color-white;
+
+    &.block-page-title-block {
+      border-bottom: 0;
+      padding: 0;
+    }
+  }
+}
+
 .region-sidebar-first {
   .block {
     border-bottom: 1px solid $color-gray-c;

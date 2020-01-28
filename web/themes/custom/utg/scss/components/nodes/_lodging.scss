@@ -1,0 +1,177 @@
+// Mobile (up to 567px) ---------------------------------
+// ------------------------------------------------------
+.page-node-type-lodging {
+  .node__content {
+    .utg-layout--lodging {
+      .field--name-field-hotel-class,
+      .field--name-field-lodging-category {
+        $bubble-size: 32px;
+
+        font-weight: 900;
+        color: $color-gray-6;
+        text-transform: uppercase;
+        line-height: $bubble-size;
+        padding-left: $bubble-size * 1.25;
+        margin: 0.25em 0;
+        letter-spacing: 0.05em;
+
+        &:before {
+          content: '\f155';
+          font-family: 'Font Awesome 5 Free';
+          font-weight: 900;
+          font-size: 0.9em;
+          width: $bubble-size;
+          height: $bubble-size;
+          color: $color-white;
+          background: $gradient-teal;
+          border-radius: $bubble-size;
+          text-align: center;
+          line-height: $bubble-size;
+          position: absolute;
+          left: 0;
+        }
+      }
+
+      .field--name-field-hotel-class {
+        border-top: 1px solid $color-gray-c;
+        margin-top: 1em;
+        padding-top: 0.5em;
+
+        &:before {
+          content: '\f005';
+        }
+
+        span {
+          i {
+            color: $color-gray-c;
+          }
+        }
+
+        .hotel-class-1 {
+          i {
+            &:nth-child(-n + 1) {
+              color: $color-gray-6;
+            }
+          }
+        }
+
+        .hotel-class-2 {
+          i {
+            &:nth-child(-n + 2) {
+              color: $color-gray-6;
+            }
+          }
+        }
+
+        .hotel-class-3 {
+          i {
+            &:nth-child(-n + 3) {
+              color: $color-gray-6;
+            }
+          }
+        }
+
+        .hotel-class-4 {
+          i {
+            &:nth-child(-n + 4) {
+              color: $color-gray-6;
+            }
+          }
+        }
+
+        .hotel-class-5 {
+          i {
+            &:nth-child(-n + 5) {
+              color: $color-gray-6;
+            }
+          }
+        }
+      }
+
+      .field--name-field-lodging-category {
+        &:before {
+          content: '\f236';
+        }
+      }
+
+      .field--name-field-amenities {
+        display: flex;
+        flex-flow: column wrap;
+
+        .field__item {
+          position: relative;
+          padding-left: 1.35em;
+          line-height: 1.2;
+          margin-bottom: 0.5em;
+
+          &:before {
+            content: '\f005';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Phablet (568px to 767px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $phab) {
+}
+
+// Tablet (768px to 1023px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $tab) {
+  .page-node-type-lodging {
+    .node__content {
+      .utg-layout--lodging {
+        .field--name-field-amenities {
+          flex-flow: row wrap;
+
+          .field__item {
+            min-width: 50%;
+            max-width: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Desktop (1024px to 1339px) ---------------------------
+// ------------------------------------------------------
+@media (min-width: $desk) {
+  .page-node-type-lodging {
+    .node__content {
+      .utg-layout--lodging {
+        .field--name-field-amenities {
+          .field__item {
+            min-width: 33.3333%;
+            max-width: 33.3333%;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Wide (over 1340px) -----------------------------------
+// ------------------------------------------------------
+@media (min-width: $wide) {
+  .page-node-type-lodging {
+    .node__content {
+      .utg-layout--lodging {
+        .field--name-field-amenities {
+          .field__item {
+            min-width: 25%;
+            max-width: 25%;
+          }
+        }
+      }
+    }
+  }
+}

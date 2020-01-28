@@ -20,3 +20,9 @@ function utg_preprocess_field__node__field_price(array &$variables)
   $key = $variables['element']['#items']->value;
   $variables['items'][0]['key'] = $key;
 }
+
+function utg_preprocess_field__node__field_hotel_class(array &$variables)
+{
+  $key = $variables['element']['#items']->value;
+  $variables['items'][0]['key'] = $key;
+}

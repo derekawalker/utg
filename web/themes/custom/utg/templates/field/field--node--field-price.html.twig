@@ -3,7 +3,15 @@
 {% block content %}
   {% for item in items %}
     <div{{ attributes.addClass(classes, 'field__item') }}>
-      <span class="price-{{ item.key }}">{{ item.content }}</span>
+      <span class="price-{{ item.key }}">
+        {% if item.key != 0 %}
+          <i class="fas fa-dollar-sign"></i>
+          <i class="fas fa-dollar-sign"></i>
+          <i class="fas fa-dollar-sign"></i>
+        {% else %}
+          {{ item.content }}
+        {% endif %}
+      </span>
     </div>
   {% endfor %}
 {% endblock %}

@@ -1,0 +1,269 @@
+// Mobile (up to 567px) ---------------------------------
+// ------------------------------------------------------
+.page-node-type-attraction,
+.page-node-type-lodging,
+.page-node-type-restaurant {
+  .region-content {
+    &-top {
+      .region-inner {
+        padding: 0;
+      }
+    }
+
+    .region-inner {
+      padding: 0;
+    }
+
+    .block {
+      border-bottom: 0;
+      padding: 0;
+    }
+  }
+
+  .utg-layout--region {
+    .field {
+      position: relative;
+    }
+  }
+
+  .node__content {
+    .field--name-field-category,
+    .field--name-field-lodging-category {
+      padding-left: 1rem;
+      margin-bottom: 1em;
+
+      a {
+        background: $gradient-teal;
+        color: #fff;
+        border-radius: $rad * 3;
+        padding: 0.25em 1em;
+        font-size: 0.75em;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        text-decoration: none;
+        font-weight: 700;
+        display: inline-block;
+        margin-top: 0.5em;
+      }
+    }
+
+    .field--name-field-image {
+      img {
+        display: block;
+      }
+    }
+
+    .field--name-title {
+      font-size: 1.5em;
+      font-weight: 700;
+    }
+
+    .field--name-field-location {
+      display: flex;
+      flex-flow: row wrap;
+
+      .field__item {
+        margin-right: 0.25em;
+        line-height: 1.25;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        a {
+          text-decoration: none;
+          color: $color-teal-dark;
+          display: block;
+          background: $color-gray-05;
+          border-radius: 15px;
+          padding: 0.25em 1em;
+
+          &:hover,
+          &:focus,
+          &:active {
+            background: $color-white;
+            background: $color-teal-light;
+          }
+        }
+      }
+    }
+
+    .field--name-field-website {
+      $bubble-size: 32px;
+
+      font-weight: 900;
+      color: $color-gray-6;
+      text-transform: uppercase;
+      line-height: $bubble-size;
+      padding-left: $bubble-size * 1.25;
+      margin: 0.25em 0;
+      letter-spacing: 0.05em;
+
+      &:before {
+        content: '\f155';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        font-size: 0.9em;
+        width: $bubble-size;
+        height: $bubble-size;
+        color: $color-white;
+        background: $gradient-teal;
+        border-radius: $bubble-size;
+        text-align: center;
+        line-height: $bubble-size;
+        position: absolute;
+        left: 0;
+      }
+    }
+
+    .field--name-body {
+      border-top: 1px solid $color-gray-c;
+      margin-top: 0.5em;
+      padding-top: 1em;
+      border-bottom: 1px solid $color-gray-c;
+      margin-bottom: 0.5em;
+      padding-bottom: 1em;
+
+      > * {
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .field--name-field-photos {
+      &.field__items {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .field__item {
+        border: 1px solid $color-gray-c;
+        margin: 0.25em;
+
+        img {
+          display: block;
+        }
+      }
+    }
+
+    .field--name-field-coupons,
+    .field--name-field-gear {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      .field__item {
+        margin: 0 0 0.5em;
+        width: 100%;
+
+        &:last-child {
+          margin: 0;
+        }
+
+        &:only-child {
+          width: 100%;
+        }
+
+        .content {
+          width: 100%;
+
+          a {
+            width: 100%;
+            display: flex;
+            flex-flow: row nowrap;
+            text-decoration: none;
+            align-items: center;
+
+            img {
+              border: 1px solid $color-gray-c;
+              margin-right: 0.5em;
+              display: block;
+            }
+
+            h4 {
+              font-size: 1em;
+              color: $color-black;
+              margin: 0;
+              font-weight: 400;
+            }
+
+            .field--name-description {
+              color: $color-black;
+              display: flex;
+              flex-flow: row wrap;
+
+              > * {
+                &:first-child {
+                  margin-top: 0;
+                }
+
+                &:last-child {
+                  margin-bottom: 0;
+                }
+              }
+
+              &:after {
+                content: '\f35d';
+                font-family: 'Font Awesome 5 Free';
+                font-weight: 900;
+                margin-left: 0.5em;
+                color: $color-teal-dark;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .field--name-field-address {
+      text-align: center;
+      border: 1px solid #ccc;
+      padding: 1em;
+
+      p {
+        margin-bottom: 0;
+      }
+
+      .organization {
+        font-weight: 700;
+      }
+    }
+
+    .field--name-field-website {
+      text-transform: none;
+      font-weight: 400;
+
+      &:before {
+        content: '\f245';
+      }
+    }
+  }
+}
+
+// Phablet (568px to 767px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $phab) {
+}
+
+// Tablet (768px to 1023px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $tab) {
+}
+
+// Desktop (1024px to 1339px) ---------------------------
+// ------------------------------------------------------
+@media (min-width: $desk) {
+}
+
+// Wide (over 1340px) -----------------------------------
+// ------------------------------------------------------
+@media (min-width: $wide) {
+}
