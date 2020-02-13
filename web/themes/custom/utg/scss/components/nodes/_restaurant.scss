@@ -1,0 +1,61 @@
+// Mobile (up to 567px) ---------------------------------
+// ------------------------------------------------------
+.page-node-type-restaurant {
+  .node__content {
+    .utg-layout--restaurant {
+      .field--name-field-cuisine {
+        $bubble-size: 32px;
+
+        font-weight: 900;
+        color: $color-gray-6;
+        text-transform: uppercase;
+        line-height: $bubble-size;
+        padding-left: $bubble-size * 1.25;
+        margin: 0.25em 0;
+        letter-spacing: 0.05em;
+
+        &:before {
+          content: '\f155';
+          font-family: 'Font Awesome 5 Free';
+          font-weight: 900;
+          font-size: 0.9em;
+          width: $bubble-size;
+          height: $bubble-size;
+          color: $color-white;
+          background: $gradient-teal;
+          border-radius: $bubble-size;
+          text-align: center;
+          line-height: $bubble-size;
+          position: absolute;
+          left: 0;
+        }
+      }
+
+      .field--name-field-cuisine {
+        &:before {
+          content: '\f236';
+        }
+      }
+    }
+  }
+}
+
+// Phablet (568px to 767px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $phab) {
+}
+
+// Tablet (768px to 1023px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $tab) {
+}
+
+// Desktop (1024px to 1339px) ---------------------------
+// ------------------------------------------------------
+@media (min-width: $desk) {
+}
+
+// Wide (over 1340px) -----------------------------------
+// ------------------------------------------------------
+@media (min-width: $wide) {
+}

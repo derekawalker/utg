@@ -9,4 +9,12 @@
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc; }
   #layout-tabs > div {
-    padding: 1em; }
+    padding: 1rem; }
+
+@media (min-width: 768px) {
+  #layout-tabs > div {
+    padding: 1.25rem; } }
+
+@media (min-width: 1024px) {
+  #layout-tabs > div {
+    padding: 1.5rem; } }

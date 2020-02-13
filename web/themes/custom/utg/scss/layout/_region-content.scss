@@ -12,7 +12,7 @@
     font-family: $font-main;
     font-size: 1.25em;
     margin: 0;
-    padding: 1em 1rem 0;
+    padding: 1em $side-pad-mobile 0;
   }
 }
 
@@ -29,6 +29,11 @@
 @media (min-width: $tab) {
   .region-content {
     font-size: 1.1rem;
+
+    .page-title {
+      padding-right: $side-pad-tablet;
+      padding-left: $side-pad-tablet;
+    }
   }
 }
 
@@ -37,6 +42,11 @@
 @media (min-width: $desk) {
   .region-content {
     font-size: 1.15rem;
+
+    .page-title {
+      padding-right: $side-pad-desktop;
+      padding-left: $side-pad-desktop;
+    }
   }
 }
 

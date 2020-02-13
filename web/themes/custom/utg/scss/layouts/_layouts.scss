@@ -6,7 +6,7 @@
   border-right: 1px solid $color-gray-c;
 
   > div {
-    padding: 1em;
+    padding: $side-pad-mobile;
   }
 }
 
@@ -18,11 +18,21 @@
 // Tablet (768px to 1023px) -----------------------------
 // ------------------------------------------------------
 @media (min-width: $tab) {
+  #layout-tabs {
+    > div {
+      padding: $side-pad-tablet;
+    }
+  }
 }
 
 // Desktop (1024px to 1339px) ---------------------------
 // ------------------------------------------------------
 @media (min-width: $desk) {
+  #layout-tabs {
+    > div {
+      padding: $side-pad-desktop;
+    }
+  }
 }
 
 // Wide (over 1340px) -----------------------------------

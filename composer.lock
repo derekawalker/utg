@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1978ffab064bd12fabaab2624b6c3a62",
+    "content-hash": "c482592ca9167aad940580d167ed2373",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4649,6 +4649,63 @@
             "support": {
                 "source": "https://cgit.drupalcode.org/responsive_menu",
                 "issues": "https://drupal.org/project/issues/responsive_menu"
+            }
+        },
+        {
+            "name": "drupal/rest_views",
+            "version": "1.0.0-alpha9",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/rest_views.git",
+                "reference": "8.x-1.0-alpha9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/rest_views-8.x-1.0-alpha9.zip",
+                "reference": "8.x-1.0-alpha9",
+                "shasum": "1075bd496cb26a5e4cf6c17032a5cc172ef26c84"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "require-dev": {
+                "drupal/entity_reference_revisions": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha9",
+                    "datestamp": "1504468744",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Christoph Burschka",
+                    "homepage": "https://github.com/cburschka-pwc",
+                    "email": "christoph.burschka@pwc-digital.ch",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Expose fields and entity references in REST view displays.",
+            "homepage": "https://www.drupal.org/project/rest_views",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/rest_views",
+                "error": "Invalid dependency: \"reversegeofield\" is an unknown drupal 8 package name",
+                "issues": "https://www.drupal.org/project/issues/rest_views"
             }
         },
         {
@@ -12066,7 +12123,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "drupal/radioactivity": 15
+        "drupal/radioactivity": 15,
+        "drupal/rest_views": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,

@@ -47,3 +47,22 @@ lodging:
       label: Fourth Column
     fifth:
       label: Fifth Column
+restaurant:
+  label: 'Restaurant'
+  category: 'UTG Layouts'
+  template: templates/restaurant
+  default_region: first
+  icon_map:
+    - [first, second, third, fourth, fifth]
+  library: utg/utg-layouts
+  regions:
+    first:
+      label: First Column
+    second:
+      label: Second Column
+    third:
+      label: Third Column
+    fourth:
+      label: Fourth Column
+    fifth:
+      label: Fifth Column

@@ -1,16 +1,17 @@
 // Mobile (up to 567px) ---------------------------------
 // ------------------------------------------------------
+$button-size: 30px;
+
 .owl-nav {
   .owl-prev,
   .owl-next {
-    $button-size: 30px;
     top: calc(50% - 1rem);
     position: absolute;
     width: $button-size;
     height: $button-size;
     border-radius: $button-size / 2;
 
-    span {
+    i {
       display: block;
       width: $button-size;
       height: $button-size;
@@ -18,10 +19,10 @@
       width: 100%;
       height: 100%;
       background: rgba(255, 255, 255, 0.75);
-      font-size: $button-size;
+      font-size: 1em;
       border-radius: $button-size / 2;
       font-weight: 900;
-      line-height: $button-size * 0.66;
+      line-height: $button-size;
       border: 1px solid rgba(0, 0, 0, 0.1);
     }
   }

@@ -2,14 +2,15 @@
 // ------------------------------------------------------
 .view-content {
   &.owl-carousel {
-    margin: 0 -1rem;
-    width: calc(100% + 2rem);
+    margin: 0 #{-$side-pad-mobile};
+    width: calc(100% + #{$side-pad-mobile * 2});
 
     .owl-item {
-      padding-left: 1rem;
+      padding-left: $side-pad-mobile;
     }
   }
 }
+
 .square-view-item {
   a {
     display: block;
@@ -52,11 +53,31 @@
 // Tablet (768px to 1023px) -----------------------------
 // ------------------------------------------------------
 @media (min-width: $tab) {
+  .view-content {
+    &.owl-carousel {
+      margin: 0 #{-$side-pad-tablet};
+      width: calc(100% + #{$side-pad-tablet * 2});
+
+      .owl-item {
+        padding-left: $side-pad-tablet;
+      }
+    }
+  }
 }
 
 // Desktop (1024px to 1339px) ---------------------------
 // ------------------------------------------------------
 @media (min-width: $desk) {
+  .view-content {
+    &.owl-carousel {
+      margin: 0 #{-$side-pad-desktop};
+      width: calc(100% + #{$side-pad-desktop * 2});
+
+      .owl-item {
+        padding-left: $side-pad-desktop;
+      }
+    }
+  }
 }
 
 // Wide (over 1340px) -----------------------------------

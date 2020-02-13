@@ -1,0 +1,86 @@
+[
+  {
+    "title": "Treehouse Museum",
+    "type": "attraction",
+    "star_rating": null,
+    "image": "/sites/default/files/styles/thumbnail/public/places/ogden/attractions/treehouse_museum/treehouse_museum_ogden_utah.jpg?itok=goTZzvax",
+    "indoor": ["indoor"],
+    "node_url": "/attractions/ogden-ut/treehouse-museum",
+    "price": "1",
+    "radioactivity": null,
+    "location": "Ogden, UT",
+    "cuisine": []
+  },
+  {
+    "title": "Hill Aerospace Museum",
+    "type": "attraction",
+    "star_rating": null,
+    "image": "/sites/default/files/styles/thumbnail/public/places/ogden/attractions/hill_aerospace_museum/hill_aerospace_museum.jpg?itok=w-BPZsPj",
+    "indoor": ["indoor", "outdoor"],
+    "node_url": "/attractions/ogden-ut/hill-aerospace-museum",
+    "price": "0",
+    "radioactivity": null,
+    "location": "Ogden, UT",
+    "cuisine": []
+  },
+  {
+    "title": "Angels Landing",
+    "type": "attraction",
+    "star_rating": null,
+    "image": "/sites/default/files/styles/thumbnail/public/places/main-photos/alaska_inn.png?itok=2QsLxEQv",
+    "indoor": ["outdoor"],
+    "node_url": "/attractions/zion-national-park/angels-landing",
+    "price": "1",
+    "radioactivity": null,
+    "location": "Zion National Park",
+    "cuisine": []
+  },
+  {
+    "title": "Alaska Inn",
+    "type": "lodging",
+    "star_rating": "4",
+    "image": "/sites/default/files/styles/thumbnail/public/places/ogden/lodging/alaska_inn/alaska_inn.png?itok=oVb3FyJV",
+    "indoor": null,
+    "node_url": "/lodging/ogden-ut/alaska-inn",
+    "price": null,
+    "radioactivity": null,
+    "location": "Ogden, UT",
+    "cuisine": []
+  },
+  {
+    "title": "The Bigelow Hotel & Residences",
+    "type": "lodging",
+    "star_rating": "3",
+    "image": "/sites/default/files/styles/thumbnail/public/places/ogden/lodging/bigelow_hotel/bigelow_hotel.jpeg?itok=Q56NNRi7",
+    "indoor": null,
+    "node_url": "/lodging/ogden-ut/bigelow-hotel-residences",
+    "price": null,
+    "radioactivity": null,
+    "location": "Ogden, UT",
+    "cuisine": []
+  },
+  {
+    "title": "Rovali's ",
+    "type": "restaurant",
+    "star_rating": null,
+    "image": "/sites/default/files/styles/thumbnail/public/places/ogden/lodging/bigelow_hotel/bigelow_hotel.jpeg?itok=Q56NNRi7",
+    "indoor": null,
+    "node_url": "/restaurants/ogden-ut/rovalis",
+    "price": "2",
+    "radioactivity": null,
+    "location": "Ogden, UT",
+    "cuisine": ["Bar", "Italian"]
+  },
+  {
+    "title": "Tona Sushi",
+    "type": "restaurant",
+    "star_rating": null,
+    "image": "/sites/default/files/styles/thumbnail/public/places/ogden/lodging/bigelow_hotel/bigelow_hotel.jpeg?itok=Q56NNRi7",
+    "indoor": null,
+    "node_url": "/restaurants/ogden-ut/tona-sushi",
+    "price": "3",
+    "radioactivity": null,
+    "location": "Ogden, UT",
+    "cuisine": ["Asian", "Sushi"]
+  }
+]

@@ -29,7 +29,8 @@
   .node__content {
     .field--name-field-category,
     .field--name-field-lodging-category {
-      padding-left: 1rem;
+      padding-left: $side-pad-mobile;
+      padding-right: $side-pad-mobile;
       margin-bottom: 1em;
 
       a {
@@ -256,11 +257,33 @@
 // Tablet (768px to 1023px) -----------------------------
 // ------------------------------------------------------
 @media (min-width: $tab) {
+  .page-node-type-attraction,
+  .page-node-type-lodging,
+  .page-node-type-restaurant {
+    .node__content {
+      .field--name-field-category,
+      .field--name-field-lodging-category {
+        padding-left: $side-pad-tablet;
+        padding-right: $side-pad-tablet;
+      }
+    }
+  }
 }
 
 // Desktop (1024px to 1339px) ---------------------------
 // ------------------------------------------------------
 @media (min-width: $desk) {
+  .page-node-type-attraction,
+  .page-node-type-lodging,
+  .page-node-type-restaurant {
+    .node__content {
+      .field--name-field-category,
+      .field--name-field-lodging-category {
+        padding-left: $side-pad-desktop;
+        padding-right: $side-pad-desktop;
+      }
+    }
+  }
 }
 
 // Wide (over 1340px) -----------------------------------

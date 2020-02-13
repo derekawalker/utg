@@ -267,11 +267,17 @@ table {
 
 @media (min-width: 768px) {
   .region-content {
-    font-size: 1.1rem; } }
+    font-size: 1.1rem; }
+    .region-content .page-title {
+      padding-right: 1.25rem;
+      padding-left: 1.25rem; } }
 
 @media (min-width: 1024px) {
   .region-content {
-    font-size: 1.15rem; } }
+    font-size: 1.15rem; }
+    .region-content .page-title {
+      padding-right: 1.5rem;
+      padding-left: 1.5rem; } }
 
 @media (min-width: 1340px) {
   .region-content {
@@ -807,8 +813,8 @@ header {
   width: 30px;
   height: 30px;
   border-radius: 15px; }
-  .owl-nav .owl-prev span,
-  .owl-nav .owl-next span {
+  .owl-nav .owl-prev i,
+  .owl-nav .owl-next i {
     display: block;
     width: 30px;
     height: 30px;
@@ -816,10 +822,10 @@ header {
     width: 100%;
     height: 100%;
     background: rgba(255, 255, 255, 0.75);
-    font-size: 30px;
+    font-size: 1em;
     border-radius: 15px;
     font-weight: 900;
-    line-height: 19.8px;
+    line-height: 30px;
     border: 1px solid rgba(0, 0, 0, 0.1); }
 
 .owl-nav .owl-prev {
@@ -1148,7 +1154,7 @@ header {
 
 .region-content .block {
   border-bottom: 1rem #e6e6e6 solid;
-  padding: 1rem;
+  padding: 1em 1rem;
   background: #fff; }
   .region-content .block.block-page-title-block {
     border-bottom: 0;
@@ -1214,6 +1220,16 @@ header {
         font-family: 'Font Awesome 5 Free';
         font-weight: 900;
         margin-right: 0.5em; }
+
+@media (min-width: 768px) {
+  .region-content .block {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem; } }
+
+@media (min-width: 1024px) {
+  .region-content .block {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem; } }
 
 form .button {
   background: #bbb;
@@ -1329,6 +1345,7 @@ form .button {
 .page-node-type-restaurant .node__content .field--name-field-category,
 .page-node-type-restaurant .node__content .field--name-field-lodging-category {
   padding-left: 1rem;
+  padding-right: 1rem;
   margin-bottom: 1em; }
   .page-node-type-attraction .node__content .field--name-field-category a,
   .page-node-type-attraction .node__content .field--name-field-lodging-category a,
@@ -1623,6 +1640,26 @@ form .button {
   .page-node-type-restaurant .node__content .field--name-field-website:before {
     content: '\f245'; }
 
+@media (min-width: 768px) {
+  .page-node-type-attraction .node__content .field--name-field-category,
+  .page-node-type-attraction .node__content .field--name-field-lodging-category,
+  .page-node-type-lodging .node__content .field--name-field-category,
+  .page-node-type-lodging .node__content .field--name-field-lodging-category,
+  .page-node-type-restaurant .node__content .field--name-field-category,
+  .page-node-type-restaurant .node__content .field--name-field-lodging-category {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem; } }
+
+@media (min-width: 1024px) {
+  .page-node-type-attraction .node__content .field--name-field-category,
+  .page-node-type-attraction .node__content .field--name-field-lodging-category,
+  .page-node-type-lodging .node__content .field--name-field-category,
+  .page-node-type-lodging .node__content .field--name-field-lodging-category,
+  .page-node-type-restaurant .node__content .field--name-field-category,
+  .page-node-type-restaurant .node__content .field--name-field-lodging-category {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem; } }
+
 .page-node-type-attraction .node__content .field--name-field-price,
 .page-node-type-attraction .node__content .field--name-field-indoor-outdoor,
 .page-node-type-attraction .node__content .field--name-field-hours {
@@ -1807,6 +1844,34 @@ form .button {
     min-width: 25%;
     max-width: 25%; } }
 
+.page-node-type-restaurant .node__content .utg-layout--restaurant .field--name-field-cuisine {
+  font-weight: 900;
+  color: #666;
+  text-transform: uppercase;
+  line-height: 32px;
+  padding-left: 40px;
+  margin: 0.25em 0;
+  letter-spacing: 0.05em; }
+  .page-node-type-restaurant .node__content .utg-layout--restaurant .field--name-field-cuisine:before {
+    content: '\f155';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 0.9em;
+    width: 32px;
+    height: 32px;
+    color: #fff;
+    background: -webkit-gradient(linear, left top, right bottom, from(#3ef5d4), to(#2bb3bc));
+    background: -o-linear-gradient(top left, #3ef5d4, #2bb3bc);
+    background: linear-gradient(to bottom right, #3ef5d4, #2bb3bc);
+    border-radius: 32px;
+    text-align: center;
+    line-height: 32px;
+    position: absolute;
+    left: 0; }
+
+.page-node-type-restaurant .node__content .utg-layout--restaurant .field--name-field-cuisine:before {
+  content: '\f236'; }
+
 .view-content.owl-carousel {
   margin: 0 -1rem;
   width: calc(100% + 2rem); }
@@ -1840,3 +1905,17 @@ form .button {
     .square-view-item a div img {
       display: block;
       border-radius: 5px; }
+
+@media (min-width: 768px) {
+  .view-content.owl-carousel {
+    margin: 0 -1.25rem;
+    width: calc(100% + 2.5rem); }
+    .view-content.owl-carousel .owl-item {
+      padding-left: 1.25rem; } }
+
+@media (min-width: 1024px) {
+  .view-content.owl-carousel {
+    margin: 0 -1.5rem;
+    width: calc(100% + 3rem); }
+    .view-content.owl-carousel .owl-item {
+      padding-left: 1.5rem; } }

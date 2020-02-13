@@ -31,9 +31,9 @@ import {
 const ListItem = props => {
   const {
     image,
-    path,
+    node_url,
     title,
-    city,
+    location,
     price,
     price_food,
     star_rating,
@@ -129,7 +129,7 @@ const ListItem = props => {
   };
 
   return (
-    <Wrapper href={path} key={props.index}>
+    <Wrapper href={node_url} key={props.index}>
       <ImageWrapper>
         <img src={image} alt={title} />
       </ImageWrapper>
@@ -145,16 +145,16 @@ const ListItem = props => {
           <Caps>{type}</Caps> in{" "}
           <Caps
             onClick={() => {
-              handleParamChange(lowerUnder(city));
+              handleParamChange(lowerUnder(location));
             }}
           >
-            <u>{city}</u>
+            <span>{location}</span>
           </Caps>
         </p>
 
         {indoor ? <div>{indoorText(indoor)}</div> : null}
 
-        {cuisine.length ? <div>{cuisineText(cuisine)}</div> : null}
+        {cuisine && cuisine.length ? <div>{cuisineText(cuisine)}</div> : null}
       </DetailsWrapper>
     </Wrapper>
   );

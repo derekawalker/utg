@@ -9,14 +9,12 @@ import {
   Icon,
   Divider,
   Header,
-  Placeholder,
-  Label
+  Placeholder
 } from "semantic-ui-react";
 import _ from "lodash";
 import { formatNumber } from "accounting";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faCloudSun } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // Custom Components.
 import { useFetchPlaces } from "../../utils/hooks/useFetchPlaces";
@@ -25,49 +23,37 @@ import {
   arrayContainsAnyElementOfArray,
   filterByString
 } from "../../utils/filters/filters";
-import { cities } from "../../utils/data/cities";
 import { lowerUnder } from "../../utils/format/format";
 import Paginator from "../../common/components/Paginator";
 import ListItem from "../ListItem";
 
 // Styled Components.
-import { Wrapper, DescriptionWrapper, ExtrasWrapper } from "./styles";
+import { Wrapper } from "./styles";
 
 library.add(faCloudSun);
 
 const defaultFilters = {
   type: "all",
+  location: "all",
   indoor: [],
-  price_attraction: [],
-  price_food: [],
+  price: [],
   food_types: [],
   star_ratings: []
 };
 
-let cityOptions = _.map(cities, city => {
-  return {
-    key: lowerUnder(city),
-    value: lowerUnder(city),
-    text: city
-  };
-});
-
-cityOptions.unshift({ key: "all", value: "all", text: "Any" });
-
-const endpoint = "http://utg.lndo.site/api/places";
-console.log("change endpoint!");
-// const endpoint = "/api/places";
+// const endpoint = "/data/places.json";
+// console.log("change endpoint!");
+const endpoint = "/api/places";
 
 let placeTypes = [];
 let indoorTypes = [];
-let attractionPrices = [];
-let foodPrices = [];
+let placePrices = [];
 let foodTypes = [];
 let starRatings = [];
+let locations = [];
 
 const Places = props => {
   const [places, setPlaces] = useState([]);
-  const [params, setParams] = useState({ city: "all" });
   const [filters, setFilters] = useState(defaultFilters);
   const [searchPhrase, setSearchPhrase] = useState("");
   const [paginationSettings, setPaginationSettings] = useState({
@@ -78,7 +64,7 @@ const Places = props => {
     activeIndex: -1
   });
 
-  const { data, loading, error } = useFetchPlaces(endpoint, params);
+  const { data, loading, error } = useFetchPlaces(endpoint);
   let filteredData = data;
   let paginatedData = data;
   let filterSet = null;
@@ -87,28 +73,21 @@ const Places = props => {
     // Get "types".
     placeTypes = findPropertyValues(data, "type");
 
+    // Get location values.
+    locations = findPropertyValues(data, "location");
+
     // Get indoor "types".
     indoorTypes = findPropertyValues(data, "indoor");
 
-    // Get attraction price values.
-    attractionPrices = findPropertyValues(data, "price");
-
-    // Get food price values.
-    foodPrices = findPropertyValues(data, "price_food");
+    // Get price values.
+    placePrices = findPropertyValues(data, "price");
 
     // Get cuisine type values.
     foodTypes = findPropertyValues(data, "cuisine");
 
-    // Get cuisine type values.
+    // Get star rating values.
     starRatings = findPropertyValues(data, "star_rating");
   }
-
-  const handleParamChange = (e, { name, value }) => {
-    setParams({
-      ...params,
-      [name]: value
-    });
-  };
 
   const handleAccordion = (e, titleProps) => {
     const { index } = titleProps;
@@ -121,9 +100,9 @@ const Places = props => {
     if (name === "type") {
       setFilters({
         type: value,
+        location: "all",
         indoor: [],
-        price_attraction: [],
-        price_food: [],
+        price: [],
         food_types: [],
         star_ratings: []
       });
@@ -144,15 +123,15 @@ const Places = props => {
   };
 
   useEffect(() => {
-    // Retrieve the city object from storage.
-    const retrievedObject = JSON.parse(localStorage.getItem("utgPrefs"));
+    // Retrieve the location object from storage.
+    const retrievedObject = JSON.parse(sessionStorage.getItem("utgPrefs"));
 
-    if (retrievedObject && retrievedObject.city) {
-      // If city storage, update it.
-      if (retrievedObject.city !== params.city) {
-        setParams({
-          ...params,
-          city: retrievedObject.city
+    if (retrievedObject && retrievedObject.location) {
+      // If location storage, update it.
+      if (retrievedObject.location !== filters.location) {
+        setFilters({
+          ...filters,
+          location: retrievedObject.location
         });
       }
     }
@@ -164,8 +143,8 @@ const Places = props => {
 
   useEffect(() => {
     // Update storage.
-    localStorage.setItem("utgPrefs", JSON.stringify(params));
-  }, [params]);
+    sessionStorage.setItem("utgPrefs", JSON.stringify(filters));
+  }, [filters]);
 
   if (loading)
     return (
@@ -213,9 +192,9 @@ const Places = props => {
             label="Price"
             placeholder="Price"
             onChange={handleFilterChange}
-            name="price_attraction"
-            options={attractionPrices}
-            value={filters.price_attraction}
+            name="price"
+            options={placePrices}
+            value={filters.price}
             multiple
           />
         </Form.Group>
@@ -223,7 +202,7 @@ const Places = props => {
     );
   }
 
-  if (filters.type === "food") {
+  if (filters.type === "restaurant") {
     filterSet = (
       <Segment secondary>
         <Form.Group widths="equal">
@@ -231,9 +210,9 @@ const Places = props => {
             label="Price"
             placeholder="Price"
             onChange={handleFilterChange}
-            name="price_food"
-            options={foodPrices}
-            value={filters.price_food}
+            name="price"
+            options={placePrices}
+            value={filters.price}
             multiple
           />
           <Form.Select
@@ -282,8 +261,8 @@ const Places = props => {
       <Accordion.Content active={accordion.activeIndex === 0}>
         <Form
           onSubmit={() => {
-            setParams(...params, { city: "all" });
             setFilters(defaultFilters);
+            setSearchPhrase("");
           }}
         >
           <Form.Group widths="equal">
@@ -297,12 +276,12 @@ const Places = props => {
             />
             <Form.Select
               search
-              label="City"
-              placeholder="City"
-              onChange={handleParamChange}
-              name="city"
-              options={cityOptions}
-              value={params.city}
+              label="Location"
+              placeholder="Location"
+              onChange={handleFilterChange}
+              name="location"
+              options={locations}
+              value={filters.location}
             />
             <Form.Field
               label="Search"
@@ -316,10 +295,7 @@ const Places = props => {
           </Form.Group>
           {filterSet}
           <Button type="submit" animated="vertical" fluid>
-            <Button.Content hidden>Reset</Button.Content>
-            <Button.Content visible>
-              <Icon name="sync" />
-            </Button.Content>
+            <Button.Content>Reset</Button.Content>
           </Button>
         </Form>
       </Accordion.Content>
@@ -337,26 +313,29 @@ const Places = props => {
       });
     }
 
+    if (filters.location !== "all") {
+      filteredData = _.filter(filteredData, place => {
+        return filters.location === place.location;
+      });
+    }
+
     if (filters.indoor.length) {
       filteredData = _.filter(filteredData, place => {
         return arrayContainsAnyElementOfArray(filters.indoor, place.indoor);
       });
     }
 
-    if (filters.price_attraction.length) {
+    if (filters.price.length) {
       filteredData = _.filter(filteredData, place => {
-        return arrayContainsAnyElementOfArray(
-          filters.price_attraction,
-          place.price
-        );
+        return arrayContainsAnyElementOfArray(filters.price, place.price);
       });
     }
 
-    if (filters.price_food.length) {
+    if (filters.star_ratings.length) {
       filteredData = _.filter(filteredData, place => {
         return arrayContainsAnyElementOfArray(
-          filters.price_food,
-          place.price_food
+          filters.star_ratings,
+          place.star_rating
         );
       });
     }
@@ -374,7 +353,7 @@ const Places = props => {
     if (searchPhrase !== "") {
       filteredData = filterByString(filteredData, searchPhrase, [
         "title",
-        "city"
+        "location"
       ]);
     }
 
@@ -392,8 +371,8 @@ const Places = props => {
       <ListItem
         key={index}
         place={place}
-        setParams={setParams}
-        params={params}
+        setFilters={setFilters}
+        filters={filters}
       />
     ));
 

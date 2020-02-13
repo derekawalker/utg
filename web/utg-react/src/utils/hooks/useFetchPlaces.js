@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const useFetchPlaces = (endpoint, params) => {
+export const useFetchPlaces = endpoint => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -10,18 +10,6 @@ export const useFetchPlaces = (endpoint, params) => {
     setError(null);
 
     let url = endpoint;
-
-    if (params && params.city) {
-      url = `${url}/${params.city}`;
-    } else {
-      url = `${url}/all`;
-    }
-
-    // if (params && params.type) {
-    //   url = `${url}/${params.type}`;
-    // } else {
-    //   url = `${url}/all`;
-    // }
 
     fetch(url)
       .then(response => response.json())
@@ -37,6 +25,6 @@ export const useFetchPlaces = (endpoint, params) => {
         setError(err);
         setLoading(false);
       });
-  }, [params]);
+  }, []);
   return { data, loading, error };
 };
