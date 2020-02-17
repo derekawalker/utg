@@ -17,13 +17,11 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { faCloudSun } from "@fortawesome/free-solid-svg-icons";
 
 // Custom Components.
-import { useFetchPlaces } from "../../utils/hooks/useFetchPlaces";
 import {
   findPropertyValues,
   arrayContainsAnyElementOfArray,
   filterByString
 } from "../../utils/filters/filters";
-import { lowerUnder } from "../../utils/format/format";
 import Paginator from "../../common/components/Paginator";
 import ListItem from "../ListItem";
 
@@ -40,10 +38,6 @@ const defaultFilters = {
   food_types: [],
   star_ratings: []
 };
-
-// const endpoint = "/data/places.json";
-// console.log("change endpoint!");
-const endpoint = "/api/places";
 
 let placeTypes = [];
 let indoorTypes = [];
@@ -64,7 +58,8 @@ const Places = props => {
     activeIndex: -1
   });
 
-  const { data, loading, error } = useFetchPlaces(endpoint);
+  const { data, loading, error, type } = props;
+
   let filteredData = data;
   let paginatedData = data;
   let filterSet = null;
@@ -109,6 +104,8 @@ const Places = props => {
     } else {
       setFilters({ ...filters, [name]: value });
     }
+
+    setPaginationSettings({ ...paginationSettings, activePage: 1 });
   };
 
   const handleSearchChange = e => {
@@ -175,7 +172,7 @@ const Places = props => {
     );
   if (error) return <div>error</div>;
 
-  if (filters.type === "attraction") {
+  if (filters.type === "attraction" || type === "attraction") {
     filterSet = (
       <Segment secondary>
         <Form.Group widths="equal">
@@ -202,7 +199,7 @@ const Places = props => {
     );
   }
 
-  if (filters.type === "restaurant") {
+  if (filters.type === "restaurant" || type === "restaurant") {
     filterSet = (
       <Segment secondary>
         <Form.Group widths="equal">
@@ -230,7 +227,7 @@ const Places = props => {
     );
   }
 
-  if (filters.type === "lodging") {
+  if (filters.type === "lodging" || type === "lodging") {
     filterSet = (
       <Segment secondary>
         <Form.Group widths="equal">
@@ -248,6 +245,12 @@ const Places = props => {
     );
   }
 
+  const handleFormSubmit = () => {
+    setFilters(defaultFilters);
+    setSearchPhrase("");
+    setPaginationSettings({ ...paginationSettings, activePage: 1 });
+  };
+
   let form = (
     <Accordion fluid styled>
       <Accordion.Title
@@ -259,21 +262,18 @@ const Places = props => {
         Filter Results
       </Accordion.Title>
       <Accordion.Content active={accordion.activeIndex === 0}>
-        <Form
-          onSubmit={() => {
-            setFilters(defaultFilters);
-            setSearchPhrase("");
-          }}
-        >
+        <Form onSubmit={() => handleFormSubmit()}>
           <Form.Group widths="equal">
-            <Form.Select
-              label="Type"
-              placeholder="Type"
-              onChange={handleFilterChange}
-              name="type"
-              options={placeTypes}
-              value={filters.type}
-            />
+            {type === "all" ? (
+              <Form.Select
+                label="Type"
+                placeholder="Type"
+                onChange={handleFilterChange}
+                name="type"
+                options={placeTypes}
+                value={filters.type}
+              />
+            ) : null}
             <Form.Select
               search
               label="Location"
@@ -294,9 +294,20 @@ const Places = props => {
             />
           </Form.Group>
           {filterSet}
-          <Button type="submit" animated="vertical" fluid>
-            <Button.Content>Reset</Button.Content>
-          </Button>
+          <div>
+            <Button>
+              <Button.Content>Reset</Button.Content>
+            </Button>
+            <Button
+              as="a"
+              primary
+              active={accordion.activeIndex === 0}
+              index={0}
+              onClick={handleAccordion}
+            >
+              <Button.Content>Apply Filters</Button.Content>
+            </Button>
+          </div>
         </Form>
       </Accordion.Content>
     </Accordion>
@@ -379,6 +390,11 @@ const Places = props => {
     // Update content display if data exists.
     content = (
       <Fragment>
+        <Paginator
+          activePage={paginationSettings.activePage}
+          onPageChange={handlePageChange}
+          totalPages={filteredData.length / paginationSettings.perPage}
+        />
         <Item.Group divided>{listItems}</Item.Group>
         <Paginator
           activePage={paginationSettings.activePage}

@@ -34,6 +34,24 @@ function utg_places_theme() {
         'description' => NULL,
       ]
     ],
+    'utg_attractions' => [
+      'variables' => [
+        'title' => NULL,
+        'description' => NULL,
+      ]
+    ],
+    'utg_lodging' => [
+      'variables' => [
+        'title' => NULL,
+        'description' => NULL,
+      ]
+    ],
+    'utg_restaurants' => [
+      'variables' => [
+        'title' => NULL,
+        'description' => NULL,
+      ]
+    ],
     'utg_places_block' => [
       'variables' => [
         'title' => NULL,

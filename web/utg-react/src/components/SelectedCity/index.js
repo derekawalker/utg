@@ -1,41 +1,52 @@
 import React, { useState, useEffect } from "react";
 import { Form } from "semantic-ui-react";
 import _ from "lodash";
-import { cities } from "../../utils/data/cities";
-import { lowerUnder } from "../../utils/format/format";
+import { useFetchPlaces } from "../../utils/hooks/useFetchPlaces";
 
 // Styled Components.
 import { FormWrapper, Wrapper, SelectWrapper, SelectLabel } from "./styles";
 
 const defaultStorage = {
-  city: "all"
+  location: "all"
 };
-
-let cityOptions = _.map(cities, city => {
-  return {
-    key: lowerUnder(city),
-    value: lowerUnder(city),
-    text: city
-  };
-});
-
-cityOptions.unshift({ key: "all", value: "all", text: "All of Utah" });
 
 const SelectedCity = props => {
   const [storage, setStorage] = useState(defaultStorage);
 
+  // const endpoint = "./data/places.json";
+  // console.log("change endpoint!");
+  const endpoint = "/api/places";
+
+  const { data } = useFetchPlaces(endpoint);
+
+  let locations = Array.from(new Set(_.map(data, "location")));
+
+  let locationOptions = _.map(locations, location => {
+    return {
+      key: location,
+      value: location,
+      text: location
+    };
+  });
+
+  locationOptions.unshift({
+    key: "all",
+    value: "all",
+    text: "Select a Location"
+  });
+
   useEffect(() => {
     // Retrieve the object from storage.
-    const retrievedObject = JSON.parse(localStorage.getItem("utgPrefs"));
+    const retrievedObject = JSON.parse(sessionStorage.getItem("utgPrefs"));
 
-    if (retrievedObject && retrievedObject.city) {
-      setStorage({ ...storage, city: retrievedObject.city });
+    if (retrievedObject && retrievedObject.location) {
+      setStorage({ ...storage, location: retrievedObject.location });
     }
   }, []);
 
   useEffect(() => {
     // Update storage.
-    localStorage.setItem("utgPrefs", JSON.stringify(storage));
+    sessionStorage.setItem("utgPrefs", JSON.stringify(storage));
   }, [storage]);
 
   const handleCityChange = (e, { name, value }) => {
@@ -52,7 +63,7 @@ const SelectedCity = props => {
     // Update State.
     setStorage({
       ...storage,
-      city: "all"
+      location: "all"
     });
 
     window.location.href = "/places";
@@ -65,9 +76,9 @@ const SelectedCity = props => {
           <Form.Select
             placeholder="Select a City"
             onChange={handleCityChange}
-            name="city"
-            options={cityOptions}
-            value={storage.city}
+            name="location"
+            options={locationOptions}
+            value={storage.location}
             search
           />
         </SelectWrapper>

@@ -1,7 +1,5 @@
 import _ from "lodash";
 
-import { lowerUnder } from "../format/format";
-
 export const findPropertyValues = (data, property) => {
   // Make array of propert values.
   let values = _.map(data, property);

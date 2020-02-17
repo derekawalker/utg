@@ -4,3 +4,21 @@ utg_places.admin:
   parent: main
   route_name: utg_places.places_controller_places
   menu_name: main
+utg_attractions.admin:
+  title: "Restaurants"
+  description: "Attractions to visit."
+  parent: main
+  route_name: utg_attractions.attractions_controller_attractions
+  menu_name: main
+utg_lodging.admin:
+  title: "Lodging"
+  description: "Lodging to visit."
+  parent: main
+  route_name: utg_lodging.lodging_controller_lodging
+  menu_name: main
+utg_restaurants.admin:
+  title: "Restaurants"
+  description: "Restaurants to visit."
+  parent: main
+  route_name: utg_restaurants.restaurants_controller_restaurants
+  menu_name: main

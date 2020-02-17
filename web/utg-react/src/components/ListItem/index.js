@@ -1,21 +1,6 @@
 import React from "react";
-import {
-  Form,
-  Button,
-  Item,
-  Loader,
-  Segment,
-  Accordion,
-  Icon,
-  Divider,
-  Header,
-  Placeholder,
-  Label
-} from "semantic-ui-react";
+import { Icon, Header, Label } from "semantic-ui-react";
 import _ from "lodash";
-import { formatNumber } from "accounting";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faCloudSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { lowerUnder } from "../../utils/format/format";
 
@@ -25,6 +10,7 @@ import {
   ImageWrapper,
   PriceWrapper,
   DetailsWrapper,
+  DataWrapper,
   Caps
 } from "./styles";
 
@@ -133,29 +119,31 @@ const ListItem = props => {
       <ImageWrapper>
         <img src={image} alt={title} />
       </ImageWrapper>
-      <PriceWrapper>
-        {price ? <div>{priceIcons(price)}</div> : null}
+      <DataWrapper>
+        <PriceWrapper>
+          {price ? <div>{priceIcons(price)}</div> : null}
 
-        {price_food ? <div>{priceIcons(price_food)}</div> : null}
-        {star_rating ? <div>{starIcons(star_rating)}</div> : null}
-      </PriceWrapper>
-      <DetailsWrapper>
-        <h3>{title}</h3>
-        <p>
-          <Caps>{type}</Caps> in{" "}
-          <Caps
-            onClick={() => {
-              handleParamChange(lowerUnder(location));
-            }}
-          >
-            <span>{location}</span>
-          </Caps>
-        </p>
+          {price_food ? <div>{priceIcons(price_food)}</div> : null}
+          {star_rating ? <div>{starIcons(star_rating)}</div> : null}
+        </PriceWrapper>
+        <DetailsWrapper>
+          <h3>{title}</h3>
+          <p>
+            <Caps>{type}</Caps> in{" "}
+            <Caps
+              onClick={() => {
+                handleParamChange(lowerUnder(location));
+              }}
+            >
+              <span>{location}</span>
+            </Caps>
+          </p>
 
-        {indoor ? <div>{indoorText(indoor)}</div> : null}
+          {indoor ? <div>{indoorText(indoor)}</div> : null}
 
-        {cuisine && cuisine.length ? <div>{cuisineText(cuisine)}</div> : null}
-      </DetailsWrapper>
+          {cuisine && cuisine.length ? <div>{cuisineText(cuisine)}</div> : null}
+        </DetailsWrapper>
+      </DataWrapper>
     </Wrapper>
   );
 };

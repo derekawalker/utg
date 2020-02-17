@@ -1,5 +1,5 @@
 name: "UTG: Places"
 type: module
-description: "Loads react on the the /places route, and creates a block for location selection."
+description: "Loads react specific pages, and creates a block for location selection."
 core: 8.x
 package: "UTG"

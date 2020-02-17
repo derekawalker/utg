@@ -1,17 +1,50 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import PlacesApp from "./PlacesApp";
+import AttractionsApp from "./AttractionsApp";
+import LodgingApp from "./LodgingApp";
+import RestaurantsApp from "./RestaurantsApp";
 import SelectedCity from "./components/SelectedCity";
 import "semantic-ui-css/semantic.min.css";
 import "./fontawesome";
 
 const selectedCityExists = document.getElementById("selected-city");
 const placeSearchExists = document.getElementById("place-search");
+const attractionsSearchExists = document.getElementById("attractions-search");
+const lodgingSearchExists = document.getElementById("lodging-search");
+const restaurantsSearchExists = document.getElementById("restaurants-search");
 
 if (typeof selectedCityExists !== "undefined" && selectedCityExists !== null) {
   ReactDOM.render(<SelectedCity />, document.getElementById("selected-city"));
 }
 
 if (typeof placeSearchExists !== "undefined" && placeSearchExists !== null) {
-  ReactDOM.render(<App />, document.getElementById("place-search"));
+  ReactDOM.render(<PlacesApp />, document.getElementById("place-search"));
+}
+
+if (
+  typeof attractionsSearchExists !== "undefined" &&
+  attractionsSearchExists !== null
+) {
+  ReactDOM.render(
+    <AttractionsApp />,
+    document.getElementById("attractions-search")
+  );
+}
+
+if (
+  typeof lodgingSearchExists !== "undefined" &&
+  lodgingSearchExists !== null
+) {
+  ReactDOM.render(<LodgingApp />, document.getElementById("lodging-search"));
+}
+
+if (
+  typeof restaurantsSearchExists !== "undefined" &&
+  restaurantsSearchExists !== null
+) {
+  ReactDOM.render(
+    <RestaurantsApp />,
+    document.getElementById("restaurants-search")
+  );
 }

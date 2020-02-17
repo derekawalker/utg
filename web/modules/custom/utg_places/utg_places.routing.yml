@@ -5,3 +5,24 @@ utg_places.places_controller_places:
     _title: "Places"
   requirements:
     _permission: "access content"
+utg_attractions.attractions_controller_attractions:
+  path: "/attractions"
+  defaults:
+    _controller: '\Drupal\utg_places\Controller\AttractionsController::content'
+    _title: "Attractions"
+  requirements:
+    _permission: "access content"
+utg_lodging.lodging_controller_lodging:
+  path: "/lodging"
+  defaults:
+    _controller: '\Drupal\utg_places\Controller\LodgingController::content'
+    _title: "Lodging"
+  requirements:
+    _permission: "access content"
+utg_restaurants.restaurants_controller_restaurants:
+  path: "/restaurants"
+  defaults:
+    _controller: '\Drupal\utg_places\Controller\RestaurantsController::content'
+    _title: "Restaurants"
+  requirements:
+    _permission: "access content"

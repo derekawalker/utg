@@ -11,6 +11,33 @@
   }
 }
 
+.square-view {
+  .view-content {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 -0.5em;
+
+    .views-row {
+      max-width: 100%;
+      margin: 0 0.5em 1em;
+    }
+
+    .square-view-item {
+      $div-height: 200px;
+      a {
+        > div {
+          > img {
+            object-fit: cover;
+            object-position: 50% 50%;
+            max-height: $div-height;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
 .square-view-item {
   a {
     display: block;
@@ -26,7 +53,7 @@
       color: $color-white;
       background: $gradient-teal-transparent;
       margin: 0;
-      font-size: 1.1em;
+      font-size: 1em;
       width: 100%;
       white-space: nowrap;
       overflow: hidden;
@@ -63,6 +90,25 @@
       }
     }
   }
+
+  .square-view {
+    .view-content {
+      .views-row {
+        max-width: calc(50% - 1em);
+      }
+
+      .square-view-item {
+        $div-height: none;
+        a {
+          > div {
+            > img {
+              max-height: $div-height;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 // Desktop (1024px to 1339px) ---------------------------
@@ -78,9 +124,24 @@
       }
     }
   }
+
+  .square-view {
+    .view-content {
+      .views-row {
+        max-width: calc(33.3333% - 1em);
+      }
+    }
+  }
 }
 
 // Wide (over 1340px) -----------------------------------
 // ------------------------------------------------------
 @media (min-width: $wide) {
+  .square-view {
+    .view-content {
+      .views-row {
+        max-width: calc(25% - 1em);
+      }
+    }
+  }
 }
