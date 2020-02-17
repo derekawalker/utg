@@ -30,6 +30,8 @@ web/modules/contrib/
 web/themes/contrib/
 web/profiles/contrib/
 web/libraries/
+web/.htaccess
+web/error_log/
 
 # Ignore node modules
 node_modules
