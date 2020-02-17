@@ -5,7 +5,7 @@ utg_places.admin:
   route_name: utg_places.places_controller_places
   menu_name: main
 utg_attractions.admin:
-  title: "Restaurants"
+  title: "Attractions"
   description: "Attractions to visit."
   parent: main
   route_name: utg_attractions.attractions_controller_attractions
