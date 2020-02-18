@@ -11,7 +11,9 @@ import {
   PriceWrapper,
   DetailsWrapper,
   DataWrapper,
-  Caps
+  Caps,
+  LabelWrapper,
+  Free
 } from "./styles";
 
 const ListItem = props => {
@@ -25,13 +27,25 @@ const ListItem = props => {
     star_rating,
     cuisine,
     indoor,
-    type
+    type,
+    lodging_type
   } = props.place;
   const { setParams, params } = props;
 
   // Custom field output.
   const indoorText = indoor => {
-    if (indoor === "indoor") {
+    if (indoor.length > 1) {
+      return (
+        <Label basic color="grey">
+          <Icon>
+            <FontAwesomeIcon icon={["fas", "cloud-sun"]} />
+          </Icon>
+          <Caps>indoor & outdoor</Caps>
+        </Label>
+      );
+    }
+
+    if (indoor[0] === "indoor") {
       return (
         <Label basic color="grey">
           <Icon name="cloud" />
@@ -40,22 +54,11 @@ const ListItem = props => {
       );
     }
 
-    if (indoor === "outdoor") {
+    if (indoor[0] === "outdoor") {
       return (
         <Label basic color="grey">
           <Icon name="sun" />
           <Caps>outdoor</Caps>
-        </Label>
-      );
-    }
-
-    if (indoor === "both") {
-      return (
-        <Label basic color="grey">
-          <Icon>
-            <FontAwesomeIcon icon={["fas", "cloud-sun"]} />
-          </Icon>
-          <Caps>indoor & outdoor</Caps>
         </Label>
       );
     }
@@ -66,14 +69,23 @@ const ListItem = props => {
     let cuisines;
     if (array.length > 0) {
       cuisines = _.map(array, (cuisine, index) => (
-        <Label key={index} basic color="orange">
+        <Label key={index} basic color="grey">
           <Caps>{cuisine}</Caps>
         </Label>
       ));
     }
 
-    return <div>{cuisines}</div>;
+    return <LabelWrapper>{cuisines}</LabelWrapper>;
   };
+
+  // Custom field output.
+  const lodgingTypeText = lodging_type => (
+    <LabelWrapper>
+      <Label basic color="grey">
+        <Caps>{lodging_type}</Caps>
+      </Label>
+    </LabelWrapper>
+  );
 
   // Custom field output.
   const priceIcons = price => {
@@ -87,8 +99,8 @@ const ListItem = props => {
       return <div>{dollars}</div>;
     } else {
       return (
-        <Header as="h4" color="green">
-          FREE
+        <Header as="div" color="green">
+          <Free>FREE</Free>
         </Header>
       );
     }
@@ -139,9 +151,11 @@ const ListItem = props => {
             </Caps>
           </p>
 
-          {indoor ? <div>{indoorText(indoor)}</div> : null}
+          {indoor ? <LabelWrapper>{indoorText(indoor)}</LabelWrapper> : null}
 
           {cuisine && cuisine.length ? <div>{cuisineText(cuisine)}</div> : null}
+
+          {lodging_type ? <div>{lodgingTypeText(lodging_type)}</div> : null}
         </DetailsWrapper>
       </DataWrapper>
     </Wrapper>

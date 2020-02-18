@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Form } from "semantic-ui-react";
 import _ from "lodash";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useFetchPlaces } from "../../utils/hooks/useFetchPlaces";
 
 // Styled Components.
-import { FormWrapper, Wrapper, SelectWrapper, SelectLabel } from "./styles";
+import {
+  FormWrapper,
+  Wrapper,
+  SelectWrapper,
+  SelectLabel,
+  Spinner
+} from "./styles";
 
 const defaultStorage = {
   location: "all"
@@ -12,6 +19,7 @@ const defaultStorage = {
 
 const SelectedCity = props => {
   const [storage, setStorage] = useState(defaultStorage);
+  const [loading, setLoading] = useState(false);
 
   // const endpoint = "./data/places.json";
   // console.log("change endpoint!");
@@ -32,8 +40,18 @@ const SelectedCity = props => {
   locationOptions.unshift({
     key: "all",
     value: "all",
-    text: "Select a Location"
+    text: "Anywhere"
   });
+
+  let spinner = null;
+
+  if (loading) {
+    spinner = (
+      <Spinner>
+        <FontAwesomeIcon icon="sync-alt" spin />
+      </Spinner>
+    );
+  }
 
   useEffect(() => {
     // Retrieve the object from storage.
@@ -49,7 +67,9 @@ const SelectedCity = props => {
     sessionStorage.setItem("utgPrefs", JSON.stringify(storage));
   }, [storage]);
 
-  const handleCityChange = (e, { name, value }) => {
+  const handleLocationChange = (e, { name, value }) => {
+    setLoading(true);
+
     // Update State.
     setStorage({
       ...storage,
@@ -74,14 +94,17 @@ const SelectedCity = props => {
       <FormWrapper>
         <SelectWrapper>
           <Form.Select
-            placeholder="Select a City"
-            onChange={handleCityChange}
+            placeholder="Select a Location"
+            onChange={handleLocationChange}
             name="location"
             options={locationOptions}
             value={storage.location}
             search
-          />
+          >
+            {spinner}
+          </Form.Select>
         </SelectWrapper>
+
         <Form.Button circular icon="times" />
       </FormWrapper>
     </Form>

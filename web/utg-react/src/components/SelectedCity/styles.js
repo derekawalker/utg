@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   background-size: cover;
 
   @media (min-width: ${Variables.gridTab}) {
-    padding: 8% 2em 12%;
+    padding: 4% 2em 6%;
   }
 `;
 
@@ -48,4 +48,19 @@ export const SelectLabel = styled.div`
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   text-transform: uppercase;
   letter-spacing: 0.1em;
+`;
+
+export const Spinner = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-flow: row no-wrap;
+  align-items: center;
+  justify-content: center;
+  background: ${Variables.colorWhite85};
+  color: ${Variables.colorTeal};
+  z-index: 3;
 `;

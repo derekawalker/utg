@@ -62,6 +62,8 @@
       font-size: 1.5em;
       font-weight: 700;
       line-height: 1.1;
+      display: block;
+      margin-bottom: 0.25em;
     }
 
     .field--name-field-location {
@@ -94,9 +96,35 @@
       }
     }
 
+    .field--name-field-phone {
+      $bubble-size: 32px;
+      font-weight: 900;
+      color: $color-gray-6;
+      text-transform: uppercase;
+      line-height: $bubble-size;
+      padding-left: $bubble-size * 1.25;
+      margin: 0.25em 0;
+      letter-spacing: 0.05em;
+
+      &:before {
+        content: '\f095';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        font-size: 0.9em;
+        width: $bubble-size;
+        height: $bubble-size;
+        color: $color-white;
+        background: $gradient-teal;
+        border-radius: $bubble-size;
+        text-align: center;
+        line-height: $bubble-size;
+        position: absolute;
+        left: 0;
+      }
+    }
+
     .field--name-field-website {
       $bubble-size: 32px;
-
       font-weight: 900;
       color: $color-gray-6;
       text-transform: uppercase;

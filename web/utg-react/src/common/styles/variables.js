@@ -7,6 +7,7 @@ export default {
 
   // Colors.
   colorWhite: "rgba(255, 255, 255, 1)",
+  colorWhite85: "rgba(255, 255, 255, .85)",
   colorBlack: "rgba(0, 0, 0, 1)",
   colorGray025: "rgba(0, 0, 0, 0.025)",
   colorGray05: "#f2f2f2",

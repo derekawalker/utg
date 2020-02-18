@@ -9,3 +9,14 @@ export const Wrapper = styled.div`
     padding: 0;
   }
 `;
+
+export const FormSubmit = styled.div`
+  .button {
+    margin-right: 0.5em;
+    border: 1px solid transparent;
+
+    &:first-child {
+      margin-right: 0.5em;
+    }
+  }
+`;

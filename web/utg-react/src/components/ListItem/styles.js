@@ -41,22 +41,22 @@ export const DataWrapper = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
-  max-width: 60px;
-  min-width: 60px;
-  height: 60px;
+  max-width: 85px;
+  min-width: 85px;
+  height: 85px;
   margin-right: 1em;
   border: 1px solid ${Variables.colorGray10};
 
   @media (min-width: ${Variables.gridPhab}) {
-    max-width: 85px;
-    min-width: 85px;
-    height: 85px;
+    max-width: 80px;
+    min-width: 80px;
+    height: 80px;
   }
 
   @media (min-width: ${Variables.gridTab}) {
-    max-width: 100px;
-    min-width: 100px;
-    height: 100px;
+    max-width: 90px;
+    min-width: 90px;
+    height: 90px;
   }
 `;
 
@@ -98,4 +98,17 @@ export const DetailsWrapper = styled.div`
 
 export const Caps = styled.span`
   text-transform: capitalize;
+`;
+
+export const LabelWrapper = styled.div`
+  margin-bottom: 0.25em;
+`;
+
+export const Free = styled.span`
+  margin-top: 0.25em;
+  display: inline-block;
+
+  @media (min-width: ${Variables.gridPhab}) {
+    margin-top: 0;
+  }
 `;

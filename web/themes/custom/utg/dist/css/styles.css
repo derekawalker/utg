@@ -391,7 +391,7 @@ header {
   background: -webkit-gradient(linear, left top, right bottom, from(#3ef5d4), to(#2bb3bc));
   background: -o-linear-gradient(top left, #3ef5d4, #2bb3bc);
   background: linear-gradient(to bottom right, #3ef5d4, #2bb3bc);
-  padding: 0.75rem 1rem; }
+  padding: 0.5rem 1rem; }
   .region-subbanner .breadcrumb ol {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -430,10 +430,6 @@ header {
 @media (min-width: 568px) {
   .region-subbanner .breadcrumb {
     padding: 0.5rem 1.5rem; } }
-
-@media (min-width: 768px) {
-  .region-subbanner .breadcrumb {
-    padding: 0.75rem 1.5rem; } }
 
 .field--name-comment {
   background: rgba(255, 255, 255, 0.5);
@@ -960,7 +956,7 @@ header {
   font-size: 0.6em;
   position: -webkit-sticky;
   position: sticky;
-  top: 135px;
+  top: 127px;
   z-index: 2;
   background: #fff; }
   [role='tablist']:after {
@@ -1022,6 +1018,14 @@ header {
       color: #666; }
       [role='tab']:hover:not([aria-selected='true']) i, [role='tab']:active:not([aria-selected='true']) i, [role='tab']:focus:not([aria-selected='true']) i {
         color: #ff5c00; }
+
+@media (min-width: 768px) {
+  [role='tablist'] {
+    top: 154px; } }
+
+@media (min-width: 1024px) {
+  [role='tablist'] {
+    top: 208px; } }
 
 .region-content-top ul.tabs {
   -webkit-box-align: center;
@@ -1091,10 +1095,10 @@ header {
       display: block;
       text-align: center;
       color: #000;
-      padding: 1em;
+      padding: 1em 0.5em;
       text-decoration: none;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.05em;
       font-size: 0.5em;
       font-weight: 400;
       margin-bottom: 0;
@@ -1407,7 +1411,9 @@ form .button {
 .page-node-type-restaurant .node__content .field--name-title {
   font-size: 1.5em;
   font-weight: 700;
-  line-height: 1.1; }
+  line-height: 1.1;
+  display: block;
+  margin-bottom: 0.25em; }
 
 .page-node-type-attraction .node__content .field--name-field-location,
 .page-node-type-lodging .node__content .field--name-field-location,
@@ -1446,6 +1452,35 @@ form .button {
       .page-node-type-restaurant .node__content .field--name-field-location .field__item a:active {
         background: #fff;
         background: #3ef5d4; }
+
+.page-node-type-attraction .node__content .field--name-field-phone,
+.page-node-type-lodging .node__content .field--name-field-phone,
+.page-node-type-restaurant .node__content .field--name-field-phone {
+  font-weight: 900;
+  color: #666;
+  text-transform: uppercase;
+  line-height: 32px;
+  padding-left: 40px;
+  margin: 0.25em 0;
+  letter-spacing: 0.05em; }
+  .page-node-type-attraction .node__content .field--name-field-phone:before,
+  .page-node-type-lodging .node__content .field--name-field-phone:before,
+  .page-node-type-restaurant .node__content .field--name-field-phone:before {
+    content: '\f095';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 0.9em;
+    width: 32px;
+    height: 32px;
+    color: #fff;
+    background: -webkit-gradient(linear, left top, right bottom, from(#3ef5d4), to(#2bb3bc));
+    background: -o-linear-gradient(top left, #3ef5d4, #2bb3bc);
+    background: linear-gradient(to bottom right, #3ef5d4, #2bb3bc);
+    border-radius: 32px;
+    text-align: center;
+    line-height: 32px;
+    position: absolute;
+    left: 0; }
 
 .page-node-type-attraction .node__content .field--name-field-website,
 .page-node-type-lodging .node__content .field--name-field-website,

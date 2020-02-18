@@ -12,7 +12,7 @@
   border-right: 1px solid $color-gray-c;
   font-size: 0.6em;
   position: sticky;
-  top: 135px;
+  top: 127px;
   z-index: 2;
   background: $color-white;
 
@@ -93,11 +93,17 @@
 // Tablet (768px to 1023px) -----------------------------
 // ------------------------------------------------------
 @media (min-width: $tab) {
+  [role='tablist'] {
+    top: 154px;
+  }
 }
 
 // Desktop (1024px to 1339px) ---------------------------
 // ------------------------------------------------------
 @media (min-width: $desk) {
+  [role='tablist'] {
+    top: 208px;
+  }
 }
 
 // Wide (over 1340px) -----------------------------------

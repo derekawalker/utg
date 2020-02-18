@@ -26,7 +26,7 @@ import Paginator from "../../common/components/Paginator";
 import ListItem from "../ListItem";
 
 // Styled Components.
-import { Wrapper } from "./styles";
+import { Wrapper, FormSubmit } from "./styles";
 
 library.add(faCloudSun);
 
@@ -36,6 +36,7 @@ const defaultFilters = {
   indoor: [],
   price: [],
   food_types: [],
+  lodging_types: [],
   star_ratings: []
 };
 
@@ -43,6 +44,7 @@ let placeTypes = [];
 let indoorTypes = [];
 let placePrices = [];
 let foodTypes = [];
+let lodgingTypes = [];
 let starRatings = [];
 let locations = [];
 
@@ -80,6 +82,13 @@ const Places = props => {
     // Get cuisine type values.
     foodTypes = findPropertyValues(data, "cuisine");
 
+    // Get lodging type values.
+    lodgingTypes = findPropertyValues(data, "lodging_type");
+    // Set to null if no values exist.
+    if (lodgingTypes && lodgingTypes[0] && lodgingTypes[0].key === undefined) {
+      lodgingTypes = null;
+    }
+
     // Get star rating values.
     starRatings = findPropertyValues(data, "star_rating");
   }
@@ -99,6 +108,7 @@ const Places = props => {
         indoor: [],
         price: [],
         food_types: [],
+        lodging_types: [],
         star_ratings: []
       });
     } else {
@@ -231,6 +241,19 @@ const Places = props => {
     filterSet = (
       <Segment secondary>
         <Form.Group widths="equal">
+          {lodgingTypes ? (
+            <Form.Select
+              search
+              label="Lodging Type"
+              placeholder="Lodging Type"
+              onChange={handleFilterChange}
+              name="lodging_types"
+              options={lodgingTypes}
+              value={filters.lodging_types}
+              multiple
+            />
+          ) : null}
+
           <Form.Select
             label="Star Rating"
             placeholder="Star Rating"
@@ -294,7 +317,7 @@ const Places = props => {
             />
           </Form.Group>
           {filterSet}
-          <div>
+          <FormSubmit>
             <Button>
               <Button.Content>Reset</Button.Content>
             </Button>
@@ -307,7 +330,7 @@ const Places = props => {
             >
               <Button.Content>Apply Filters</Button.Content>
             </Button>
-          </div>
+          </FormSubmit>
         </Form>
       </Accordion.Content>
     </Accordion>
@@ -360,6 +383,15 @@ const Places = props => {
       });
     }
 
+    if (filters.lodging_types.length) {
+      filteredData = _.filter(filteredData, place => {
+        return arrayContainsAnyElementOfArray(
+          filters.lodging_types,
+          place.lodging_type
+        );
+      });
+    }
+
     // Apply search filter.
     if (searchPhrase !== "") {
       filteredData = filterByString(filteredData, searchPhrase, [
@@ -390,11 +422,6 @@ const Places = props => {
     // Update content display if data exists.
     content = (
       <Fragment>
-        <Paginator
-          activePage={paginationSettings.activePage}
-          onPageChange={handlePageChange}
-          totalPages={filteredData.length / paginationSettings.perPage}
-        />
         <Item.Group divided>{listItems}</Item.Group>
         <Paginator
           activePage={paginationSettings.activePage}

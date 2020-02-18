@@ -1,0 +1,28 @@
+[
+  {
+    "title": "Alaska Inn",
+    "type": "lodging",
+    "star_rating": "3",
+    "image": "/sites/default/files/styles/thumbnail/public/places/ogden/lodging/alaska_inn/alaska_inn.png?itok=oVb3FyJV",
+    "indoor": null,
+    "node_url": "/lodging/ogden-ut/alaska-inn",
+    "price": null,
+    "radioactivity": null,
+    "location": "Ogden, UT",
+    "cuisine": [],
+    "lodging_type": "Cabins"
+  },
+  {
+    "title": "The Bigelow Hotel & Residences",
+    "type": "lodging",
+    "star_rating": "3",
+    "image": "/sites/default/files/styles/thumbnail/public/places/ogden/lodging/bigelow_hotel/bigelow_hotel.jpeg?itok=Q56NNRi7",
+    "indoor": null,
+    "node_url": "/lodging/ogden-ut/bigelow-hotel-residences",
+    "price": null,
+    "radioactivity": null,
+    "location": "Ogden, UT",
+    "cuisine": [],
+    "lodging_type": "Hotel"
+  }
+]

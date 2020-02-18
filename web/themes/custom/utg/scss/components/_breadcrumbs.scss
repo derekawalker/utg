@@ -3,7 +3,7 @@
 .region-subbanner {
   .breadcrumb {
     background: $gradient-teal;
-    padding: 0.75rem 1rem;
+    padding: 0.5rem 1rem;
 
     ol {
       display: flex;
@@ -65,11 +65,6 @@
 // Tablet (768px to 1023px) -----------------------------
 // ------------------------------------------------------
 @media (min-width: $tab) {
-  .region-subbanner {
-    .breadcrumb {
-      padding: 0.75rem 1.5rem;
-    }
-  }
 }
 
 // Desktop (1024px to 1339px) ---------------------------
