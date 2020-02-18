@@ -28,10 +28,13 @@
 
   .node__content {
     .field--name-field-category,
-    .field--name-field-lodging-category {
+    .field--name-field-lodging-category,
+    .field--name-field-cuisine {
       padding-left: $side-pad-mobile;
       padding-right: $side-pad-mobile;
       margin-bottom: 1em;
+      display: flex;
+      flex-flow: row wrap;
 
       a {
         background: $gradient-teal;
@@ -45,6 +48,7 @@
         font-weight: 700;
         display: inline-block;
         margin-top: 0.5em;
+        margin-right: 0.5em;
       }
     }
 
@@ -57,6 +61,7 @@
     .field--name-title {
       font-size: 1.5em;
       font-weight: 700;
+      line-height: 1.1;
     }
 
     .field--name-field-location {
@@ -262,7 +267,8 @@
   .page-node-type-restaurant {
     .node__content {
       .field--name-field-category,
-      .field--name-field-lodging-category {
+      .field--name-field-lodging-category,
+      .field--name-field-cuisine {
         padding-left: $side-pad-tablet;
         padding-right: $side-pad-tablet;
       }
@@ -278,7 +284,7 @@
   .page-node-type-restaurant {
     .node__content {
       .field--name-field-category,
-      .field--name-field-lodging-category {
+      .field--name-field-lodging-categorym .field--name-field-cuisine {
         padding-left: $side-pad-desktop;
         padding-right: $side-pad-desktop;
       }

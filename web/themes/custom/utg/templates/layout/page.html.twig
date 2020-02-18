@@ -47,21 +47,23 @@
 {% endblock %}
 
 <div class="layout-container">
-  {{ page.userbar }}
+  <div class="utg-section-header">
+    {{ page.userbar }}
 
-  <header role="banner">
-    {{ page.header }}
-  </header>
+    <header role="banner">
+      {{ page.header }}
+    </header>
 
-  {% if page.banner %}
-    {{ page.banner }}
-  {% endif %}
+    {% if page.banner %}
+      {{ page.banner }}
+    {% endif %}
 
-  {% if page.subbanner %}
-    {{ page.subbanner }}
-  {% endif %}
+    {% if page.subbanner %}
+      {{ page.subbanner }}
+    {% endif %}
+  </div>
 
-  <main role="main">
+  <main role="main"  class="utg-section-main">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
     <div class="layout-columns">
@@ -87,7 +89,7 @@
   </main>
 
   {% if page.footer or page.footer_banner %}
-    <footer role="contentinfo">
+    <footer role="contentinfo"  class="utg-section-footer">
       {{ page.footer_banner }}
       {{ page.footer }}
     </footer>

@@ -159,6 +159,18 @@ table {
   margin: 0 auto;
   max-width: 1440px; }
 
+.utg-section-header {
+  position: relative;
+  z-index: 3; }
+
+.utg-section-main {
+  position: relative;
+  z-index: 2; }
+
+.utg-section-footer {
+  position: relative;
+  z-index: 1; }
+
 @media (min-width: 568px) {
   .both-sidebars .layout-columns {
     display: -webkit-box;
@@ -291,11 +303,7 @@ table {
 
 header {
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  z-index: 10; }
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); }
 
 .region-header {
   background: #fff; }
@@ -314,6 +322,11 @@ header {
         -ms-flex-pack: justify;
             justify-content: space-between;
     padding: 0.35rem 0.75rem; }
+
+.utg-section-header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0; }
 
 @media (min-width: 568px) {
   .region-header .region-inner {
@@ -345,25 +358,8 @@ header {
 .layout-sidebar-second {
   background: rgba(0, 0, 0, 0.025); }
 
-.region-subbanner {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 50px;
-  z-index: 1; }
-  .region-subbanner .region-inner {
-    padding: 0; }
-
-@media (min-width: 568px) {
-  .region-subbanner {
-    top: 56px; } }
-
-@media (min-width: 768px) {
-  .region-subbanner {
-    top: 66px; } }
-
-@media (min-width: 1024px) {
-  .region-subbanner {
-    top: 103px; } }
+.region-subbanner .region-inner {
+  padding: 0; }
 
 .block-system-branding-block {
   margin: 0 0.75rem 0 0; }
@@ -961,7 +957,22 @@ header {
   border-top: 1px solid #ccc;
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
-  font-size: 0.6em; }
+  font-size: 0.6em;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 135px;
+  z-index: 2;
+  background: #fff; }
+  [role='tablist']:after {
+    content: '';
+    position: absolute;
+    bottom: -2em;
+    left: 0;
+    height: 2em;
+    width: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(rgba(255, 255, 255, 0.65)), to(rgba(255, 255, 255, 0)));
+    background: -o-linear-gradient(top, white, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0));
+    background: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0)); }
   [role='tablist'] li {
     -webkit-box-flex: 1;
         -ms-flex: 1;
@@ -1052,7 +1063,7 @@ header {
         background: #fff;
         color: #ff5c00; }
 
-.utg-category-menu {
+.menu--subnav ul.menu {
   margin: 0;
   padding: 0;
   background: #fff;
@@ -1064,35 +1075,37 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
           box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); }
-  .utg-category-menu li {
-    min-width: 33.33%;
+  .menu--subnav ul.menu li {
+    min-width: 25%;
     display: block;
-    border-right: 1px solid #e6e6e6; }
-    .utg-category-menu li:last-child {
+    border-right: 1px solid #e6e6e6;
+    padding-top: 0; }
+    .menu--subnav ul.menu li:last-child {
       border: 0; }
-    .utg-category-menu li a {
+    .menu--subnav ul.menu li a {
       display: block;
       text-align: center;
       color: #000;
       padding: 1em;
-      text-decoration: none; }
-      .utg-category-menu li a h4 {
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        font-size: 0.5em;
-        font-weight: 400;
-        margin-bottom: 0; }
-      .utg-category-menu li a i {
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.5em;
+      font-weight: 400;
+      margin-bottom: 0;
+      position: relative;
+      line-height: 1.1; }
+      .menu--subnav ul.menu li a:before {
+        content: '\f105';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
         color: #ff5c00;
-        font-size: 1.25em;
+        font-size: 2em;
         background: -webkit-gradient(linear, left top, right bottom, from(#ffa900), to(#ff5c00));
         background: -o-linear-gradient(top left, #ffa900, #ff5c00);
         background: linear-gradient(to bottom right, #ffa900, #ff5c00);
@@ -1101,22 +1114,24 @@ header {
         -webkit-text-fill-color: transparent;
         display: block;
         margin-bottom: 0.25em; }
+      .menu--subnav ul.menu li a[data-drupal-link-system-path='attractions']:before {
+        content: '\f554'; }
+      .menu--subnav ul.menu li a[data-drupal-link-system-path='restaurants']:before {
+        content: '\f2e7'; }
+      .menu--subnav ul.menu li a[data-drupal-link-system-path='lodging']:before {
+        content: '\f236'; }
+      .menu--subnav ul.menu li a[href='/coupons']:before {
+        content: '\f02c'; }
 
 @media (min-width: 768px) {
-  .utg-category-menu li a {
-    padding: 1.15em; }
-    .utg-category-menu li a h4 {
-      font-size: 0.6em; }
-    .utg-category-menu li a i {
-      font-size: 1.5em; } }
+  .menu--subnav ul.menu li a {
+    padding: 1.15em;
+    font-size: 0.6em; } }
 
 @media (min-width: 1024px) {
-  .utg-category-menu li a {
-    padding: 1.25em; }
-    .utg-category-menu li a h4 {
-      font-size: 0.75em; }
-    .utg-category-menu li a i {
-      font-size: 2em; } }
+  .menu--subnav ul.menu li a {
+    padding: 1.25em;
+    font-size: 0.75em; } }
 
 .social-links-block {
   display: -webkit-box;
@@ -1341,19 +1356,32 @@ form .button {
 
 .page-node-type-attraction .node__content .field--name-field-category,
 .page-node-type-attraction .node__content .field--name-field-lodging-category,
+.page-node-type-attraction .node__content .field--name-field-cuisine,
 .page-node-type-lodging .node__content .field--name-field-category,
 .page-node-type-lodging .node__content .field--name-field-lodging-category,
+.page-node-type-lodging .node__content .field--name-field-cuisine,
 .page-node-type-restaurant .node__content .field--name-field-category,
-.page-node-type-restaurant .node__content .field--name-field-lodging-category {
+.page-node-type-restaurant .node__content .field--name-field-lodging-category,
+.page-node-type-restaurant .node__content .field--name-field-cuisine {
   padding-left: 1rem;
   padding-right: 1rem;
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap; }
   .page-node-type-attraction .node__content .field--name-field-category a,
   .page-node-type-attraction .node__content .field--name-field-lodging-category a,
+  .page-node-type-attraction .node__content .field--name-field-cuisine a,
   .page-node-type-lodging .node__content .field--name-field-category a,
   .page-node-type-lodging .node__content .field--name-field-lodging-category a,
+  .page-node-type-lodging .node__content .field--name-field-cuisine a,
   .page-node-type-restaurant .node__content .field--name-field-category a,
-  .page-node-type-restaurant .node__content .field--name-field-lodging-category a {
+  .page-node-type-restaurant .node__content .field--name-field-lodging-category a,
+  .page-node-type-restaurant .node__content .field--name-field-cuisine a {
     background: -webkit-gradient(linear, left top, right bottom, from(#3ef5d4), to(#2bb3bc));
     background: -o-linear-gradient(top left, #3ef5d4, #2bb3bc);
     background: linear-gradient(to bottom right, #3ef5d4, #2bb3bc);
@@ -1366,7 +1394,8 @@ form .button {
     text-decoration: none;
     font-weight: 700;
     display: inline-block;
-    margin-top: 0.5em; }
+    margin-top: 0.5em;
+    margin-right: 0.5em; }
 
 .page-node-type-attraction .node__content .field--name-field-image img,
 .page-node-type-lodging .node__content .field--name-field-image img,
@@ -1377,7 +1406,8 @@ form .button {
 .page-node-type-lodging .node__content .field--name-title,
 .page-node-type-restaurant .node__content .field--name-title {
   font-size: 1.5em;
-  font-weight: 700; }
+  font-weight: 700;
+  line-height: 1.1; }
 
 .page-node-type-attraction .node__content .field--name-field-location,
 .page-node-type-lodging .node__content .field--name-field-location,
@@ -1644,20 +1674,23 @@ form .button {
 @media (min-width: 768px) {
   .page-node-type-attraction .node__content .field--name-field-category,
   .page-node-type-attraction .node__content .field--name-field-lodging-category,
+  .page-node-type-attraction .node__content .field--name-field-cuisine,
   .page-node-type-lodging .node__content .field--name-field-category,
   .page-node-type-lodging .node__content .field--name-field-lodging-category,
+  .page-node-type-lodging .node__content .field--name-field-cuisine,
   .page-node-type-restaurant .node__content .field--name-field-category,
-  .page-node-type-restaurant .node__content .field--name-field-lodging-category {
+  .page-node-type-restaurant .node__content .field--name-field-lodging-category,
+  .page-node-type-restaurant .node__content .field--name-field-cuisine {
     padding-left: 1.25rem;
     padding-right: 1.25rem; } }
 
 @media (min-width: 1024px) {
   .page-node-type-attraction .node__content .field--name-field-category,
-  .page-node-type-attraction .node__content .field--name-field-lodging-category,
+  .page-node-type-attraction .node__content .field--name-field-lodging-categorym .field--name-field-cuisine,
   .page-node-type-lodging .node__content .field--name-field-category,
-  .page-node-type-lodging .node__content .field--name-field-lodging-category,
+  .page-node-type-lodging .node__content .field--name-field-lodging-categorym .field--name-field-cuisine,
   .page-node-type-restaurant .node__content .field--name-field-category,
-  .page-node-type-restaurant .node__content .field--name-field-lodging-category {
+  .page-node-type-restaurant .node__content .field--name-field-lodging-categorym .field--name-field-cuisine {
     padding-left: 1.5rem;
     padding-right: 1.5rem; } }
 
@@ -1870,8 +1903,34 @@ form .button {
     position: absolute;
     left: 0; }
 
-.page-node-type-restaurant .node__content .utg-layout--restaurant .field--name-field-cuisine:before {
-  content: '\f236'; }
+.page-node-type-restaurant .node__content .utg-layout--restaurant .block-layout-builder .field--name-field-cuisine {
+  border-top: 1px solid #ccc;
+  margin-top: 1em;
+  padding-top: 0.5em; }
+  .page-node-type-restaurant .node__content .utg-layout--restaurant .block-layout-builder .field--name-field-cuisine a {
+    background: none;
+    border: 0;
+    margin-top: 0;
+    font-size: 1rem;
+    font-weight: 900;
+    color: #666;
+    text-transform: uppercase;
+    line-height: 32px;
+    padding-left: 40px;
+    margin: 0.25em 0;
+    letter-spacing: 0.05em;
+    padding: 0 0.5em 0 0;
+    display: inline; }
+    .page-node-type-restaurant .node__content .utg-layout--restaurant .block-layout-builder .field--name-field-cuisine a:after {
+      content: ','; }
+  .page-node-type-restaurant .node__content .utg-layout--restaurant .block-layout-builder .field--name-field-cuisine .field__item {
+    padding: 0 0.25em 0 0; }
+    .page-node-type-restaurant .node__content .utg-layout--restaurant .block-layout-builder .field--name-field-cuisine .field__item:last-child {
+      padding: 0; }
+      .page-node-type-restaurant .node__content .utg-layout--restaurant .block-layout-builder .field--name-field-cuisine .field__item:last-child a:after {
+        content: ''; }
+  .page-node-type-restaurant .node__content .utg-layout--restaurant .block-layout-builder .field--name-field-cuisine:before {
+    content: '\f2e7'; }
 
 .view-content.owl-carousel {
   margin: 0 -1rem;

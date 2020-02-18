@@ -11,6 +11,25 @@
   border-left: 1px solid $color-gray-c;
   border-right: 1px solid $color-gray-c;
   font-size: 0.6em;
+  position: sticky;
+  top: 135px;
+  z-index: 2;
+  background: $color-white;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -2em;
+    left: 0;
+    height: 2em;
+    width: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0.65),
+      rgba(255, 255, 255, 0)
+    );
+  }
 
   li {
     flex: 1;

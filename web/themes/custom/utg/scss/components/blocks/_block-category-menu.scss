@@ -1,20 +1,20 @@
 // Mobile (up to 567px) ---------------------------------
 // ------------------------------------------------------
-.utg-category-menu {
+.menu--subnav ul.menu {
   margin: 0;
   padding: 0;
   background: $color-white;
   display: flex;
   list-style: none;
   flex-flow: row nowrap;
-  align-items: center;
   justify-content: center;
   box-shadow: 0 5px 20px $color-gray-25;
 
   li {
-    min-width: 33.33%;
+    min-width: 25%;
     display: block;
     border-right: 1px solid $site-background;
+    padding-top: 0;
 
     &:last-child {
       border: 0;
@@ -26,24 +26,50 @@
       color: $color-black;
       padding: 1em;
       text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.5em;
+      font-weight: 400;
+      margin-bottom: 0;
+      position: relative;
+      line-height: 1.1;
 
-      h4 {
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        font-size: 0.5em;
-        font-weight: 400;
-        margin-bottom: 0;
-      }
-
-      i {
+      &:before {
+        content: '\f105';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
         color: $color-orange-dark;
-        font-size: 1.25em;
+        font-size: 2em;
         background: $gradient-orange;
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         display: block;
         margin-bottom: 0.25em;
+      }
+
+      &[data-drupal-link-system-path='attractions'] {
+        &:before {
+          content: '\f554';
+        }
+      }
+
+      &[data-drupal-link-system-path='restaurants'] {
+        &:before {
+          content: '\f2e7';
+        }
+      }
+
+      &[data-drupal-link-system-path='lodging'] {
+        &:before {
+          content: '\f236';
+        }
+      }
+
+      &[href='/coupons'] {
+        &:before {
+          content: '\f02c';
+        }
       }
     }
   }
@@ -57,18 +83,11 @@
 // Tablet (768px to 1023px) -----------------------------
 // ------------------------------------------------------
 @media (min-width: $tab) {
-  .utg-category-menu {
+  .menu--subnav ul.menu {
     li {
       a {
         padding: 1.15em;
-
-        h4 {
-          font-size: 0.6em;
-        }
-
-        i {
-          font-size: 1.5em;
-        }
+        font-size: 0.6em;
       }
     }
   }
@@ -77,18 +96,11 @@
 // Desktop (1024px to 1339px) ---------------------------
 // ------------------------------------------------------
 @media (min-width: $desk) {
-  .utg-category-menu {
+  .menu--subnav ul.menu {
     li {
       a {
         padding: 1.25em;
-
-        h4 {
-          font-size: 0.75em;
-        }
-
-        i {
-          font-size: 2em;
-        }
+        font-size: 0.75em;
       }
     }
   }

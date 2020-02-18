@@ -24,6 +24,19 @@
   max-width: $max-width;
 }
 
+.utg-section-header {
+  position: relative;
+  z-index: 3;
+}
+.utg-section-main {
+  position: relative;
+  z-index: 2;
+}
+.utg-section-footer {
+  position: relative;
+  z-index: 1;
+}
+
 // Phablet (568px to 767px) ---------------------------
 // ------------------------------------------------------
 @media (min-width: $phab) {

@@ -4,6 +4,8 @@
   border-bottom: 1px solid $color-gray-c;
   border-left: 1px solid $color-gray-c;
   border-right: 1px solid $color-gray-c;
+  position: relative;
+  z-index: 1;
 
   > div {
     padding: $side-pad-mobile;

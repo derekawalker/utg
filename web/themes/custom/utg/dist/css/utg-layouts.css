@@ -7,7 +7,9 @@
 #layout-tabs {
   border-bottom: 1px solid #ccc;
   border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc; }
+  border-right: 1px solid #ccc;
+  position: relative;
+  z-index: 1; }
   #layout-tabs > div {
     padding: 1rem; }
 
