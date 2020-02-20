@@ -9,7 +9,11 @@
     "price": "1",
     "radioactivity": null,
     "location": "Ogden, UT",
-    "cuisine": []
+    "cuisine": [],
+    "lodging_type": "",
+    "difficulty": null,
+    "category": "Museums",
+    "hike_type": ""
   },
   {
     "title": "Hill Aerospace Museum",
@@ -21,7 +25,11 @@
     "price": "0",
     "radioactivity": null,
     "location": "Ogden, UT",
-    "cuisine": []
+    "cuisine": [],
+    "lodging_type": "",
+    "difficulty": null,
+    "category": "Museums",
+    "hike_type": ""
   },
   {
     "title": "Angels Landing",
@@ -33,6 +41,42 @@
     "price": "1",
     "radioactivity": null,
     "location": "Zion National Park",
-    "cuisine": []
+    "cuisine": [],
+    "lodging_type": "",
+    "difficulty": null,
+    "category": "Hikes",
+    "hike_type": ""
+  },
+  {
+    "title": "The Subway",
+    "type": "hike",
+    "star_rating": null,
+    "image": "/sites/default/files/styles/thumbnail/public/hikes/main-photos/subway.jpeg?itok=tzZ8OAGU",
+    "indoor": null,
+    "node_url": "/node/44",
+    "price": null,
+    "radioactivity": null,
+    "location": "Zion National Park",
+    "cuisine": [],
+    "lodging_type": "",
+    "difficulty": "2",
+    "category": "",
+    "hike_type": "Point to Point"
+  },
+  {
+    "title": "Mossy Cave",
+    "type": "hike",
+    "star_rating": null,
+    "image": "/sites/default/files/styles/thumbnail/public/hikes/main-photos/mossy_cave.jpeg?itok=lNGtGSFl",
+    "indoor": null,
+    "node_url": "/node/45",
+    "price": null,
+    "radioactivity": null,
+    "location": "Weber County, UT",
+    "cuisine": [],
+    "lodging_type": "",
+    "difficulty": "0",
+    "category": "",
+    "hike_type": "Out and Back"
   }
 ]

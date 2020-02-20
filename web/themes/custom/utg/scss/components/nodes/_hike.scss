@@ -1,9 +1,10 @@
 // Mobile (up to 567px) ---------------------------------
 // ------------------------------------------------------
-.page-node-type-restaurant {
+.page-node-type-hike {
   .node__content {
-    .utg-layout--restaurant {
-      .field--name-field-cuisine {
+    .utg-layout--hike {
+      .field--name-field-difficult,
+      .field--name-field-distance {
         $bubble-size: 28px;
         font-weight: 900;
         color: $color-gray-6;
@@ -11,7 +12,6 @@
         line-height: $bubble-size;
         padding-left: $bubble-size * 1.25;
         margin: 0.25em 0;
-        letter-spacing: 0.05em;
         font-size: 0.8em;
 
         &:before {
@@ -31,46 +31,24 @@
         }
       }
 
-      .block-layout-builder {
-        .field--name-field-cuisine {
-          border-top: 1px solid $color-gray-c;
-          margin-top: 1em;
-          padding-top: 0.5em;
+      .field--name-field-distance {
+        border-top: 1px solid $color-gray-c;
+        margin-top: 1em;
+        padding-top: 0.5em;
+        &:after {
+          content: ' Miles';
+        }
+      }
 
-          a {
-            background: none;
-            border: 0;
-            font-size: 1rem;
-            font-weight: 900;
-            color: #666;
-            text-transform: uppercase;
-            line-height: 32px;
-            padding-left: 40px;
-            margin: 0.25em 0;
-            letter-spacing: 0.05em;
-            padding: 0 0.5em 0 0;
-            display: inline;
+      .field--name-field-difficult {
+        &:before {
+          content: '\f583';
+        }
+      }
 
-            &:after {
-              content: ',';
-            }
-          }
-
-          .field__item {
-            &:last-child {
-              padding: 0;
-
-              a {
-                &:after {
-                  content: '';
-                }
-              }
-            }
-          }
-
-          &:before {
-            content: '\f2e7';
-          }
+      .field--name-field-distance {
+        &:before {
+          content: '\f6ec';
         }
       }
     }

@@ -2,7 +2,8 @@
 // ------------------------------------------------------
 .page-node-type-attraction,
 .page-node-type-lodging,
-.page-node-type-restaurant {
+.page-node-type-restaurant,
+.page-node-type-hike {
   .region-content {
     &-top {
       .region-inner {
@@ -29,7 +30,8 @@
   .node__content {
     .field--name-field-category,
     .field--name-field-lodging-category,
-    .field--name-field-cuisine {
+    .field--name-field-cuisine,
+    .field--name-field-hike-type {
       padding-left: $side-pad-mobile;
       padding-right: $side-pad-mobile;
       margin-bottom: 1em;
@@ -55,6 +57,7 @@
     .field--name-field-image {
       img {
         display: block;
+        width: 100%;
       }
     }
 
@@ -69,6 +72,7 @@
     .field--name-field-location {
       display: flex;
       flex-flow: row wrap;
+      font-size: 0.8em;
 
       .field__item {
         margin-right: 0.25em;
@@ -96,8 +100,9 @@
       }
     }
 
-    .field--name-field-phone {
-      $bubble-size: 32px;
+    .field--name-field-phone,
+    .field--name-field-website {
+      $bubble-size: 28px;
       font-weight: 900;
       color: $color-gray-6;
       text-transform: uppercase;
@@ -105,6 +110,8 @@
       padding-left: $bubble-size * 1.25;
       margin: 0.25em 0;
       letter-spacing: 0.05em;
+      text-transform: none;
+      font-size: 0.8em;
 
       &:before {
         content: '\f095';
@@ -124,29 +131,8 @@
     }
 
     .field--name-field-website {
-      $bubble-size: 32px;
-      font-weight: 900;
-      color: $color-gray-6;
-      text-transform: uppercase;
-      line-height: $bubble-size;
-      padding-left: $bubble-size * 1.25;
-      margin: 0.25em 0;
-      letter-spacing: 0.05em;
-
       &:before {
         content: '\f155';
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
-        font-size: 0.9em;
-        width: $bubble-size;
-        height: $bubble-size;
-        color: $color-white;
-        background: $gradient-teal;
-        border-radius: $bubble-size;
-        text-align: center;
-        line-height: $bubble-size;
-        position: absolute;
-        left: 0;
       }
     }
 
@@ -165,6 +151,41 @@
 
         &:last-child {
           margin-bottom: 0;
+        }
+      }
+    }
+
+    .field--name-field-tips {
+      margin-top: -0.75em;
+      padding: 0.75em;
+      margin-bottom: 1.25em;
+      border-radius: $rad;
+      background: $color-gray-f1;
+
+      .field__label {
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 0.7em;
+        font-weight: 900;
+        margin-bottom: 0.35em;
+      }
+
+      .field__item {
+        font-size: 0.9em;
+        width: 100%;
+        padding-left: 0.75em;
+        position: relative;
+        line-height: 1.2;
+        margin-bottom: 0.35em;
+
+        &:before {
+          content: '\f0da';
+          font-family: 'Font Awesome 5 Free';
+          font-weight: 900;
+          color: $color-teal-dark;
+          position: absolute;
+          left: 0;
+          top: 1px;
         }
       }
     }
@@ -191,15 +212,20 @@
     .field--name-field-gear {
       display: flex;
       flex-flow: row wrap;
-      align-items: flex-start;
+      align-items: center;
       justify-content: flex-start;
 
-      .field__item {
-        margin: 0 0 0.5em;
+      > .field__item {
+        margin: 0 0 3%;
         width: 100%;
+        border-bottom: 1px solid $color-gray-c;
+        position: relative;
+        padding-bottom: 3%;
 
         &:last-child {
           margin: 0;
+          padding-bottom: 0;
+          border-bottom: 0;
         }
 
         &:only-child {
@@ -216,23 +242,34 @@
             text-decoration: none;
             align-items: center;
 
+            > div {
+              &:first-child {
+                min-width: 50px;
+                max-width: 50px;
+                margin-right: 1em;
+              }
+            }
+
             img {
-              border: 1px solid $color-gray-c;
               margin-right: 0.5em;
               display: block;
             }
 
             h4 {
               font-size: 1em;
-              color: $color-black;
-              margin: 0;
+              color: $color-teal-dark;
+              margin: 0 0 0.25em;
               font-weight: 400;
+              padding-right: 2em;
             }
 
             .field--name-description {
               color: $color-black;
               display: flex;
               flex-flow: row wrap;
+              font-size: 0.8em;
+              line-height: 1.2;
+              position: static;
 
               > * {
                 &:first-child {
@@ -250,9 +287,130 @@
                 font-weight: 900;
                 margin-left: 0.5em;
                 color: $color-teal-dark;
+                position: absolute;
+                top: 0;
+                right: 0;
               }
             }
           }
+        }
+      }
+    }
+
+    .field--name-field-time-year,
+    .field--name-field-time-day {
+      $bubble-size: 28px;
+      font-weight: 900;
+      color: $color-gray-6;
+      text-transform: uppercase;
+      line-height: $bubble-size;
+      padding-left: $bubble-size * 1.25;
+      margin: 0.25em 0;
+      font-size: 0.8em;
+
+      &:before {
+        content: '\f155';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        font-size: 0.9em;
+        width: $bubble-size;
+        height: $bubble-size;
+        color: $color-white;
+        background: $gradient-teal;
+        border-radius: $bubble-size;
+        text-align: center;
+        line-height: $bubble-size;
+        position: absolute;
+        left: 0;
+      }
+    }
+
+    .field--name-field-time-day {
+      display: flex;
+      flex-flow: row nowrap;
+
+      &:before {
+        content: '\f017';
+      }
+
+      .field__item {
+        padding: 0 0.25em 0 0;
+
+        &:after {
+          content: ',';
+        }
+
+        &:last-child {
+          padding: 0;
+
+          &:after {
+            content: '';
+          }
+        }
+      }
+    }
+
+    .field--name-field-time-year {
+      display: flex;
+      flex-flow: row nowrap;
+
+      &:before {
+        content: '\f57d';
+      }
+
+      .field__item {
+        padding: 0 0.25em 0 0;
+
+        &:after {
+          content: ',';
+        }
+
+        &:last-child {
+          padding: 0;
+
+          &:after {
+            content: '';
+          }
+        }
+      }
+    }
+
+    .field--name-field-features {
+      margin-top: -0.75em;
+      padding: 0.75em;
+      margin-bottom: 1.25em;
+      border-radius: $rad;
+      background: $color-gray-f1;
+
+      .field__label {
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 0.7em;
+        font-weight: 900;
+        margin-bottom: 0.35em;
+      }
+
+      .field__items {
+        display: flex;
+        flex-flow: row wrap;
+      }
+
+      .field__item {
+        font-size: 0.9em;
+        width: 100%;
+        padding-left: 1.25em;
+        position: relative;
+        line-height: 1.2;
+        margin-bottom: 0.35em;
+
+        &:before {
+          content: '\f058';
+          font-family: 'Font Awesome 5 Free';
+          font-weight: 900;
+          color: $color-teal-dark;
+          position: absolute;
+          left: 0;
+          top: 1px;
         }
       }
     }
@@ -269,6 +427,14 @@
       .organization {
         font-weight: 700;
       }
+    }
+
+    .field--name-field-map.field--type-geolocation {
+      text-align: center;
+      background: $gradient-teal;
+      color: $color-white;
+      padding: 1em;
+      font-weight: 700;
     }
 
     .field--name-field-website {
@@ -292,10 +458,12 @@
 @media (min-width: $tab) {
   .page-node-type-attraction,
   .page-node-type-lodging,
-  .page-node-type-restaurant {
+  .page-node-type-restaurant,
+  .page-node-type-hike {
     .node__content {
       .field--name-field-category,
       .field--name-field-lodging-category,
+      .field--name-field-hike-type,
       .field--name-field-cuisine {
         padding-left: $side-pad-tablet;
         padding-right: $side-pad-tablet;
@@ -309,10 +477,13 @@
 @media (min-width: $desk) {
   .page-node-type-attraction,
   .page-node-type-lodging,
+  .page-node-type-hike,
   .page-node-type-restaurant {
     .node__content {
       .field--name-field-category,
-      .field--name-field-lodging-categorym .field--name-field-cuisine {
+      .field--name-field-lodging-category,
+      .field--name-field-hike-type,
+      .field--name-field-cuisine {
         padding-left: $side-pad-desktop;
         padding-right: $side-pad-desktop;
       }

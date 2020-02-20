@@ -3,17 +3,15 @@
 .page-node-type-attraction {
   .node__content {
     .field--name-field-price,
-    .field--name-field-indoor-outdoor,
-    .field--name-field-hours {
-      $bubble-size: 32px;
-
+    .field--name-field-indoor-outdoor {
+      $bubble-size: 28px;
       font-weight: 900;
       color: $color-gray-6;
       text-transform: uppercase;
       line-height: $bubble-size;
       padding-left: $bubble-size * 1.25;
       margin: 0.25em 0;
-      letter-spacing: 0.05em;
+      font-size: 0.8em;
 
       &:before {
         content: '\f155';
@@ -85,12 +83,14 @@
     }
 
     .field--name-field-hours {
-      &:before {
-        content: '\f017';
-      }
+      margin-bottom: 1.25em;
 
       .field__label {
-        display: inline-block;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 0.7em;
+        font-weight: 900;
+        margin-bottom: 0.35em;
       }
 
       .field__items {
@@ -104,6 +104,9 @@
           font-size: 0.9em;
           letter-spacing: 0;
           color: $color-black;
+          background: $color-gray-f1;
+          border-radius: $rad-inner;
+          padding: 0.25em 0.75em;
 
           .field__label {
             display: none;
@@ -113,7 +116,7 @@
         .field--name-field-day {
           margin-right: 0.5em;
           width: 5.5em;
-          text-align: right;
+          font-weight: 400;
 
           &:after {
             content: ':';
@@ -152,14 +155,44 @@
 // Tablet (768px to 1023px) -----------------------------
 // ------------------------------------------------------
 @media (min-width: $tab) {
+  .page-node-type-attraction {
+    .node__content {
+      .field--name-field-features {
+        .field__item {
+          width: 50%;
+          padding-right: 1em;
+        }
+      }
+    }
+  }
 }
 
 // Desktop (1024px to 1339px) ---------------------------
 // ------------------------------------------------------
 @media (min-width: $desk) {
+  .page-node-type-attraction {
+    .node__content {
+      .field--name-field-features {
+        .field__item {
+          width: 33.3333%;
+          padding-right: 1em;
+        }
+      }
+    }
+  }
 }
 
 // Wide (over 1340px) -----------------------------------
 // ------------------------------------------------------
 @media (min-width: $wide) {
+  .page-node-type-attraction {
+    .node__content {
+      .field--name-field-features {
+        .field__item {
+          width: 25%;
+          padding-right: 1em;
+        }
+      }
+    }
+  }
 }

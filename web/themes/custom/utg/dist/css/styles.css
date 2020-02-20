@@ -962,9 +962,9 @@ header {
   [role='tablist']:after {
     content: '';
     position: absolute;
-    bottom: -2em;
+    bottom: -3em;
     left: 0;
-    height: 2em;
+    height: 3em;
     width: 100%;
     background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(rgba(255, 255, 255, 0.65)), to(rgba(255, 255, 255, 0)));
     background: -o-linear-gradient(top, white, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0));
@@ -1124,6 +1124,8 @@ header {
         content: '\f2e7'; }
       .menu--subnav ul.menu li a[data-drupal-link-system-path='lodging']:before {
         content: '\f236'; }
+      .menu--subnav ul.menu li a[data-drupal-link-system-path='hikes']:before {
+        content: '\f6ec'; }
       .menu--subnav ul.menu li a[href='/coupons']:before {
         content: '\f02c'; }
 
@@ -1339,34 +1341,45 @@ form .button {
 
 .page-node-type-attraction .region-content-top .region-inner,
 .page-node-type-lodging .region-content-top .region-inner,
-.page-node-type-restaurant .region-content-top .region-inner {
+.page-node-type-restaurant .region-content-top .region-inner,
+.page-node-type-hike .region-content-top .region-inner {
   padding: 0; }
 
 .page-node-type-attraction .region-content .region-inner,
 .page-node-type-lodging .region-content .region-inner,
-.page-node-type-restaurant .region-content .region-inner {
+.page-node-type-restaurant .region-content .region-inner,
+.page-node-type-hike .region-content .region-inner {
   padding: 0; }
 
 .page-node-type-attraction .region-content .block,
 .page-node-type-lodging .region-content .block,
-.page-node-type-restaurant .region-content .block {
+.page-node-type-restaurant .region-content .block,
+.page-node-type-hike .region-content .block {
   border-bottom: 0;
   padding: 0; }
 
 .page-node-type-attraction .utg-layout--region .field,
 .page-node-type-lodging .utg-layout--region .field,
-.page-node-type-restaurant .utg-layout--region .field {
+.page-node-type-restaurant .utg-layout--region .field,
+.page-node-type-hike .utg-layout--region .field {
   position: relative; }
 
 .page-node-type-attraction .node__content .field--name-field-category,
 .page-node-type-attraction .node__content .field--name-field-lodging-category,
 .page-node-type-attraction .node__content .field--name-field-cuisine,
+.page-node-type-attraction .node__content .field--name-field-hike-type,
 .page-node-type-lodging .node__content .field--name-field-category,
 .page-node-type-lodging .node__content .field--name-field-lodging-category,
 .page-node-type-lodging .node__content .field--name-field-cuisine,
+.page-node-type-lodging .node__content .field--name-field-hike-type,
 .page-node-type-restaurant .node__content .field--name-field-category,
 .page-node-type-restaurant .node__content .field--name-field-lodging-category,
-.page-node-type-restaurant .node__content .field--name-field-cuisine {
+.page-node-type-restaurant .node__content .field--name-field-cuisine,
+.page-node-type-restaurant .node__content .field--name-field-hike-type,
+.page-node-type-hike .node__content .field--name-field-category,
+.page-node-type-hike .node__content .field--name-field-lodging-category,
+.page-node-type-hike .node__content .field--name-field-cuisine,
+.page-node-type-hike .node__content .field--name-field-hike-type {
   padding-left: 1rem;
   padding-right: 1rem;
   margin-bottom: 1em;
@@ -1380,12 +1393,19 @@ form .button {
   .page-node-type-attraction .node__content .field--name-field-category a,
   .page-node-type-attraction .node__content .field--name-field-lodging-category a,
   .page-node-type-attraction .node__content .field--name-field-cuisine a,
+  .page-node-type-attraction .node__content .field--name-field-hike-type a,
   .page-node-type-lodging .node__content .field--name-field-category a,
   .page-node-type-lodging .node__content .field--name-field-lodging-category a,
   .page-node-type-lodging .node__content .field--name-field-cuisine a,
+  .page-node-type-lodging .node__content .field--name-field-hike-type a,
   .page-node-type-restaurant .node__content .field--name-field-category a,
   .page-node-type-restaurant .node__content .field--name-field-lodging-category a,
-  .page-node-type-restaurant .node__content .field--name-field-cuisine a {
+  .page-node-type-restaurant .node__content .field--name-field-cuisine a,
+  .page-node-type-restaurant .node__content .field--name-field-hike-type a,
+  .page-node-type-hike .node__content .field--name-field-category a,
+  .page-node-type-hike .node__content .field--name-field-lodging-category a,
+  .page-node-type-hike .node__content .field--name-field-cuisine a,
+  .page-node-type-hike .node__content .field--name-field-hike-type a {
     background: -webkit-gradient(linear, left top, right bottom, from(#3ef5d4), to(#2bb3bc));
     background: -o-linear-gradient(top left, #3ef5d4, #2bb3bc);
     background: linear-gradient(to bottom right, #3ef5d4, #2bb3bc);
@@ -1403,12 +1423,15 @@ form .button {
 
 .page-node-type-attraction .node__content .field--name-field-image img,
 .page-node-type-lodging .node__content .field--name-field-image img,
-.page-node-type-restaurant .node__content .field--name-field-image img {
-  display: block; }
+.page-node-type-restaurant .node__content .field--name-field-image img,
+.page-node-type-hike .node__content .field--name-field-image img {
+  display: block;
+  width: 100%; }
 
 .page-node-type-attraction .node__content .field--name-title,
 .page-node-type-lodging .node__content .field--name-title,
-.page-node-type-restaurant .node__content .field--name-title {
+.page-node-type-restaurant .node__content .field--name-title,
+.page-node-type-hike .node__content .field--name-title {
   font-size: 1.5em;
   font-weight: 700;
   line-height: 1.1;
@@ -1417,26 +1440,31 @@ form .button {
 
 .page-node-type-attraction .node__content .field--name-field-location,
 .page-node-type-lodging .node__content .field--name-field-location,
-.page-node-type-restaurant .node__content .field--name-field-location {
+.page-node-type-restaurant .node__content .field--name-field-location,
+.page-node-type-hike .node__content .field--name-field-location {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
-          flex-flow: row wrap; }
+          flex-flow: row wrap;
+  font-size: 0.8em; }
   .page-node-type-attraction .node__content .field--name-field-location .field__item,
   .page-node-type-lodging .node__content .field--name-field-location .field__item,
-  .page-node-type-restaurant .node__content .field--name-field-location .field__item {
+  .page-node-type-restaurant .node__content .field--name-field-location .field__item,
+  .page-node-type-hike .node__content .field--name-field-location .field__item {
     margin-right: 0.25em;
     line-height: 1.25; }
     .page-node-type-attraction .node__content .field--name-field-location .field__item:last-child,
     .page-node-type-lodging .node__content .field--name-field-location .field__item:last-child,
-    .page-node-type-restaurant .node__content .field--name-field-location .field__item:last-child {
+    .page-node-type-restaurant .node__content .field--name-field-location .field__item:last-child,
+    .page-node-type-hike .node__content .field--name-field-location .field__item:last-child {
       margin-right: 0; }
     .page-node-type-attraction .node__content .field--name-field-location .field__item a,
     .page-node-type-lodging .node__content .field--name-field-location .field__item a,
-    .page-node-type-restaurant .node__content .field--name-field-location .field__item a {
+    .page-node-type-restaurant .node__content .field--name-field-location .field__item a,
+    .page-node-type-hike .node__content .field--name-field-location .field__item a {
       text-decoration: none;
       color: #2bb3bc;
       display: block;
@@ -1449,71 +1477,64 @@ form .button {
       .page-node-type-lodging .node__content .field--name-field-location .field__item a:active,
       .page-node-type-restaurant .node__content .field--name-field-location .field__item a:hover,
       .page-node-type-restaurant .node__content .field--name-field-location .field__item a:focus,
-      .page-node-type-restaurant .node__content .field--name-field-location .field__item a:active {
+      .page-node-type-restaurant .node__content .field--name-field-location .field__item a:active,
+      .page-node-type-hike .node__content .field--name-field-location .field__item a:hover,
+      .page-node-type-hike .node__content .field--name-field-location .field__item a:focus,
+      .page-node-type-hike .node__content .field--name-field-location .field__item a:active {
         background: #fff;
         background: #3ef5d4; }
 
 .page-node-type-attraction .node__content .field--name-field-phone,
+.page-node-type-attraction .node__content .field--name-field-website,
 .page-node-type-lodging .node__content .field--name-field-phone,
-.page-node-type-restaurant .node__content .field--name-field-phone {
+.page-node-type-lodging .node__content .field--name-field-website,
+.page-node-type-restaurant .node__content .field--name-field-phone,
+.page-node-type-restaurant .node__content .field--name-field-website,
+.page-node-type-hike .node__content .field--name-field-phone,
+.page-node-type-hike .node__content .field--name-field-website {
   font-weight: 900;
   color: #666;
   text-transform: uppercase;
-  line-height: 32px;
-  padding-left: 40px;
+  line-height: 28px;
+  padding-left: 35px;
   margin: 0.25em 0;
-  letter-spacing: 0.05em; }
+  letter-spacing: 0.05em;
+  text-transform: none;
+  font-size: 0.8em; }
   .page-node-type-attraction .node__content .field--name-field-phone:before,
+  .page-node-type-attraction .node__content .field--name-field-website:before,
   .page-node-type-lodging .node__content .field--name-field-phone:before,
-  .page-node-type-restaurant .node__content .field--name-field-phone:before {
+  .page-node-type-lodging .node__content .field--name-field-website:before,
+  .page-node-type-restaurant .node__content .field--name-field-phone:before,
+  .page-node-type-restaurant .node__content .field--name-field-website:before,
+  .page-node-type-hike .node__content .field--name-field-phone:before,
+  .page-node-type-hike .node__content .field--name-field-website:before {
     content: '\f095';
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
     font-size: 0.9em;
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     color: #fff;
     background: -webkit-gradient(linear, left top, right bottom, from(#3ef5d4), to(#2bb3bc));
     background: -o-linear-gradient(top left, #3ef5d4, #2bb3bc);
     background: linear-gradient(to bottom right, #3ef5d4, #2bb3bc);
-    border-radius: 32px;
+    border-radius: 28px;
     text-align: center;
-    line-height: 32px;
+    line-height: 28px;
     position: absolute;
     left: 0; }
 
-.page-node-type-attraction .node__content .field--name-field-website,
-.page-node-type-lodging .node__content .field--name-field-website,
-.page-node-type-restaurant .node__content .field--name-field-website {
-  font-weight: 900;
-  color: #666;
-  text-transform: uppercase;
-  line-height: 32px;
-  padding-left: 40px;
-  margin: 0.25em 0;
-  letter-spacing: 0.05em; }
-  .page-node-type-attraction .node__content .field--name-field-website:before,
-  .page-node-type-lodging .node__content .field--name-field-website:before,
-  .page-node-type-restaurant .node__content .field--name-field-website:before {
-    content: '\f155';
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    font-size: 0.9em;
-    width: 32px;
-    height: 32px;
-    color: #fff;
-    background: -webkit-gradient(linear, left top, right bottom, from(#3ef5d4), to(#2bb3bc));
-    background: -o-linear-gradient(top left, #3ef5d4, #2bb3bc);
-    background: linear-gradient(to bottom right, #3ef5d4, #2bb3bc);
-    border-radius: 32px;
-    text-align: center;
-    line-height: 32px;
-    position: absolute;
-    left: 0; }
+.page-node-type-attraction .node__content .field--name-field-website:before,
+.page-node-type-lodging .node__content .field--name-field-website:before,
+.page-node-type-restaurant .node__content .field--name-field-website:before,
+.page-node-type-hike .node__content .field--name-field-website:before {
+  content: '\f155'; }
 
 .page-node-type-attraction .node__content .field--name-body,
 .page-node-type-lodging .node__content .field--name-body,
-.page-node-type-restaurant .node__content .field--name-body {
+.page-node-type-restaurant .node__content .field--name-body,
+.page-node-type-hike .node__content .field--name-body {
   border-top: 1px solid #ccc;
   margin-top: 0.5em;
   padding-top: 1em;
@@ -1522,16 +1543,59 @@ form .button {
   padding-bottom: 1em; }
   .page-node-type-attraction .node__content .field--name-body > *:first-child,
   .page-node-type-lodging .node__content .field--name-body > *:first-child,
-  .page-node-type-restaurant .node__content .field--name-body > *:first-child {
+  .page-node-type-restaurant .node__content .field--name-body > *:first-child,
+  .page-node-type-hike .node__content .field--name-body > *:first-child {
     margin-top: 0; }
   .page-node-type-attraction .node__content .field--name-body > *:last-child,
   .page-node-type-lodging .node__content .field--name-body > *:last-child,
-  .page-node-type-restaurant .node__content .field--name-body > *:last-child {
+  .page-node-type-restaurant .node__content .field--name-body > *:last-child,
+  .page-node-type-hike .node__content .field--name-body > *:last-child {
     margin-bottom: 0; }
+
+.page-node-type-attraction .node__content .field--name-field-tips,
+.page-node-type-lodging .node__content .field--name-field-tips,
+.page-node-type-restaurant .node__content .field--name-field-tips,
+.page-node-type-hike .node__content .field--name-field-tips {
+  margin-top: -0.75em;
+  padding: 0.75em;
+  margin-bottom: 1.25em;
+  border-radius: 5px;
+  background: #f1f1f1; }
+  .page-node-type-attraction .node__content .field--name-field-tips .field__label,
+  .page-node-type-lodging .node__content .field--name-field-tips .field__label,
+  .page-node-type-restaurant .node__content .field--name-field-tips .field__label,
+  .page-node-type-hike .node__content .field--name-field-tips .field__label {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.7em;
+    font-weight: 900;
+    margin-bottom: 0.35em; }
+  .page-node-type-attraction .node__content .field--name-field-tips .field__item,
+  .page-node-type-lodging .node__content .field--name-field-tips .field__item,
+  .page-node-type-restaurant .node__content .field--name-field-tips .field__item,
+  .page-node-type-hike .node__content .field--name-field-tips .field__item {
+    font-size: 0.9em;
+    width: 100%;
+    padding-left: 0.75em;
+    position: relative;
+    line-height: 1.2;
+    margin-bottom: 0.35em; }
+    .page-node-type-attraction .node__content .field--name-field-tips .field__item:before,
+    .page-node-type-lodging .node__content .field--name-field-tips .field__item:before,
+    .page-node-type-restaurant .node__content .field--name-field-tips .field__item:before,
+    .page-node-type-hike .node__content .field--name-field-tips .field__item:before {
+      content: '\f0da';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      color: #2bb3bc;
+      position: absolute;
+      left: 0;
+      top: 1px; }
 
 .page-node-type-attraction .node__content .field--name-field-photos.field__items,
 .page-node-type-lodging .node__content .field--name-field-photos.field__items,
-.page-node-type-restaurant .node__content .field--name-field-photos.field__items {
+.page-node-type-restaurant .node__content .field--name-field-photos.field__items,
+.page-node-type-hike .node__content .field--name-field-photos.field__items {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1548,12 +1612,14 @@ form .button {
 
 .page-node-type-attraction .node__content .field--name-field-photos .field__item,
 .page-node-type-lodging .node__content .field--name-field-photos .field__item,
-.page-node-type-restaurant .node__content .field--name-field-photos .field__item {
+.page-node-type-restaurant .node__content .field--name-field-photos .field__item,
+.page-node-type-hike .node__content .field--name-field-photos .field__item {
   border: 1px solid #ccc;
   margin: 0.25em; }
   .page-node-type-attraction .node__content .field--name-field-photos .field__item img,
   .page-node-type-lodging .node__content .field--name-field-photos .field__item img,
-  .page-node-type-restaurant .node__content .field--name-field-photos .field__item img {
+  .page-node-type-restaurant .node__content .field--name-field-photos .field__item img,
+  .page-node-type-hike .node__content .field--name-field-photos .field__item img {
     display: block; }
 
 .page-node-type-attraction .node__content .field--name-field-coupons,
@@ -1561,7 +1627,9 @@ form .button {
 .page-node-type-lodging .node__content .field--name-field-coupons,
 .page-node-type-lodging .node__content .field--name-field-gear,
 .page-node-type-restaurant .node__content .field--name-field-coupons,
-.page-node-type-restaurant .node__content .field--name-field-gear {
+.page-node-type-restaurant .node__content .field--name-field-gear,
+.page-node-type-hike .node__content .field--name-field-coupons,
+.page-node-type-hike .node__content .field--name-field-gear {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1569,47 +1637,62 @@ form .button {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start; }
-  .page-node-type-attraction .node__content .field--name-field-coupons .field__item,
-  .page-node-type-attraction .node__content .field--name-field-gear .field__item,
-  .page-node-type-lodging .node__content .field--name-field-coupons .field__item,
-  .page-node-type-lodging .node__content .field--name-field-gear .field__item,
-  .page-node-type-restaurant .node__content .field--name-field-coupons .field__item,
-  .page-node-type-restaurant .node__content .field--name-field-gear .field__item {
-    margin: 0 0 0.5em;
-    width: 100%; }
-    .page-node-type-attraction .node__content .field--name-field-coupons .field__item:last-child,
-    .page-node-type-attraction .node__content .field--name-field-gear .field__item:last-child,
-    .page-node-type-lodging .node__content .field--name-field-coupons .field__item:last-child,
-    .page-node-type-lodging .node__content .field--name-field-gear .field__item:last-child,
-    .page-node-type-restaurant .node__content .field--name-field-coupons .field__item:last-child,
-    .page-node-type-restaurant .node__content .field--name-field-gear .field__item:last-child {
-      margin: 0; }
-    .page-node-type-attraction .node__content .field--name-field-coupons .field__item:only-child,
-    .page-node-type-attraction .node__content .field--name-field-gear .field__item:only-child,
-    .page-node-type-lodging .node__content .field--name-field-coupons .field__item:only-child,
-    .page-node-type-lodging .node__content .field--name-field-gear .field__item:only-child,
-    .page-node-type-restaurant .node__content .field--name-field-coupons .field__item:only-child,
-    .page-node-type-restaurant .node__content .field--name-field-gear .field__item:only-child {
+  .page-node-type-attraction .node__content .field--name-field-coupons > .field__item,
+  .page-node-type-attraction .node__content .field--name-field-gear > .field__item,
+  .page-node-type-lodging .node__content .field--name-field-coupons > .field__item,
+  .page-node-type-lodging .node__content .field--name-field-gear > .field__item,
+  .page-node-type-restaurant .node__content .field--name-field-coupons > .field__item,
+  .page-node-type-restaurant .node__content .field--name-field-gear > .field__item,
+  .page-node-type-hike .node__content .field--name-field-coupons > .field__item,
+  .page-node-type-hike .node__content .field--name-field-gear > .field__item {
+    margin: 0 0 3%;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    padding-bottom: 3%; }
+    .page-node-type-attraction .node__content .field--name-field-coupons > .field__item:last-child,
+    .page-node-type-attraction .node__content .field--name-field-gear > .field__item:last-child,
+    .page-node-type-lodging .node__content .field--name-field-coupons > .field__item:last-child,
+    .page-node-type-lodging .node__content .field--name-field-gear > .field__item:last-child,
+    .page-node-type-restaurant .node__content .field--name-field-coupons > .field__item:last-child,
+    .page-node-type-restaurant .node__content .field--name-field-gear > .field__item:last-child,
+    .page-node-type-hike .node__content .field--name-field-coupons > .field__item:last-child,
+    .page-node-type-hike .node__content .field--name-field-gear > .field__item:last-child {
+      margin: 0;
+      padding-bottom: 0;
+      border-bottom: 0; }
+    .page-node-type-attraction .node__content .field--name-field-coupons > .field__item:only-child,
+    .page-node-type-attraction .node__content .field--name-field-gear > .field__item:only-child,
+    .page-node-type-lodging .node__content .field--name-field-coupons > .field__item:only-child,
+    .page-node-type-lodging .node__content .field--name-field-gear > .field__item:only-child,
+    .page-node-type-restaurant .node__content .field--name-field-coupons > .field__item:only-child,
+    .page-node-type-restaurant .node__content .field--name-field-gear > .field__item:only-child,
+    .page-node-type-hike .node__content .field--name-field-coupons > .field__item:only-child,
+    .page-node-type-hike .node__content .field--name-field-gear > .field__item:only-child {
       width: 100%; }
-    .page-node-type-attraction .node__content .field--name-field-coupons .field__item .content,
-    .page-node-type-attraction .node__content .field--name-field-gear .field__item .content,
-    .page-node-type-lodging .node__content .field--name-field-coupons .field__item .content,
-    .page-node-type-lodging .node__content .field--name-field-gear .field__item .content,
-    .page-node-type-restaurant .node__content .field--name-field-coupons .field__item .content,
-    .page-node-type-restaurant .node__content .field--name-field-gear .field__item .content {
+    .page-node-type-attraction .node__content .field--name-field-coupons > .field__item .content,
+    .page-node-type-attraction .node__content .field--name-field-gear > .field__item .content,
+    .page-node-type-lodging .node__content .field--name-field-coupons > .field__item .content,
+    .page-node-type-lodging .node__content .field--name-field-gear > .field__item .content,
+    .page-node-type-restaurant .node__content .field--name-field-coupons > .field__item .content,
+    .page-node-type-restaurant .node__content .field--name-field-gear > .field__item .content,
+    .page-node-type-hike .node__content .field--name-field-coupons > .field__item .content,
+    .page-node-type-hike .node__content .field--name-field-gear > .field__item .content {
       width: 100%; }
-      .page-node-type-attraction .node__content .field--name-field-coupons .field__item .content a,
-      .page-node-type-attraction .node__content .field--name-field-gear .field__item .content a,
-      .page-node-type-lodging .node__content .field--name-field-coupons .field__item .content a,
-      .page-node-type-lodging .node__content .field--name-field-gear .field__item .content a,
-      .page-node-type-restaurant .node__content .field--name-field-coupons .field__item .content a,
-      .page-node-type-restaurant .node__content .field--name-field-gear .field__item .content a {
+      .page-node-type-attraction .node__content .field--name-field-coupons > .field__item .content a,
+      .page-node-type-attraction .node__content .field--name-field-gear > .field__item .content a,
+      .page-node-type-lodging .node__content .field--name-field-coupons > .field__item .content a,
+      .page-node-type-lodging .node__content .field--name-field-gear > .field__item .content a,
+      .page-node-type-restaurant .node__content .field--name-field-coupons > .field__item .content a,
+      .page-node-type-restaurant .node__content .field--name-field-gear > .field__item .content a,
+      .page-node-type-hike .node__content .field--name-field-coupons > .field__item .content a,
+      .page-node-type-hike .node__content .field--name-field-gear > .field__item .content a {
         width: 100%;
         display: -webkit-box;
         display: -ms-flexbox;
@@ -1622,31 +1705,48 @@ form .button {
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center; }
-        .page-node-type-attraction .node__content .field--name-field-coupons .field__item .content a img,
-        .page-node-type-attraction .node__content .field--name-field-gear .field__item .content a img,
-        .page-node-type-lodging .node__content .field--name-field-coupons .field__item .content a img,
-        .page-node-type-lodging .node__content .field--name-field-gear .field__item .content a img,
-        .page-node-type-restaurant .node__content .field--name-field-coupons .field__item .content a img,
-        .page-node-type-restaurant .node__content .field--name-field-gear .field__item .content a img {
-          border: 1px solid #ccc;
+        .page-node-type-attraction .node__content .field--name-field-coupons > .field__item .content a > div:first-child,
+        .page-node-type-attraction .node__content .field--name-field-gear > .field__item .content a > div:first-child,
+        .page-node-type-lodging .node__content .field--name-field-coupons > .field__item .content a > div:first-child,
+        .page-node-type-lodging .node__content .field--name-field-gear > .field__item .content a > div:first-child,
+        .page-node-type-restaurant .node__content .field--name-field-coupons > .field__item .content a > div:first-child,
+        .page-node-type-restaurant .node__content .field--name-field-gear > .field__item .content a > div:first-child,
+        .page-node-type-hike .node__content .field--name-field-coupons > .field__item .content a > div:first-child,
+        .page-node-type-hike .node__content .field--name-field-gear > .field__item .content a > div:first-child {
+          min-width: 50px;
+          max-width: 50px;
+          margin-right: 1em; }
+        .page-node-type-attraction .node__content .field--name-field-coupons > .field__item .content a img,
+        .page-node-type-attraction .node__content .field--name-field-gear > .field__item .content a img,
+        .page-node-type-lodging .node__content .field--name-field-coupons > .field__item .content a img,
+        .page-node-type-lodging .node__content .field--name-field-gear > .field__item .content a img,
+        .page-node-type-restaurant .node__content .field--name-field-coupons > .field__item .content a img,
+        .page-node-type-restaurant .node__content .field--name-field-gear > .field__item .content a img,
+        .page-node-type-hike .node__content .field--name-field-coupons > .field__item .content a img,
+        .page-node-type-hike .node__content .field--name-field-gear > .field__item .content a img {
           margin-right: 0.5em;
           display: block; }
-        .page-node-type-attraction .node__content .field--name-field-coupons .field__item .content a h4,
-        .page-node-type-attraction .node__content .field--name-field-gear .field__item .content a h4,
-        .page-node-type-lodging .node__content .field--name-field-coupons .field__item .content a h4,
-        .page-node-type-lodging .node__content .field--name-field-gear .field__item .content a h4,
-        .page-node-type-restaurant .node__content .field--name-field-coupons .field__item .content a h4,
-        .page-node-type-restaurant .node__content .field--name-field-gear .field__item .content a h4 {
+        .page-node-type-attraction .node__content .field--name-field-coupons > .field__item .content a h4,
+        .page-node-type-attraction .node__content .field--name-field-gear > .field__item .content a h4,
+        .page-node-type-lodging .node__content .field--name-field-coupons > .field__item .content a h4,
+        .page-node-type-lodging .node__content .field--name-field-gear > .field__item .content a h4,
+        .page-node-type-restaurant .node__content .field--name-field-coupons > .field__item .content a h4,
+        .page-node-type-restaurant .node__content .field--name-field-gear > .field__item .content a h4,
+        .page-node-type-hike .node__content .field--name-field-coupons > .field__item .content a h4,
+        .page-node-type-hike .node__content .field--name-field-gear > .field__item .content a h4 {
           font-size: 1em;
-          color: #000;
-          margin: 0;
-          font-weight: 400; }
-        .page-node-type-attraction .node__content .field--name-field-coupons .field__item .content a .field--name-description,
-        .page-node-type-attraction .node__content .field--name-field-gear .field__item .content a .field--name-description,
-        .page-node-type-lodging .node__content .field--name-field-coupons .field__item .content a .field--name-description,
-        .page-node-type-lodging .node__content .field--name-field-gear .field__item .content a .field--name-description,
-        .page-node-type-restaurant .node__content .field--name-field-coupons .field__item .content a .field--name-description,
-        .page-node-type-restaurant .node__content .field--name-field-gear .field__item .content a .field--name-description {
+          color: #2bb3bc;
+          margin: 0 0 0.25em;
+          font-weight: 400;
+          padding-right: 2em; }
+        .page-node-type-attraction .node__content .field--name-field-coupons > .field__item .content a .field--name-description,
+        .page-node-type-attraction .node__content .field--name-field-gear > .field__item .content a .field--name-description,
+        .page-node-type-lodging .node__content .field--name-field-coupons > .field__item .content a .field--name-description,
+        .page-node-type-lodging .node__content .field--name-field-gear > .field__item .content a .field--name-description,
+        .page-node-type-restaurant .node__content .field--name-field-coupons > .field__item .content a .field--name-description,
+        .page-node-type-restaurant .node__content .field--name-field-gear > .field__item .content a .field--name-description,
+        .page-node-type-hike .node__content .field--name-field-coupons > .field__item .content a .field--name-description,
+        .page-node-type-hike .node__content .field--name-field-gear > .field__item .content a .field--name-description {
           color: #000;
           display: -webkit-box;
           display: -ms-flexbox;
@@ -1654,107 +1754,315 @@ form .button {
           -webkit-box-orient: horizontal;
           -webkit-box-direction: normal;
               -ms-flex-flow: row wrap;
-                  flex-flow: row wrap; }
-          .page-node-type-attraction .node__content .field--name-field-coupons .field__item .content a .field--name-description > *:first-child,
-          .page-node-type-attraction .node__content .field--name-field-gear .field__item .content a .field--name-description > *:first-child,
-          .page-node-type-lodging .node__content .field--name-field-coupons .field__item .content a .field--name-description > *:first-child,
-          .page-node-type-lodging .node__content .field--name-field-gear .field__item .content a .field--name-description > *:first-child,
-          .page-node-type-restaurant .node__content .field--name-field-coupons .field__item .content a .field--name-description > *:first-child,
-          .page-node-type-restaurant .node__content .field--name-field-gear .field__item .content a .field--name-description > *:first-child {
+                  flex-flow: row wrap;
+          font-size: 0.8em;
+          line-height: 1.2;
+          position: static; }
+          .page-node-type-attraction .node__content .field--name-field-coupons > .field__item .content a .field--name-description > *:first-child,
+          .page-node-type-attraction .node__content .field--name-field-gear > .field__item .content a .field--name-description > *:first-child,
+          .page-node-type-lodging .node__content .field--name-field-coupons > .field__item .content a .field--name-description > *:first-child,
+          .page-node-type-lodging .node__content .field--name-field-gear > .field__item .content a .field--name-description > *:first-child,
+          .page-node-type-restaurant .node__content .field--name-field-coupons > .field__item .content a .field--name-description > *:first-child,
+          .page-node-type-restaurant .node__content .field--name-field-gear > .field__item .content a .field--name-description > *:first-child,
+          .page-node-type-hike .node__content .field--name-field-coupons > .field__item .content a .field--name-description > *:first-child,
+          .page-node-type-hike .node__content .field--name-field-gear > .field__item .content a .field--name-description > *:first-child {
             margin-top: 0; }
-          .page-node-type-attraction .node__content .field--name-field-coupons .field__item .content a .field--name-description > *:last-child,
-          .page-node-type-attraction .node__content .field--name-field-gear .field__item .content a .field--name-description > *:last-child,
-          .page-node-type-lodging .node__content .field--name-field-coupons .field__item .content a .field--name-description > *:last-child,
-          .page-node-type-lodging .node__content .field--name-field-gear .field__item .content a .field--name-description > *:last-child,
-          .page-node-type-restaurant .node__content .field--name-field-coupons .field__item .content a .field--name-description > *:last-child,
-          .page-node-type-restaurant .node__content .field--name-field-gear .field__item .content a .field--name-description > *:last-child {
+          .page-node-type-attraction .node__content .field--name-field-coupons > .field__item .content a .field--name-description > *:last-child,
+          .page-node-type-attraction .node__content .field--name-field-gear > .field__item .content a .field--name-description > *:last-child,
+          .page-node-type-lodging .node__content .field--name-field-coupons > .field__item .content a .field--name-description > *:last-child,
+          .page-node-type-lodging .node__content .field--name-field-gear > .field__item .content a .field--name-description > *:last-child,
+          .page-node-type-restaurant .node__content .field--name-field-coupons > .field__item .content a .field--name-description > *:last-child,
+          .page-node-type-restaurant .node__content .field--name-field-gear > .field__item .content a .field--name-description > *:last-child,
+          .page-node-type-hike .node__content .field--name-field-coupons > .field__item .content a .field--name-description > *:last-child,
+          .page-node-type-hike .node__content .field--name-field-gear > .field__item .content a .field--name-description > *:last-child {
             margin-bottom: 0; }
-          .page-node-type-attraction .node__content .field--name-field-coupons .field__item .content a .field--name-description:after,
-          .page-node-type-attraction .node__content .field--name-field-gear .field__item .content a .field--name-description:after,
-          .page-node-type-lodging .node__content .field--name-field-coupons .field__item .content a .field--name-description:after,
-          .page-node-type-lodging .node__content .field--name-field-gear .field__item .content a .field--name-description:after,
-          .page-node-type-restaurant .node__content .field--name-field-coupons .field__item .content a .field--name-description:after,
-          .page-node-type-restaurant .node__content .field--name-field-gear .field__item .content a .field--name-description:after {
+          .page-node-type-attraction .node__content .field--name-field-coupons > .field__item .content a .field--name-description:after,
+          .page-node-type-attraction .node__content .field--name-field-gear > .field__item .content a .field--name-description:after,
+          .page-node-type-lodging .node__content .field--name-field-coupons > .field__item .content a .field--name-description:after,
+          .page-node-type-lodging .node__content .field--name-field-gear > .field__item .content a .field--name-description:after,
+          .page-node-type-restaurant .node__content .field--name-field-coupons > .field__item .content a .field--name-description:after,
+          .page-node-type-restaurant .node__content .field--name-field-gear > .field__item .content a .field--name-description:after,
+          .page-node-type-hike .node__content .field--name-field-coupons > .field__item .content a .field--name-description:after,
+          .page-node-type-hike .node__content .field--name-field-gear > .field__item .content a .field--name-description:after {
             content: '\f35d';
             font-family: 'Font Awesome 5 Free';
             font-weight: 900;
             margin-left: 0.5em;
-            color: #2bb3bc; }
+            color: #2bb3bc;
+            position: absolute;
+            top: 0;
+            right: 0; }
+
+.page-node-type-attraction .node__content .field--name-field-time-year,
+.page-node-type-attraction .node__content .field--name-field-time-day,
+.page-node-type-lodging .node__content .field--name-field-time-year,
+.page-node-type-lodging .node__content .field--name-field-time-day,
+.page-node-type-restaurant .node__content .field--name-field-time-year,
+.page-node-type-restaurant .node__content .field--name-field-time-day,
+.page-node-type-hike .node__content .field--name-field-time-year,
+.page-node-type-hike .node__content .field--name-field-time-day {
+  font-weight: 900;
+  color: #666;
+  text-transform: uppercase;
+  line-height: 28px;
+  padding-left: 35px;
+  margin: 0.25em 0;
+  font-size: 0.8em; }
+  .page-node-type-attraction .node__content .field--name-field-time-year:before,
+  .page-node-type-attraction .node__content .field--name-field-time-day:before,
+  .page-node-type-lodging .node__content .field--name-field-time-year:before,
+  .page-node-type-lodging .node__content .field--name-field-time-day:before,
+  .page-node-type-restaurant .node__content .field--name-field-time-year:before,
+  .page-node-type-restaurant .node__content .field--name-field-time-day:before,
+  .page-node-type-hike .node__content .field--name-field-time-year:before,
+  .page-node-type-hike .node__content .field--name-field-time-day:before {
+    content: '\f155';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 0.9em;
+    width: 28px;
+    height: 28px;
+    color: #fff;
+    background: -webkit-gradient(linear, left top, right bottom, from(#3ef5d4), to(#2bb3bc));
+    background: -o-linear-gradient(top left, #3ef5d4, #2bb3bc);
+    background: linear-gradient(to bottom right, #3ef5d4, #2bb3bc);
+    border-radius: 28px;
+    text-align: center;
+    line-height: 28px;
+    position: absolute;
+    left: 0; }
+
+.page-node-type-attraction .node__content .field--name-field-time-day,
+.page-node-type-lodging .node__content .field--name-field-time-day,
+.page-node-type-restaurant .node__content .field--name-field-time-day,
+.page-node-type-hike .node__content .field--name-field-time-day {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap; }
+  .page-node-type-attraction .node__content .field--name-field-time-day:before,
+  .page-node-type-lodging .node__content .field--name-field-time-day:before,
+  .page-node-type-restaurant .node__content .field--name-field-time-day:before,
+  .page-node-type-hike .node__content .field--name-field-time-day:before {
+    content: '\f017'; }
+  .page-node-type-attraction .node__content .field--name-field-time-day .field__item,
+  .page-node-type-lodging .node__content .field--name-field-time-day .field__item,
+  .page-node-type-restaurant .node__content .field--name-field-time-day .field__item,
+  .page-node-type-hike .node__content .field--name-field-time-day .field__item {
+    padding: 0 0.25em 0 0; }
+    .page-node-type-attraction .node__content .field--name-field-time-day .field__item:after,
+    .page-node-type-lodging .node__content .field--name-field-time-day .field__item:after,
+    .page-node-type-restaurant .node__content .field--name-field-time-day .field__item:after,
+    .page-node-type-hike .node__content .field--name-field-time-day .field__item:after {
+      content: ','; }
+    .page-node-type-attraction .node__content .field--name-field-time-day .field__item:last-child,
+    .page-node-type-lodging .node__content .field--name-field-time-day .field__item:last-child,
+    .page-node-type-restaurant .node__content .field--name-field-time-day .field__item:last-child,
+    .page-node-type-hike .node__content .field--name-field-time-day .field__item:last-child {
+      padding: 0; }
+      .page-node-type-attraction .node__content .field--name-field-time-day .field__item:last-child:after,
+      .page-node-type-lodging .node__content .field--name-field-time-day .field__item:last-child:after,
+      .page-node-type-restaurant .node__content .field--name-field-time-day .field__item:last-child:after,
+      .page-node-type-hike .node__content .field--name-field-time-day .field__item:last-child:after {
+        content: ''; }
+
+.page-node-type-attraction .node__content .field--name-field-time-year,
+.page-node-type-lodging .node__content .field--name-field-time-year,
+.page-node-type-restaurant .node__content .field--name-field-time-year,
+.page-node-type-hike .node__content .field--name-field-time-year {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap; }
+  .page-node-type-attraction .node__content .field--name-field-time-year:before,
+  .page-node-type-lodging .node__content .field--name-field-time-year:before,
+  .page-node-type-restaurant .node__content .field--name-field-time-year:before,
+  .page-node-type-hike .node__content .field--name-field-time-year:before {
+    content: '\f57d'; }
+  .page-node-type-attraction .node__content .field--name-field-time-year .field__item,
+  .page-node-type-lodging .node__content .field--name-field-time-year .field__item,
+  .page-node-type-restaurant .node__content .field--name-field-time-year .field__item,
+  .page-node-type-hike .node__content .field--name-field-time-year .field__item {
+    padding: 0 0.25em 0 0; }
+    .page-node-type-attraction .node__content .field--name-field-time-year .field__item:after,
+    .page-node-type-lodging .node__content .field--name-field-time-year .field__item:after,
+    .page-node-type-restaurant .node__content .field--name-field-time-year .field__item:after,
+    .page-node-type-hike .node__content .field--name-field-time-year .field__item:after {
+      content: ','; }
+    .page-node-type-attraction .node__content .field--name-field-time-year .field__item:last-child,
+    .page-node-type-lodging .node__content .field--name-field-time-year .field__item:last-child,
+    .page-node-type-restaurant .node__content .field--name-field-time-year .field__item:last-child,
+    .page-node-type-hike .node__content .field--name-field-time-year .field__item:last-child {
+      padding: 0; }
+      .page-node-type-attraction .node__content .field--name-field-time-year .field__item:last-child:after,
+      .page-node-type-lodging .node__content .field--name-field-time-year .field__item:last-child:after,
+      .page-node-type-restaurant .node__content .field--name-field-time-year .field__item:last-child:after,
+      .page-node-type-hike .node__content .field--name-field-time-year .field__item:last-child:after {
+        content: ''; }
+
+.page-node-type-attraction .node__content .field--name-field-features,
+.page-node-type-lodging .node__content .field--name-field-features,
+.page-node-type-restaurant .node__content .field--name-field-features,
+.page-node-type-hike .node__content .field--name-field-features {
+  margin-top: -0.75em;
+  padding: 0.75em;
+  margin-bottom: 1.25em;
+  border-radius: 5px;
+  background: #f1f1f1; }
+  .page-node-type-attraction .node__content .field--name-field-features .field__label,
+  .page-node-type-lodging .node__content .field--name-field-features .field__label,
+  .page-node-type-restaurant .node__content .field--name-field-features .field__label,
+  .page-node-type-hike .node__content .field--name-field-features .field__label {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.7em;
+    font-weight: 900;
+    margin-bottom: 0.35em; }
+  .page-node-type-attraction .node__content .field--name-field-features .field__items,
+  .page-node-type-lodging .node__content .field--name-field-features .field__items,
+  .page-node-type-restaurant .node__content .field--name-field-features .field__items,
+  .page-node-type-hike .node__content .field--name-field-features .field__items {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap; }
+  .page-node-type-attraction .node__content .field--name-field-features .field__item,
+  .page-node-type-lodging .node__content .field--name-field-features .field__item,
+  .page-node-type-restaurant .node__content .field--name-field-features .field__item,
+  .page-node-type-hike .node__content .field--name-field-features .field__item {
+    font-size: 0.9em;
+    width: 100%;
+    padding-left: 1.25em;
+    position: relative;
+    line-height: 1.2;
+    margin-bottom: 0.35em; }
+    .page-node-type-attraction .node__content .field--name-field-features .field__item:before,
+    .page-node-type-lodging .node__content .field--name-field-features .field__item:before,
+    .page-node-type-restaurant .node__content .field--name-field-features .field__item:before,
+    .page-node-type-hike .node__content .field--name-field-features .field__item:before {
+      content: '\f058';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      color: #2bb3bc;
+      position: absolute;
+      left: 0;
+      top: 1px; }
 
 .page-node-type-attraction .node__content .field--name-field-address,
 .page-node-type-lodging .node__content .field--name-field-address,
-.page-node-type-restaurant .node__content .field--name-field-address {
+.page-node-type-restaurant .node__content .field--name-field-address,
+.page-node-type-hike .node__content .field--name-field-address {
   text-align: center;
   border: 1px solid #ccc;
   padding: 1em; }
   .page-node-type-attraction .node__content .field--name-field-address p,
   .page-node-type-lodging .node__content .field--name-field-address p,
-  .page-node-type-restaurant .node__content .field--name-field-address p {
+  .page-node-type-restaurant .node__content .field--name-field-address p,
+  .page-node-type-hike .node__content .field--name-field-address p {
     margin-bottom: 0; }
   .page-node-type-attraction .node__content .field--name-field-address .organization,
   .page-node-type-lodging .node__content .field--name-field-address .organization,
-  .page-node-type-restaurant .node__content .field--name-field-address .organization {
+  .page-node-type-restaurant .node__content .field--name-field-address .organization,
+  .page-node-type-hike .node__content .field--name-field-address .organization {
     font-weight: 700; }
+
+.page-node-type-attraction .node__content .field--name-field-map.field--type-geolocation,
+.page-node-type-lodging .node__content .field--name-field-map.field--type-geolocation,
+.page-node-type-restaurant .node__content .field--name-field-map.field--type-geolocation,
+.page-node-type-hike .node__content .field--name-field-map.field--type-geolocation {
+  text-align: center;
+  background: -webkit-gradient(linear, left top, right bottom, from(#3ef5d4), to(#2bb3bc));
+  background: -o-linear-gradient(top left, #3ef5d4, #2bb3bc);
+  background: linear-gradient(to bottom right, #3ef5d4, #2bb3bc);
+  color: #fff;
+  padding: 1em;
+  font-weight: 700; }
 
 .page-node-type-attraction .node__content .field--name-field-website,
 .page-node-type-lodging .node__content .field--name-field-website,
-.page-node-type-restaurant .node__content .field--name-field-website {
+.page-node-type-restaurant .node__content .field--name-field-website,
+.page-node-type-hike .node__content .field--name-field-website {
   text-transform: none;
   font-weight: 400; }
   .page-node-type-attraction .node__content .field--name-field-website:before,
   .page-node-type-lodging .node__content .field--name-field-website:before,
-  .page-node-type-restaurant .node__content .field--name-field-website:before {
+  .page-node-type-restaurant .node__content .field--name-field-website:before,
+  .page-node-type-hike .node__content .field--name-field-website:before {
     content: '\f245'; }
 
 @media (min-width: 768px) {
   .page-node-type-attraction .node__content .field--name-field-category,
   .page-node-type-attraction .node__content .field--name-field-lodging-category,
+  .page-node-type-attraction .node__content .field--name-field-hike-type,
   .page-node-type-attraction .node__content .field--name-field-cuisine,
   .page-node-type-lodging .node__content .field--name-field-category,
   .page-node-type-lodging .node__content .field--name-field-lodging-category,
+  .page-node-type-lodging .node__content .field--name-field-hike-type,
   .page-node-type-lodging .node__content .field--name-field-cuisine,
   .page-node-type-restaurant .node__content .field--name-field-category,
   .page-node-type-restaurant .node__content .field--name-field-lodging-category,
-  .page-node-type-restaurant .node__content .field--name-field-cuisine {
+  .page-node-type-restaurant .node__content .field--name-field-hike-type,
+  .page-node-type-restaurant .node__content .field--name-field-cuisine,
+  .page-node-type-hike .node__content .field--name-field-category,
+  .page-node-type-hike .node__content .field--name-field-lodging-category,
+  .page-node-type-hike .node__content .field--name-field-hike-type,
+  .page-node-type-hike .node__content .field--name-field-cuisine {
     padding-left: 1.25rem;
     padding-right: 1.25rem; } }
 
 @media (min-width: 1024px) {
   .page-node-type-attraction .node__content .field--name-field-category,
-  .page-node-type-attraction .node__content .field--name-field-lodging-categorym .field--name-field-cuisine,
+  .page-node-type-attraction .node__content .field--name-field-lodging-category,
+  .page-node-type-attraction .node__content .field--name-field-hike-type,
+  .page-node-type-attraction .node__content .field--name-field-cuisine,
   .page-node-type-lodging .node__content .field--name-field-category,
-  .page-node-type-lodging .node__content .field--name-field-lodging-categorym .field--name-field-cuisine,
+  .page-node-type-lodging .node__content .field--name-field-lodging-category,
+  .page-node-type-lodging .node__content .field--name-field-hike-type,
+  .page-node-type-lodging .node__content .field--name-field-cuisine,
+  .page-node-type-hike .node__content .field--name-field-category,
+  .page-node-type-hike .node__content .field--name-field-lodging-category,
+  .page-node-type-hike .node__content .field--name-field-hike-type,
+  .page-node-type-hike .node__content .field--name-field-cuisine,
   .page-node-type-restaurant .node__content .field--name-field-category,
-  .page-node-type-restaurant .node__content .field--name-field-lodging-categorym .field--name-field-cuisine {
+  .page-node-type-restaurant .node__content .field--name-field-lodging-category,
+  .page-node-type-restaurant .node__content .field--name-field-hike-type,
+  .page-node-type-restaurant .node__content .field--name-field-cuisine {
     padding-left: 1.5rem;
     padding-right: 1.5rem; } }
 
 .page-node-type-attraction .node__content .field--name-field-price,
-.page-node-type-attraction .node__content .field--name-field-indoor-outdoor,
-.page-node-type-attraction .node__content .field--name-field-hours {
+.page-node-type-attraction .node__content .field--name-field-indoor-outdoor {
   font-weight: 900;
   color: #666;
   text-transform: uppercase;
-  line-height: 32px;
-  padding-left: 40px;
+  line-height: 28px;
+  padding-left: 35px;
   margin: 0.25em 0;
-  letter-spacing: 0.05em; }
+  font-size: 0.8em; }
   .page-node-type-attraction .node__content .field--name-field-price:before,
-  .page-node-type-attraction .node__content .field--name-field-indoor-outdoor:before,
-  .page-node-type-attraction .node__content .field--name-field-hours:before {
+  .page-node-type-attraction .node__content .field--name-field-indoor-outdoor:before {
     content: '\f155';
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
     font-size: 0.9em;
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     color: #fff;
     background: -webkit-gradient(linear, left top, right bottom, from(#3ef5d4), to(#2bb3bc));
     background: -o-linear-gradient(top left, #3ef5d4, #2bb3bc);
     background: linear-gradient(to bottom right, #3ef5d4, #2bb3bc);
-    border-radius: 32px;
+    border-radius: 28px;
     text-align: center;
-    line-height: 32px;
+    line-height: 28px;
     position: absolute;
     left: 0; }
 
@@ -1779,74 +2087,135 @@ form .button {
 .page-node-type-attraction .node__content .field--name-field-indoor-outdoor:before {
   content: '\f6c4'; }
 
-.page-node-type-attraction .node__content .field--name-field-hours:before {
-  content: '\f017'; }
+.page-node-type-attraction .node__content .field--name-field-hours {
+  margin-bottom: 1.25em; }
+  .page-node-type-attraction .node__content .field--name-field-hours .field__label {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.7em;
+    font-weight: 900;
+    margin-bottom: 0.35em; }
+  .page-node-type-attraction .node__content .field--name-field-hours .field__items {
+    line-height: 1.3;
+    text-transform: none; }
+    .page-node-type-attraction .node__content .field--name-field-hours .field__items .paragraph {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-flow: row nowrap;
+              flex-flow: row nowrap;
+      margin-bottom: 0.25em;
+      font-size: 0.9em;
+      letter-spacing: 0;
+      color: #000;
+      background: #f1f1f1;
+      border-radius: 3px;
+      padding: 0.25em 0.75em; }
+      .page-node-type-attraction .node__content .field--name-field-hours .field__items .paragraph .field__label {
+        display: none; }
+    .page-node-type-attraction .node__content .field--name-field-hours .field__items .field--name-field-day {
+      margin-right: 0.5em;
+      width: 5.5em;
+      font-weight: 400; }
+      .page-node-type-attraction .node__content .field--name-field-hours .field__items .field--name-field-day:after {
+        content: ':'; }
+    .page-node-type-attraction .node__content .field--name-field-hours .field__items .field--name-field-open {
+      padding-right: 0.125em;
+      font-weight: 300;
+      position: relative;
+      text-transform: lowercase; }
+      .page-node-type-attraction .node__content .field--name-field-hours .field__items .field--name-field-open:after {
+        content: '-';
+        position: absolute;
+        top: 0;
+        right: 0; }
+    .page-node-type-attraction .node__content .field--name-field-hours .field__items .field--name-field-closed {
+      padding-left: 0.25em;
+      font-weight: 300;
+      text-transform: lowercase; }
 
-.page-node-type-attraction .node__content .field--name-field-hours .field__label {
-  display: inline-block; }
+@media (min-width: 768px) {
+  .page-node-type-attraction .node__content .field--name-field-features .field__item {
+    width: 50%;
+    padding-right: 1em; } }
 
-.page-node-type-attraction .node__content .field--name-field-hours .field__items {
-  line-height: 1.3;
-  text-transform: none; }
-  .page-node-type-attraction .node__content .field--name-field-hours .field__items .paragraph {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
-    margin-bottom: 0.25em;
+@media (min-width: 1024px) {
+  .page-node-type-attraction .node__content .field--name-field-features .field__item {
+    width: 33.3333%;
+    padding-right: 1em; } }
+
+@media (min-width: 1340px) {
+  .page-node-type-attraction .node__content .field--name-field-features .field__item {
+    width: 25%;
+    padding-right: 1em; } }
+
+.page-node-type-hike .node__content .utg-layout--hike .field--name-field-difficult,
+.page-node-type-hike .node__content .utg-layout--hike .field--name-field-distance {
+  font-weight: 900;
+  color: #666;
+  text-transform: uppercase;
+  line-height: 28px;
+  padding-left: 35px;
+  margin: 0.25em 0;
+  font-size: 0.8em; }
+  .page-node-type-hike .node__content .utg-layout--hike .field--name-field-difficult:before,
+  .page-node-type-hike .node__content .utg-layout--hike .field--name-field-distance:before {
+    content: '\f155';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
     font-size: 0.9em;
-    letter-spacing: 0;
-    color: #000; }
-    .page-node-type-attraction .node__content .field--name-field-hours .field__items .paragraph .field__label {
-      display: none; }
-  .page-node-type-attraction .node__content .field--name-field-hours .field__items .field--name-field-day {
-    margin-right: 0.5em;
-    width: 5.5em;
-    text-align: right; }
-    .page-node-type-attraction .node__content .field--name-field-hours .field__items .field--name-field-day:after {
-      content: ':'; }
-  .page-node-type-attraction .node__content .field--name-field-hours .field__items .field--name-field-open {
-    padding-right: 0.125em;
-    font-weight: 300;
-    position: relative;
-    text-transform: lowercase; }
-    .page-node-type-attraction .node__content .field--name-field-hours .field__items .field--name-field-open:after {
-      content: '-';
-      position: absolute;
-      top: 0;
-      right: 0; }
-  .page-node-type-attraction .node__content .field--name-field-hours .field__items .field--name-field-closed {
-    padding-left: 0.25em;
-    font-weight: 300;
-    text-transform: lowercase; }
+    width: 28px;
+    height: 28px;
+    color: #fff;
+    background: -webkit-gradient(linear, left top, right bottom, from(#3ef5d4), to(#2bb3bc));
+    background: -o-linear-gradient(top left, #3ef5d4, #2bb3bc);
+    background: linear-gradient(to bottom right, #3ef5d4, #2bb3bc);
+    border-radius: 28px;
+    text-align: center;
+    line-height: 28px;
+    position: absolute;
+    left: 0; }
+
+.page-node-type-hike .node__content .utg-layout--hike .field--name-field-distance {
+  border-top: 1px solid #ccc;
+  margin-top: 1em;
+  padding-top: 0.5em; }
+  .page-node-type-hike .node__content .utg-layout--hike .field--name-field-distance:after {
+    content: ' Miles'; }
+
+.page-node-type-hike .node__content .utg-layout--hike .field--name-field-difficult:before {
+  content: '\f583'; }
+
+.page-node-type-hike .node__content .utg-layout--hike .field--name-field-distance:before {
+  content: '\f6ec'; }
 
 .page-node-type-lodging .node__content .utg-layout--lodging .field--name-field-hotel-class,
 .page-node-type-lodging .node__content .utg-layout--lodging .field--name-field-lodging-category {
   font-weight: 900;
   color: #666;
   text-transform: uppercase;
-  line-height: 32px;
-  padding-left: 40px;
+  line-height: 28px;
+  padding-left: 35px;
   margin: 0.25em 0;
-  letter-spacing: 0.05em; }
+  letter-spacing: 0.05em;
+  font-size: 0.8em; }
   .page-node-type-lodging .node__content .utg-layout--lodging .field--name-field-hotel-class:before,
   .page-node-type-lodging .node__content .utg-layout--lodging .field--name-field-lodging-category:before {
     content: '\f155';
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
     font-size: 0.9em;
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     color: #fff;
     background: -webkit-gradient(linear, left top, right bottom, from(#3ef5d4), to(#2bb3bc));
     background: -o-linear-gradient(top left, #3ef5d4, #2bb3bc);
     background: linear-gradient(to bottom right, #3ef5d4, #2bb3bc);
-    border-radius: 32px;
+    border-radius: 28px;
     text-align: center;
-    line-height: 32px;
+    line-height: 28px;
     position: absolute;
     left: 0; }
 
@@ -1917,24 +2286,25 @@ form .button {
   font-weight: 900;
   color: #666;
   text-transform: uppercase;
-  line-height: 32px;
-  padding-left: 40px;
+  line-height: 28px;
+  padding-left: 35px;
   margin: 0.25em 0;
-  letter-spacing: 0.05em; }
+  letter-spacing: 0.05em;
+  font-size: 0.8em; }
   .page-node-type-restaurant .node__content .utg-layout--restaurant .field--name-field-cuisine:before {
     content: '\f155';
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
     font-size: 0.9em;
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     color: #fff;
     background: -webkit-gradient(linear, left top, right bottom, from(#3ef5d4), to(#2bb3bc));
     background: -o-linear-gradient(top left, #3ef5d4, #2bb3bc);
     background: linear-gradient(to bottom right, #3ef5d4, #2bb3bc);
-    border-radius: 32px;
+    border-radius: 28px;
     text-align: center;
-    line-height: 32px;
+    line-height: 28px;
     position: absolute;
     left: 0; }
 
@@ -1945,7 +2315,6 @@ form .button {
   .page-node-type-restaurant .node__content .utg-layout--restaurant .block-layout-builder .field--name-field-cuisine a {
     background: none;
     border: 0;
-    margin-top: 0;
     font-size: 1rem;
     font-weight: 900;
     color: #666;
@@ -1958,12 +2327,10 @@ form .button {
     display: inline; }
     .page-node-type-restaurant .node__content .utg-layout--restaurant .block-layout-builder .field--name-field-cuisine a:after {
       content: ','; }
-  .page-node-type-restaurant .node__content .utg-layout--restaurant .block-layout-builder .field--name-field-cuisine .field__item {
-    padding: 0 0.25em 0 0; }
-    .page-node-type-restaurant .node__content .utg-layout--restaurant .block-layout-builder .field--name-field-cuisine .field__item:last-child {
-      padding: 0; }
-      .page-node-type-restaurant .node__content .utg-layout--restaurant .block-layout-builder .field--name-field-cuisine .field__item:last-child a:after {
-        content: ''; }
+  .page-node-type-restaurant .node__content .utg-layout--restaurant .block-layout-builder .field--name-field-cuisine .field__item:last-child {
+    padding: 0; }
+    .page-node-type-restaurant .node__content .utg-layout--restaurant .block-layout-builder .field--name-field-cuisine .field__item:last-child a:after {
+      content: ''; }
   .page-node-type-restaurant .node__content .utg-layout--restaurant .block-layout-builder .field--name-field-cuisine:before {
     content: '\f2e7'; }
 
@@ -1993,10 +2360,14 @@ form .button {
     max-height: 200px;
     width: 100%; }
 
+.row-view .view-content .views-row {
+  margin-bottom: 1em; }
+
 .square-view-item a {
   display: block;
   position: relative;
-  border-radius: 5px; }
+  border-radius: 5px;
+  overflow: hidden; }
   .square-view-item a h4 {
     position: absolute;
     bottom: 0;
@@ -2021,6 +2392,141 @@ form .button {
       display: block;
       border-radius: 5px; }
 
+.square-view-item-description a {
+  display: block;
+  position: relative;
+  border-radius: 5px;
+  text-decoration: none;
+  overflow: hidden; }
+  .square-view-item-description a .item-text {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    position: absolute;
+    top: 0; }
+  .square-view-item-description a .item-title {
+    padding: 0.65em 1em;
+    font-weight: 900;
+    color: #fff;
+    background: -webkit-gradient(linear, left top, right bottom, from(rgba(62, 245, 212, 0.85)), to(rgba(43, 179, 188, 0.85)));
+    background: -o-linear-gradient(top left, rgba(62, 245, 212, 0.85), rgba(43, 179, 188, 0.85));
+    background: linear-gradient(to bottom right, rgba(62, 245, 212, 0.85), rgba(43, 179, 188, 0.85));
+    margin: 0;
+    font-size: 1em;
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end; }
+  .square-view-item-description a .item-description {
+    padding: 0.65em 1em;
+    color: #000;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.9)), to(rgba(255, 255, 255, 0.8)));
+    background: -o-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8));
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8));
+    margin: 0;
+    font-size: 0.9em;
+    width: 100%;
+    border-radius: 0 0 5px 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
+  .square-view-item-description a .item-date {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0.7em;
+    font-weight: 700;
+    color: #fff;
+    background: -webkit-gradient(linear, left top, right bottom, from(#ffa900), to(#ff5c00));
+    background: -o-linear-gradient(top left, #ffa900, #ff5c00);
+    background: linear-gradient(to bottom right, #ffa900, #ff5c00);
+    border-radius: 0 5px 0 5px;
+    padding: 0.125em 0.75em;
+    -webkit-box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25);
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25); }
+  .square-view-item-description a .item-image {
+    border-radius: 5px; }
+    .square-view-item-description a .item-image img {
+      display: block;
+      border-radius: 5px; }
+
+.square-view-item-product a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  border-radius: 5px;
+  text-decoration: none;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); }
+  .square-view-item-product a .item-image {
+    padding: 5%; }
+    .square-view-item-product a .item-image img {
+      display: block;
+      max-width: 80px;
+      min-width: 80px; }
+  .square-view-item-product a .item-text {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    padding: 5% 5% 5% 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .square-view-item-product a .item-text:after {
+      content: '\f35d';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      font-size: 15px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px; }
+  .square-view-item-product a .item-title {
+    font-weight: 900;
+    margin: 0 0 0.25em;
+    font-size: 1em;
+    color: #2bb3bc;
+    width: 100%;
+    padding-right: 30px; }
+  .square-view-item-product a .item-description {
+    font-size: 0.8em;
+    color: #000;
+    width: 100%; }
+    .square-view-item-product a .item-description > *:first-child {
+      margin-top: 0; }
+    .square-view-item-product a .item-description > *:last-child {
+      margin-bottom: 0; }
+
 @media (min-width: 768px) {
   .view-content.owl-carousel {
     margin: 0 -1.25rem;
@@ -2030,7 +2536,10 @@ form .button {
   .square-view .view-content .views-row {
     max-width: calc(50% - 1em); }
   .square-view .view-content .square-view-item a > div > img {
-    max-height: none; } }
+    max-height: none; }
+  .square-view-item-product a .item-image img {
+    max-width: 120px;
+    min-width: 120px; } }
 
 @media (min-width: 1024px) {
   .view-content.owl-carousel {
@@ -2039,8 +2548,14 @@ form .button {
     .view-content.owl-carousel .owl-item {
       padding-left: 1.5rem; }
   .square-view .view-content .views-row {
-    max-width: calc(33.3333% - 1em); } }
+    max-width: calc(33.3333% - 1em); }
+  .square-view-item-product a .item-image img {
+    max-width: 150px;
+    min-width: 150px; } }
 
 @media (min-width: 1340px) {
   .square-view .view-content .views-row {
-    max-width: calc(25% - 1em); } }
+    max-width: calc(25% - 1em); }
+  .square-view-item-product a .item-image img {
+    max-width: 200px;
+    min-width: 200px; } }

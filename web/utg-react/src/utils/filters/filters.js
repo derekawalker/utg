@@ -11,7 +11,7 @@ export const findPropertyValues = (data, property) => {
   values = Array.from(new Set(values));
 
   // Remove stuff we don't want in there.
-  let valuesToRemove = [false, "false", "False", ""];
+  let valuesToRemove = [false, "false", "False", "", null];
   values = values.filter(value => valuesToRemove.indexOf(value) === -1);
 
   let valuesObject;
@@ -102,6 +102,38 @@ export const findPropertyValues = (data, property) => {
           return {
             key: value,
             text: "5 Stars",
+            value: value
+          };
+        default:
+          return {
+            key: value,
+            text: value,
+            value: value
+          };
+      }
+    });
+  }
+
+  if (property === "difficulty") {
+    // Format the array as an object.
+    valuesObject = _.map(values, value => {
+      switch (value) {
+        case "0":
+          return {
+            key: value,
+            text: "Easy",
+            value: value
+          };
+        case "1":
+          return {
+            key: value,
+            text: "Moderate",
+            value: value
+          };
+        case "2":
+          return {
+            key: value,
+            text: "Strenuous",
             value: value
           };
         default:

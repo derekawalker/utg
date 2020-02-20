@@ -112,3 +112,9 @@ export const Free = styled.span`
     margin-top: 0;
   }
 `;
+
+export const HikeRating = styled.div`
+  i.clockwise.rotated.icon {
+    transform: rotate(45deg) skew(10deg, 10deg);
+  }
+`;

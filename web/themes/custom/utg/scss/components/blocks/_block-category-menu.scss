@@ -66,6 +66,12 @@
         }
       }
 
+      &[data-drupal-link-system-path='hikes'] {
+        &:before {
+          content: '\f6ec';
+        }
+      }
+
       &[href='/coupons'] {
         &:before {
           content: '\f02c';

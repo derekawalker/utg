@@ -5,7 +5,7 @@ import { useFetchPlaces } from "./utils/hooks/useFetchPlaces";
 const AttractionsApp = props => {
   // const endpoint = "./data/attractions.json";
   // console.log("change endpoint!");
-  const endpoint = "/api/places/attraction";
+  const endpoint = "/api/places/attraction+hike";
 
   const { data, loading, error } = useFetchPlaces(endpoint);
 

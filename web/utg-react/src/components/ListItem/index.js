@@ -2,7 +2,6 @@ import React from "react";
 import { Icon, Header, Label } from "semantic-ui-react";
 import _ from "lodash";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { lowerUnder } from "../../utils/format/format";
 
 // Styled Components.
 import {
@@ -13,7 +12,8 @@ import {
   DataWrapper,
   Caps,
   LabelWrapper,
-  Free
+  Free,
+  HikeRating
 } from "./styles";
 
 const ListItem = props => {
@@ -25,6 +25,7 @@ const ListItem = props => {
     price,
     price_food,
     star_rating,
+    difficulty,
     cuisine,
     indoor,
     type,
@@ -119,11 +120,25 @@ const ListItem = props => {
     }
   };
 
-  const handleParamChange = city => {
-    setParams({
-      ...params,
-      city: city
-    });
+  // Custom field output.
+  const difficultyIcons = difficulty => {
+    let color = "green";
+    let icon = "circle";
+    let rotated = null;
+
+    if (Number(difficulty) === 1) {
+      color = "blue";
+      icon = "square";
+    }
+
+    if (Number(difficulty) === 2) {
+      color = "black";
+      icon = "square";
+      rotated = "clockwise";
+    }
+    const rating = <Icon fitted rotated={rotated} name={icon} color={color} />;
+
+    return <HikeRating>{rating}</HikeRating>;
   };
 
   return (
@@ -134,7 +149,7 @@ const ListItem = props => {
       <DataWrapper>
         <PriceWrapper>
           {price ? <div>{priceIcons(price)}</div> : null}
-
+          {difficulty ? <div>{difficultyIcons(difficulty)}</div> : null}
           {price_food ? <div>{priceIcons(price_food)}</div> : null}
           {star_rating ? <div>{starIcons(star_rating)}</div> : null}
         </PriceWrapper>
@@ -142,11 +157,7 @@ const ListItem = props => {
           <h3>{title}</h3>
           <p>
             <Caps>{type}</Caps> in{" "}
-            <Caps
-              onClick={() => {
-                handleParamChange(lowerUnder(location));
-              }}
-            >
+            <Caps>
               <span>{location}</span>
             </Caps>
           </p>

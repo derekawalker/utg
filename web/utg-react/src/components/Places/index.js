@@ -37,16 +37,21 @@ const defaultFilters = {
   price: [],
   food_types: [],
   lodging_types: [],
-  star_ratings: []
+  star_ratings: [],
+  hike_type: [],
+  difficulty: []
 };
 
 let placeTypes = [];
+let attractionTypes = [];
 let indoorTypes = [];
 let placePrices = [];
 let foodTypes = [];
 let lodgingTypes = [];
 let starRatings = [];
 let locations = [];
+let hikeTypes = [];
+let hikeDifficulties = [];
 
 const Places = props => {
   const [places, setPlaces] = useState([]);
@@ -70,6 +75,9 @@ const Places = props => {
     // Get "types".
     placeTypes = findPropertyValues(data, "type");
 
+    // Get "types".
+    attractionTypes = findPropertyValues(data, "type");
+
     // Get location values.
     locations = findPropertyValues(data, "location");
 
@@ -78,6 +86,12 @@ const Places = props => {
 
     // Get price values.
     placePrices = findPropertyValues(data, "price");
+
+    // Get hike_type values.
+    hikeTypes = findPropertyValues(data, "hike_type");
+
+    // Get hike_type values.
+    hikeDifficulties = findPropertyValues(data, "difficulty");
 
     // Get cuisine type values.
     foodTypes = findPropertyValues(data, "cuisine");
@@ -109,7 +123,9 @@ const Places = props => {
         price: [],
         food_types: [],
         lodging_types: [],
-        star_ratings: []
+        star_ratings: [],
+        hike_type: [],
+        difficulty: []
       });
     } else {
       setFilters({ ...filters, [name]: value });
@@ -209,6 +225,33 @@ const Places = props => {
     );
   }
 
+  if (filters.type === "hike" || type === "hike") {
+    filterSet = (
+      <Segment secondary>
+        <Form.Group widths="equal">
+          <Form.Select
+            label="Hike Type"
+            placeholder="Hike Type"
+            onChange={handleFilterChange}
+            name="hike_type"
+            options={hikeTypes}
+            value={filters.hike_type}
+            multiple
+          />
+          <Form.Select
+            label="Difficulty"
+            placeholder="Difficulty"
+            onChange={handleFilterChange}
+            name="difficulty"
+            options={hikeDifficulties}
+            value={filters.difficulty}
+            multiple
+          />
+        </Form.Group>
+      </Segment>
+    );
+  }
+
   if (filters.type === "restaurant" || type === "restaurant") {
     filterSet = (
       <Segment secondary>
@@ -297,6 +340,16 @@ const Places = props => {
                 value={filters.type}
               />
             ) : null}
+            {type === "attraction" || type === "hike" ? (
+              <Form.Select
+                label="Type"
+                placeholder="Type"
+                onChange={handleFilterChange}
+                name="type"
+                options={attractionTypes}
+                value={filters.type}
+              />
+            ) : null}
             <Form.Select
               search
               label="Location"
@@ -343,52 +396,88 @@ const Places = props => {
   if (data.length) {
     if (filters.type !== "all") {
       filteredData = _.filter(data, place => {
-        return filters.type === place.type.toLowerCase();
+        if (place.type) {
+          return filters.type === place.type.toLowerCase();
+        }
       });
     }
 
     if (filters.location !== "all") {
       filteredData = _.filter(filteredData, place => {
-        return filters.location === place.location;
+        if (place.location) {
+          return filters.location === place.location;
+        }
       });
     }
 
     if (filters.indoor.length) {
       filteredData = _.filter(filteredData, place => {
-        return arrayContainsAnyElementOfArray(filters.indoor, place.indoor);
+        if (place.indoor) {
+          return arrayContainsAnyElementOfArray(filters.indoor, place.indoor);
+        }
       });
     }
 
     if (filters.price.length) {
       filteredData = _.filter(filteredData, place => {
-        return arrayContainsAnyElementOfArray(filters.price, place.price);
+        if (place.price) {
+          return arrayContainsAnyElementOfArray(filters.price, place.price);
+        }
+      });
+    }
+
+    if (filters.hike_type.length) {
+      filteredData = _.filter(filteredData, place => {
+        if (place.hike_type) {
+          return arrayContainsAnyElementOfArray(
+            filters.hike_type,
+            place.hike_type
+          );
+        }
+      });
+    }
+
+    if (filters.difficulty.length) {
+      filteredData = _.filter(filteredData, place => {
+        if (place.difficulty) {
+          return arrayContainsAnyElementOfArray(
+            filters.difficulty,
+            place.difficulty
+          );
+        }
       });
     }
 
     if (filters.star_ratings.length) {
       filteredData = _.filter(filteredData, place => {
-        return arrayContainsAnyElementOfArray(
-          filters.star_ratings,
-          place.star_rating
-        );
+        if (place.star_ratings) {
+          return arrayContainsAnyElementOfArray(
+            filters.star_ratings,
+            place.star_rating
+          );
+        }
       });
     }
 
     if (filters.food_types.length) {
       filteredData = _.filter(filteredData, place => {
-        return arrayContainsAnyElementOfArray(
-          filters.food_types,
-          place.cuisine
-        );
+        if (place.food_types) {
+          return arrayContainsAnyElementOfArray(
+            filters.food_types,
+            place.cuisine
+          );
+        }
       });
     }
 
     if (filters.lodging_types.length) {
       filteredData = _.filter(filteredData, place => {
-        return arrayContainsAnyElementOfArray(
-          filters.lodging_types,
-          place.lodging_type
-        );
+        if (place.lodging_types) {
+          return arrayContainsAnyElementOfArray(
+            filters.lodging_types,
+            place.lodging_type
+          );
+        }
       });
     }
 
