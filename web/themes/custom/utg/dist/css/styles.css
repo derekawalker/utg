@@ -853,7 +853,7 @@ header {
     height: 30px;
     margin: 0;
     width: 100%; }
-  .region-header .search-block-form .form-search {
+  .region-header .search-block-form input.form-search {
     border: 1px solid #ccc;
     border-radius: 20px 0 0 20px;
     border-right: 0;
@@ -951,8 +951,6 @@ header {
           flex-flow: row nowrap;
   width: 100%;
   border-top: 1px solid #ccc;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
   font-size: 0.6em;
   position: -webkit-sticky;
   position: sticky;
@@ -1591,6 +1589,71 @@ form .button {
       position: absolute;
       left: 0;
       top: 1px; }
+
+.page-node-type-attraction .node__content .field--name-field-articles,
+.page-node-type-attraction .node__content .field--name-field-local-reviews,
+.page-node-type-lodging .node__content .field--name-field-articles,
+.page-node-type-lodging .node__content .field--name-field-local-reviews,
+.page-node-type-restaurant .node__content .field--name-field-articles,
+.page-node-type-restaurant .node__content .field--name-field-local-reviews,
+.page-node-type-hike .node__content .field--name-field-articles,
+.page-node-type-hike .node__content .field--name-field-local-reviews {
+  margin-bottom: 1.25em; }
+  .page-node-type-attraction .node__content .field--name-field-articles .field__label,
+  .page-node-type-attraction .node__content .field--name-field-local-reviews .field__label,
+  .page-node-type-lodging .node__content .field--name-field-articles .field__label,
+  .page-node-type-lodging .node__content .field--name-field-local-reviews .field__label,
+  .page-node-type-restaurant .node__content .field--name-field-articles .field__label,
+  .page-node-type-restaurant .node__content .field--name-field-local-reviews .field__label,
+  .page-node-type-hike .node__content .field--name-field-articles .field__label,
+  .page-node-type-hike .node__content .field--name-field-local-reviews .field__label {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.7em;
+    font-weight: 900;
+    margin-bottom: 0.35em; }
+  .page-node-type-attraction .node__content .field--name-field-articles .field__item,
+  .page-node-type-attraction .node__content .field--name-field-local-reviews .field__item,
+  .page-node-type-lodging .node__content .field--name-field-articles .field__item,
+  .page-node-type-lodging .node__content .field--name-field-local-reviews .field__item,
+  .page-node-type-restaurant .node__content .field--name-field-articles .field__item,
+  .page-node-type-restaurant .node__content .field--name-field-local-reviews .field__item,
+  .page-node-type-hike .node__content .field--name-field-articles .field__item,
+  .page-node-type-hike .node__content .field--name-field-local-reviews .field__item {
+    font-size: 0.9em;
+    width: 100%;
+    padding-left: 1.5em;
+    position: relative;
+    line-height: 1.2;
+    margin-bottom: 0.5em; }
+    .page-node-type-attraction .node__content .field--name-field-articles .field__item:before,
+    .page-node-type-attraction .node__content .field--name-field-local-reviews .field__item:before,
+    .page-node-type-lodging .node__content .field--name-field-articles .field__item:before,
+    .page-node-type-lodging .node__content .field--name-field-local-reviews .field__item:before,
+    .page-node-type-restaurant .node__content .field--name-field-articles .field__item:before,
+    .page-node-type-restaurant .node__content .field--name-field-local-reviews .field__item:before,
+    .page-node-type-hike .node__content .field--name-field-articles .field__item:before,
+    .page-node-type-hike .node__content .field--name-field-local-reviews .field__item:before {
+      content: '\f1ea';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      color: #2bb3bc;
+      position: absolute;
+      left: 0;
+      top: 1px; }
+
+.page-node-type-attraction .node__content .field--name-field-local-reviews,
+.page-node-type-lodging .node__content .field--name-field-local-reviews,
+.page-node-type-restaurant .node__content .field--name-field-local-reviews,
+.page-node-type-hike .node__content .field--name-field-local-reviews {
+  padding-bottom: 0.75em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid #ccc; }
+  .page-node-type-attraction .node__content .field--name-field-local-reviews .field__item:before,
+  .page-node-type-lodging .node__content .field--name-field-local-reviews .field__item:before,
+  .page-node-type-restaurant .node__content .field--name-field-local-reviews .field__item:before,
+  .page-node-type-hike .node__content .field--name-field-local-reviews .field__item:before {
+    content: '\f4ff'; }
 
 .page-node-type-attraction .node__content .field--name-field-photos.field__items,
 .page-node-type-lodging .node__content .field--name-field-photos.field__items,

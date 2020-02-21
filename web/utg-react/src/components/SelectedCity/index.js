@@ -23,7 +23,7 @@ const SelectedCity = props => {
 
   // const endpoint = "./data/places.json";
   // console.log("change endpoint!");
-  const endpoint = "/api/places";
+  const endpoint = "/api/places/all";
 
   const { data } = useFetchPlaces(endpoint);
 
