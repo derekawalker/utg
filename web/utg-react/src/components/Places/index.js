@@ -515,7 +515,9 @@ const Places = props => {
         <Paginator
           activePage={paginationSettings.activePage}
           onPageChange={handlePageChange}
-          totalPages={filteredData.length / paginationSettings.perPage}
+          totalPages={Math.ceil(
+            filteredData.length / paginationSettings.perPage
+          )}
         />
       </Fragment>
     );

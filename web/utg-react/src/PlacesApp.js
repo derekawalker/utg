@@ -3,9 +3,9 @@ import Places from "./components/Places";
 import { useFetchPlaces } from "./utils/hooks/useFetchPlaces";
 
 const PlacesApp = props => {
-  // const endpoint = "./data/places.json";
-  // console.log("change endpoint!");
-  const endpoint = "/api/places/all";
+  const endpoint = "./data/places.json";
+  console.log("change endpoint!");
+  // const endpoint = "/api/places/all";
 
   const { data, loading, error } = useFetchPlaces(endpoint);
 
