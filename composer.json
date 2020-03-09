@@ -145,6 +145,14 @@
                 ".editorconfig": "../.editorconfig",
                 ".gitattributes": "../.gitattributes"
             }
+        },
+        "patches": {
+            "drupal/address": {
+                "Drupal Addess fix for feeds": "./web/patches/address-feeds-address-target-2882589-23.patch"
+            },
+            "drupal/geofield": {
+                "Drupal geolocation fix for feeds": "./web/patches/geofield-add-feeds-support-269120-17.patch"
+            }
         }
     }
 }
