@@ -431,31 +431,31 @@ header {
   .region-subbanner .breadcrumb {
     padding: 0.5rem 1.5rem; } }
 
-.field--name-comment {
+.field--name-field-reviews {
   background: rgba(255, 255, 255, 0.5);
   border-radius: 5px;
   margin-top: 2rem;
   padding: 1em 1em 1px; }
-  .field--name-comment h2.title {
+  .field--name-field-reviews h2.title {
     margin-bottom: 1rem;
     margin-top: 0; }
-  .field--name-comment .indented {
+  .field--name-field-reviews .indented {
     margin-left: 0.5rem; }
-    .field--name-comment .indented .comment {
+    .field--name-field-reviews .indented .comment {
       background: -webkit-gradient(linear, left top, left bottom, from(#f1f1f1), color-stop(5%, #fff));
       background: -o-linear-gradient(top, #f1f1f1, #fff 5%);
       background: linear-gradient(to bottom, #f1f1f1, #fff 5%);
       border-radius: 0 0 5px 5px;
       border-top: 0;
       margin-top: -1rem; }
-  .field--name-comment .comment {
+  .field--name-field-reviews .comment {
     background: #fff;
     border: 1px solid #e6e6e6;
     border-radius: 5px;
     margin-bottom: 1rem;
     padding: 1rem 1rem 0.5rem;
     position: relative; }
-    .field--name-comment .comment mark {
+    .field--name-field-reviews .comment mark {
       -webkit-box-align: center;
           -ms-flex-align: center;
               align-items: center;
@@ -478,44 +478,44 @@ header {
       text-transform: lowercase;
       top: -1em;
       width: 40px; }
-      .field--name-comment .comment mark:empty, .field--name-comment .comment mark.hidden {
+      .field--name-field-reviews .comment mark:empty, .field--name-field-reviews .comment mark.hidden {
         height: 0;
         width: 0; }
-    .field--name-comment .comment .comment-permalink {
+    .field--name-field-reviews .comment .comment-permalink {
       font-size: 10px;
       position: absolute;
       right: 1em;
       text-transform: uppercase;
       top: 1em; }
-      .field--name-comment .comment .comment-permalink a {
+      .field--name-field-reviews .comment .comment-permalink a {
         opacity: 0.5;
         text-decoration: none; }
-        .field--name-comment .comment .comment-permalink a:hover, .field--name-comment .comment .comment-permalink a:focus, .field--name-comment .comment .comment-permalink a:active {
+        .field--name-field-reviews .comment .comment-permalink a:hover, .field--name-field-reviews .comment .comment-permalink a:focus, .field--name-field-reviews .comment .comment-permalink a:active {
           opacity: 1; }
-        .field--name-comment .comment .comment-permalink a:after {
+        .field--name-field-reviews .comment .comment-permalink a:after {
           content: '\f0c1';
           display: inline-block;
           font-family: 'Font Awesome 5 Free';
           font-weight: 900;
           margin-left: 3px; }
-    .field--name-comment .comment .comment__submitted {
+    .field--name-field-reviews .comment .comment__submitted {
       margin-bottom: 0; }
-      .field--name-comment .comment .comment__submitted span,
-      .field--name-comment .comment .comment__submitted a {
+      .field--name-field-reviews .comment .comment__submitted span,
+      .field--name-field-reviews .comment .comment__submitted a {
         font-size: 1.125em;
         font-weight: 400;
         text-decoration: none;
         text-transform: capitalize; }
-        .field--name-comment .comment .comment__submitted span:after,
-        .field--name-comment .comment .comment__submitted a:after {
+        .field--name-field-reviews .comment .comment__submitted span:after,
+        .field--name-field-reviews .comment .comment__submitted a:after {
           content: ':'; }
-    .field--name-comment .comment .content .field--name-field-comment {
+    .field--name-field-reviews .comment .content .field--name-field-comment {
       font-style: italic;
       margin-bottom: 0.5em; }
-      .field--name-comment .comment .content .field--name-field-comment:before, .field--name-comment .comment .content .field--name-field-comment:after {
+      .field--name-field-reviews .comment .content .field--name-field-comment:before, .field--name-field-reviews .comment .content .field--name-field-comment:after {
         content: '"';
         font-weight: bold; }
-    .field--name-comment .comment .content .links {
+    .field--name-field-reviews .comment .content .links {
       border-top: 1px dotted #e6e6e6;
       display: -webkit-box;
       display: -ms-flexbox;
@@ -529,11 +529,11 @@ header {
               justify-content: flex-end;
       margin: 0;
       padding: 0.5em 0 0; }
-      .field--name-comment .comment .content .links li {
+      .field--name-field-reviews .comment .content .links li {
         display: block;
         margin-left: 0.5em;
         padding: 0; }
-        .field--name-comment .comment .content .links li a {
+        .field--name-field-reviews .comment .content .links li a {
           display: block;
           font-size: 10px;
           padding: 0;
