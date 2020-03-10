@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "04e1445c7812ea88dad04d95466010af",
+    "content-hash": "2521903fbfbc60bd540c2f0d49bec49b",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1906,6 +1906,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Drupal Addess fix for feeds": "./web/patches/address-feeds-address-target-2882589-23.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2929,6 +2932,9 @@
                         "[web-root]/profiles/README.txt": "assets/scaffold/files/profiles.README.txt",
                         "[web-root]/themes/README.txt": "assets/scaffold/files/themes.README.txt"
                     }
+                },
+                "patches_applied": {
+                    "Drupal layout builder fix for forms": "./web/patches/layout-builder-save-issue-3045171-140.patch"
                 }
             },
             "autoload": {
@@ -5277,6 +5283,59 @@
             "homepage": "https://www.drupal.org/project/token",
             "support": {
                 "source": "https://git.drupalcode.org/project/token"
+            }
+        },
+        {
+            "name": "drupal/views_bulk_edit",
+            "version": "2.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/views_bulk_edit.git",
+                "reference": "8.x-2.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/views_bulk_edit-8.x-2.4.zip",
+                "reference": "8.x-2.4",
+                "shasum": "039ebf9c6ae3cdd0555c7bfb97c629ebfee61ddb"
+            },
+            "require": {
+                "drupal/core": "*",
+                "drupal/views_bulk_operations": "~1.0 | ~2.0 | ~3.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.4",
+                    "datestamp": "1570030085",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Marcin Grabias",
+                    "homepage": "https://www.drupal.org/u/graber"
+                },
+                {
+                    "name": "benjy",
+                    "homepage": "https://www.drupal.org/user/1852732"
+                }
+            ],
+            "description": "Allows bulk edition of entity field values.",
+            "homepage": "https://www.drupal.org/project/views_bulk_edit",
+            "support": {
+                "source": "https://git.drupalcode.org/project/views_bulk_edit",
+                "issues": "https://www.drupal.org/project/issues/views_bulk_edit?version=8.x"
             }
         },
         {

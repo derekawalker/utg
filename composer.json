@@ -69,6 +69,7 @@
         "drupal/responsive_menu": "^2.6",
         "drupal/rest_views": "^1.0@alpha",
         "drupal/simplesamlphp_auth": "^3.1",
+        "drupal/views_bulk_edit": "^2.4",
         "drupal/views_bulk_operations": "^3.6",
         "drupal/views_data_export": "^1.0@beta",
         "drupal/webform": "^5.8",
@@ -152,6 +153,9 @@
             },
             "drupal/geofield": {
                 "Drupal geolocation fix for feeds": "./web/patches/geofield-add-feeds-support-269120-17.patch"
+            },
+            "drupal/core": {
+                "Drupal layout builder fix for forms": "./web/patches/layout-builder-save-issue-3045171-140.patch"
             }
         }
     }

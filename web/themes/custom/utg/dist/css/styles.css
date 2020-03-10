@@ -911,7 +911,7 @@ header {
     width: 200px; }
     .region-header .search-block-form .form-item {
       height: 34px; }
-    .region-header .search-block-form .form-search {
+    .region-header .search-block-form input.form-search {
       height: 34px; }
     .region-header .search-block-form .form-actions:before {
       font-size: 0.875em;
@@ -926,7 +926,7 @@ header {
 @media (min-width: 1024px) {
   .region-header .search-block-form .form-item {
     height: 40px; }
-  .region-header .search-block-form .form-search {
+  .region-header .search-block-form input.form-search {
     height: 40px; }
   .region-header .search-block-form .form-actions:before {
     font-size: 1em;
@@ -1481,6 +1481,12 @@ form .button {
       .page-node-type-hike .node__content .field--name-field-location .field__item a:active {
         background: #fff;
         background: #3ef5d4; }
+
+.page-node-type-attraction .node__content .field--name-field-rating,
+.page-node-type-lodging .node__content .field--name-field-rating,
+.page-node-type-restaurant .node__content .field--name-field-rating,
+.page-node-type-hike .node__content .field--name-field-rating {
+  margin-top: 1em; }
 
 .page-node-type-attraction .node__content .field--name-field-phone,
 .page-node-type-attraction .node__content .field--name-field-website,

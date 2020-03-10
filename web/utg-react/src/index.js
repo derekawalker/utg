@@ -4,6 +4,7 @@ import PlacesApp from "./PlacesApp";
 import AttractionsApp from "./AttractionsApp";
 import LodgingApp from "./LodgingApp";
 import RestaurantsApp from "./RestaurantsApp";
+import HikesApp from "./HikesApp";
 import SelectedCity from "./components/SelectedCity";
 import "semantic-ui-css/semantic.min.css";
 import "./fontawesome";
@@ -13,6 +14,7 @@ const placeSearchExists = document.getElementById("place-search");
 const attractionsSearchExists = document.getElementById("attractions-search");
 const lodgingSearchExists = document.getElementById("lodging-search");
 const restaurantsSearchExists = document.getElementById("restaurants-search");
+const hikesSearchExists = document.getElementById("hikes-search");
 
 if (typeof selectedCityExists !== "undefined" && selectedCityExists !== null) {
   ReactDOM.render(<SelectedCity />, document.getElementById("selected-city"));
@@ -47,4 +49,8 @@ if (
     <RestaurantsApp />,
     document.getElementById("restaurants-search")
   );
+}
+
+if (typeof hikesSearchExists !== "undefined" && hikesSearchExists !== null) {
+  ReactDOM.render(<HikesApp />, document.getElementById("hikes-search"));
 }

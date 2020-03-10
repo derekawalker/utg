@@ -26,7 +26,7 @@ import Paginator from "../../common/components/Paginator";
 import ListItem from "../ListItem";
 
 // Styled Components.
-import { Wrapper, FormSubmit } from "./styles";
+import { Wrapper, FormSubmit, HeadText } from "./styles";
 
 library.add(faCloudSun);
 
@@ -52,6 +52,8 @@ let starRatings = [];
 let locations = [];
 let hikeTypes = [];
 let hikeDifficulties = [];
+let placeName = "Utah";
+let placeTypePhrase = "Things to do";
 
 const Places = props => {
   const [places, setPlaces] = useState([]);
@@ -70,6 +72,22 @@ const Places = props => {
   let filteredData = data;
   let paginatedData = data;
   let filterSet = null;
+
+  if (type) {
+    if (type === "restaurant") {
+      placeTypePhrase = "Places to eat";
+    }
+    if (type === "hike") {
+      placeTypePhrase = "Places to hike";
+    }
+    if (type === "lodging") {
+      placeTypePhrase = "Places to stay";
+    }
+  }
+
+  if (filters.location && filters.location !== "all") {
+    placeName = filters.location;
+  }
 
   if (data.length) {
     // Get "types".
@@ -533,6 +551,11 @@ const Places = props => {
 
   return (
     <Wrapper>
+      <Header as="h1">
+        <HeadText>
+          {placeTypePhrase} in {placeName}
+        </HeadText>
+      </Header>
       {form}
       {counter}
       {content}

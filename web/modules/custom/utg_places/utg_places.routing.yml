@@ -26,3 +26,10 @@ utg_restaurants.restaurants_controller_restaurants:
     _title: "Restaurants"
   requirements:
     _permission: "access content"
+utg_hikes.hikes_controller_hikes:
+  path: "/hikes"
+  defaults:
+    _controller: '\Drupal\utg_places\Controller\HikesController::content'
+    _title: "Hikes"
+  requirements:
+    _permission: "access content"

@@ -22,3 +22,9 @@ utg_restaurants.admin:
   parent: main
   route_name: utg_restaurants.restaurants_controller_restaurants
   menu_name: main
+utg_hikes.admin:
+  title: "Hikes"
+  description: "Hikes to take."
+  parent: main
+  route_name: utg_hikes.hikes_controller_hikes
+  menu_name: main

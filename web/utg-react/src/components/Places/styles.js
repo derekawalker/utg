@@ -20,3 +20,7 @@ export const FormSubmit = styled.div`
     }
   }
 `;
+
+export const HeadText = styled.span`
+  font-size: 1.35rem;
+`;
