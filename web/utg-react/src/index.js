@@ -5,6 +5,8 @@ import AttractionsApp from "./AttractionsApp";
 import LodgingApp from "./LodgingApp";
 import RestaurantsApp from "./RestaurantsApp";
 import HikesApp from "./HikesApp";
+import PlaceDetails from "./components/PlaceDetails";
+import GetData from "./components/GetData";
 import SelectedCity from "./components/SelectedCity";
 import "semantic-ui-css/semantic.min.css";
 import "./fontawesome";
@@ -54,3 +56,6 @@ if (
 if (typeof hikesSearchExists !== "undefined" && hikesSearchExists !== null) {
   ReactDOM.render(<HikesApp />, document.getElementById("hikes-search"));
 }
+
+// ReactDOM.render(<PlaceDetails />, document.getElementById("place-details"));
+// ReactDOM.render(<GetData />, document.getElementById("get-data"));

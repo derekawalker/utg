@@ -1,0 +1,7 @@
+csv_file="$PWD/images.csv"
+cd output/
+while IFS=, read -r title image_id; do
+  wget -q -O "$title.jpg" "$image_id"
+done <"$csv_file"
+
+=CONCATENATE("http://utg.lndo.site/sites/default/files/places/main-photos/",LOWER(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(C2,"&","and"),":","_"),".",""),")",""),"(",""),"|","_"),"'",""),"-","_")," ","_")),".jpg")

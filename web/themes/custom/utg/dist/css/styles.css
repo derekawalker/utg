@@ -1302,8 +1302,9 @@ form .button {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 1rem;
-  padding: 0.5rem 1rem;
-  width: 100%; }
+  padding: 0.5rem 1rem; }
+  .form-item input[type='text'] {
+    width: 100%; }
 
 .form-item textarea {
   border: 1px solid #ddd;

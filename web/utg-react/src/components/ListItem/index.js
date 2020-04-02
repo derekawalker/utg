@@ -31,7 +31,6 @@ const ListItem = props => {
     type,
     lodging_type
   } = props.place;
-  const { setParams, params } = props;
 
   // Custom field output.
   const indoorText = indoor => {
