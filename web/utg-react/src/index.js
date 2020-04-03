@@ -17,6 +17,7 @@ const attractionsSearchExists = document.getElementById("attractions-search");
 const lodgingSearchExists = document.getElementById("lodging-search");
 const restaurantsSearchExists = document.getElementById("restaurants-search");
 const hikesSearchExists = document.getElementById("hikes-search");
+const getData = document.getElementById("get-data");
 
 if (typeof selectedCityExists !== "undefined" && selectedCityExists !== null) {
   ReactDOM.render(<SelectedCity />, document.getElementById("selected-city"));
@@ -58,4 +59,6 @@ if (typeof hikesSearchExists !== "undefined" && hikesSearchExists !== null) {
 }
 
 // ReactDOM.render(<PlaceDetails />, document.getElementById("place-details"));
-ReactDOM.render(<GetData />, document.getElementById("get-data"));
+if (typeof getData !== "undefined" && getData !== null) {
+  ReactDOM.render(<GetData />, document.getElementById("get-data"));
+}
