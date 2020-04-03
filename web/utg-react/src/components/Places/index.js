@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect, useRef } from "react";
 import {
   Form,
   Button,
@@ -55,19 +55,24 @@ let hikeDifficulties = [];
 let placeName = "Utah";
 let placeTypePhrase = "Things to do";
 
+const scrollToRef = ref =>
+  window.scrollTo({ left: 0, top: ref.current.offsetTop, behavior: "smooth" });
+
 const Places = props => {
   const [places, setPlaces] = useState([]);
   const [filters, setFilters] = useState(defaultFilters);
   const [searchPhrase, setSearchPhrase] = useState("");
   const [paginationSettings, setPaginationSettings] = useState({
     activePage: 1,
-    perPage: 12
+    perPage: 24
   });
   const [accordion, setAccordion] = useState({
     activeIndex: -1
   });
 
   const { data, loading, error, type } = props;
+
+  const pageHeader = useRef(null);
 
   let filteredData = data;
   let paginatedData = data;
@@ -161,6 +166,7 @@ const Places = props => {
       ...paginationSettings,
       activePage: pagerInfo.activePage
     });
+    scrollToRef(pageHeader);
   };
 
   useEffect(() => {
@@ -551,6 +557,7 @@ const Places = props => {
 
   return (
     <Wrapper>
+      <div ref={pageHeader}></div>
       <Header as="h1">
         <HeadText>
           {placeTypePhrase} in {placeName}

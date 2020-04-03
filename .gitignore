@@ -33,6 +33,7 @@ web/libraries/
 
 # Ignore prod stuff
 web/.htaccess
+web/.htaccess-remote
 web/htaccess.bak
 web/error_log/
 
