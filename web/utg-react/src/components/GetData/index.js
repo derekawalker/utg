@@ -10,7 +10,7 @@ import { Wrapper } from "./styles";
 
 /* eslint-disable no-undef */
 
-const key = "___";
+const key = "AIzaSyBUfXaERagJUoTC503tynZfmWh5xoeTmS0";
 const endpoint = "https://maps.googleapis.com/maps/api/place/details/json?";
 const fields =
   "address_component,adr_address,formatted_address,geometry,name,permanently_closed,photo,place_id,type,url,vicinity";

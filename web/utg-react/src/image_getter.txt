@@ -1,7 +1,13 @@
+// Get images and rename them
 csv_file="$PWD/images.csv"
 cd output/
 while IFS=, read -r title image_id; do
   wget -q -O "$title.jpg" "$image_id"
 done <"$csv_file"
 
+
+// Make Lowercase using terminal
+for i in *; do mv "$i" "$(echo $i|tr A-Z a-z)"; done
+
+// Sheets formatter
 =CONCATENATE("http://utg.lndo.site/sites/default/files/places/main-photos/",LOWER(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(C2,"&","and"),":","_"),".",""),")",""),"(",""),"|","_"),"'",""),"-","_")," ","_")),".jpg")

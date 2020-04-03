@@ -58,4 +58,4 @@ if (typeof hikesSearchExists !== "undefined" && hikesSearchExists !== null) {
 }
 
 // ReactDOM.render(<PlaceDetails />, document.getElementById("place-details"));
-// ReactDOM.render(<GetData />, document.getElementById("get-data"));
+ReactDOM.render(<GetData />, document.getElementById("get-data"));
