@@ -1172,11 +1172,13 @@ header {
   font-size: 1.2em;
   margin-bottom: 0.5em; }
 
-.region-content .block {
+.region-content .block.block-system,
+.region-content .region-inner > .block.block-views {
   border-bottom: 1rem #e6e6e6 solid;
   padding: 1em 1rem;
   background: #fff; }
-  .region-content .block.block-page-title-block {
+  .region-content .block.block-system.block-page-title-block,
+  .region-content .region-inner > .block.block-views.block-page-title-block {
     border-bottom: 0;
     padding: 0; }
 
@@ -1242,12 +1244,14 @@ header {
         margin-right: 0.5em; }
 
 @media (min-width: 768px) {
-  .region-content .block {
+  .region-content .block.block-system,
+  .region-content .region-inner > .block.block-views {
     padding-left: 1.25rem;
     padding-right: 1.25rem; } }
 
 @media (min-width: 1024px) {
-  .region-content .block {
+  .region-content .block.block-system,
+  .region-content .region-inner > .block.block-views {
     padding-left: 1.5rem;
     padding-right: 1.5rem; } }
 
@@ -2109,6 +2113,103 @@ form .button {
     padding-left: 1.5rem;
     padding-right: 1.5rem; } }
 
+.page-node-type-article .field--name-field-image {
+  margin: 1em 0; }
+  .page-node-type-article .field--name-field-image img {
+    display: block;
+    width: 100%; }
+
+.page-node-type-article .field--name-body {
+  padding: 0 1rem; }
+
+.page-node-type-article .field--name-field-content-reference {
+  padding: 0 1rem; }
+  .page-node-type-article .field--name-field-content-reference .block {
+    padding: 0; }
+  .page-node-type-article .field--name-field-content-reference .node--view-mode-teaser .layout__region--content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    padding: 0.85em 1em 1em;
+    margin-bottom: 1.25rem; }
+    .page-node-type-article .field--name-field-content-reference .node--view-mode-teaser .layout__region--content .block-field-blocknodeattractiontitle,
+    .page-node-type-article .field--name-field-content-reference .node--view-mode-teaser .layout__region--content .block-field-blocknodehiketitle,
+    .page-node-type-article .field--name-field-content-reference .node--view-mode-teaser .layout__region--content .block-field-blocknoderestauranttitle,
+    .page-node-type-article .field--name-field-content-reference .node--view-mode-teaser .layout__region--content .block-field-blocknodelodgingtitle {
+      width: 100%;
+      line-height: 1.2; }
+  .page-node-type-article .field--name-field-content-reference .node--view-mode-teaser .field--name-title a {
+    text-decoration: none;
+    font-weight: 700;
+    display: block;
+    margin: 0 0 0.5em; }
+  .page-node-type-article .field--name-field-content-reference .node--view-mode-teaser .field--name-body {
+    padding: 1em 0 0; }
+    .page-node-type-article .field--name-field-content-reference .node--view-mode-teaser .field--name-body > *:last-child {
+      margin-bottom: 0; }
+  .page-node-type-article .field--name-field-content-reference .node--view-mode-teaser .field--name-field-image {
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0; }
+    .page-node-type-article .field--name-field-content-reference .node--view-mode-teaser .field--name-field-image a {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -o-object-fit: unset;
+         object-fit: unset;
+      text-align: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+    .page-node-type-article .field--name-field-content-reference .node--view-mode-teaser .field--name-field-image img {
+      display: block; }
+
+@media (min-width: 768px) {
+  .page-node-type-article .region-content .block {
+    padding: 0; }
+  .page-node-type-article .field--name-body {
+    padding: 0 1.25rem; }
+  .page-node-type-article .field--name-field-content-reference {
+    padding: 0 1.25rem; }
+  .page-node-type-article .field--name-field-content-reference .node--view-mode-teaser .layout__region--content .block-field-blocknodeattractionfield-image,
+  .page-node-type-article .field--name-field-content-reference .node--view-mode-teaser .layout__region--content .block-field-blocknodehikefield-image,
+  .page-node-type-article .field--name-field-content-reference .node--view-mode-teaser .layout__region--content .block-field-blocknoderestaurantfield-image,
+  .page-node-type-article .field--name-field-content-reference .node--view-mode-teaser .layout__region--content .block-field-blocknodelodgingfield-image {
+    max-width: 150px;
+    min-width: 150px;
+    height: 150px;
+    overflow: hidden;
+    margin-right: 1rem; }
+  .page-node-type-article .field--name-field-content-reference .node--view-mode-teaser .layout__region--content .block-field-blocknodeattractionbody,
+  .page-node-type-article .field--name-field-content-reference .node--view-mode-teaser .layout__region--content .block-field-blocknodehikebody,
+  .page-node-type-article .field--name-field-content-reference .node--view-mode-teaser .layout__region--content .block-field-blocknoderestaurantbody,
+  .page-node-type-article .field--name-field-content-reference .node--view-mode-teaser .layout__region--content .block-field-blocknodelodgingbody {
+    width: calc(100% - 166px); }
+  .page-node-type-article .field--name-field-content-reference .node--view-mode-teaser .field--name-title {
+    border-bottom: 1px solid #ffa900;
+    display: block;
+    margin-bottom: 0.35em; }
+  .page-node-type-article .field--name-field-content-reference .node--view-mode-teaser .field--name-body {
+    padding: 0; }
+  .page-node-type-article .field--name-field-content-reference .node--view-mode-teaser .field--name-field-image a {
+    height: 150px;
+    margin-top: 0.35em; }
+  .page-node-type-article .field--name-field-content-reference .node--view-mode-teaser .field--name-field-image img {
+    -o-object-fit: cover;
+       object-fit: cover; } }
+
+@media (min-width: 1024px) {
+  .page-node-type-article .field--name-body {
+    padding: 0 1.5rem; }
+  .page-node-type-article .field--name-field-content-reference {
+    padding: 0 1.5rem; } }
+
 .page-node-type-attraction .node__content .field--name-field-price,
 .page-node-type-attraction .node__content .field--name-field-indoor-outdoor {
   font-weight: 900;
@@ -2449,7 +2550,7 @@ form .button {
     background: -o-linear-gradient(top left, rgba(62, 245, 212, 0.85), rgba(43, 179, 188, 0.85));
     background: linear-gradient(to bottom right, rgba(62, 245, 212, 0.85), rgba(43, 179, 188, 0.85));
     margin: 0;
-    font-size: 1em;
+    font-size: 0.75em;
     width: 100%;
     white-space: nowrap;
     overflow: hidden;

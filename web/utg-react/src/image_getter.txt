@@ -1,6 +1,6 @@
 // Get images and rename them
-csv_file="$PWD/images.csv"
-cd output/
+csv_file="$PWD/lodging.csv"
+cd output-lodging/
 while IFS=, read -r title image_id; do
   wget -q -O "$title.jpg" "$image_id"
 done <"$csv_file"

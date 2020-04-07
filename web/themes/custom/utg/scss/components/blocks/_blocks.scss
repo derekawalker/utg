@@ -8,7 +8,8 @@
 }
 
 .region-content {
-  .block {
+  .block.block-system,
+  .region-inner > .block.block-views {
     border-bottom: 1rem $site-background solid;
     padding: 1em $side-pad-mobile;
     background: $color-white;
@@ -127,7 +128,8 @@
 // ------------------------------------------------------
 @media (min-width: $tab) {
   .region-content {
-    .block {
+    .block.block-system,
+    .region-inner > .block.block-views {
       padding-left: $side-pad-tablet;
       padding-right: $side-pad-tablet;
     }
@@ -138,7 +140,8 @@
 // ------------------------------------------------------
 @media (min-width: $desk) {
   .region-content {
-    .block {
+    .block.block-system,
+    .region-inner > .block.block-views {
       padding-left: $side-pad-desktop;
       padding-right: $side-pad-desktop;
     }
