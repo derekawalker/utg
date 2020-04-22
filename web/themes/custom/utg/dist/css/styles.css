@@ -1080,8 +1080,8 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); }
+  -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25); }
   .menu--subnav ul.menu li {
     min-width: 25%;
     display: block;
@@ -2504,6 +2504,51 @@ form .button {
       content: ''; }
   .page-node-type-restaurant .node__content .utg-layout--restaurant .block-layout-builder .field--name-field-cuisine:before {
     content: '\f2e7'; }
+
+.flex-inline-view-item {
+  margin-bottom: 0.5em; }
+  .flex-inline-view-item:last-child {
+    margin-bottom: 0; }
+  .flex-inline-view-item a {
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    background: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    border: 1px solid rgba(0, 0, 0, 0.1); }
+    .flex-inline-view-item a .image-wrapper {
+      max-width: 60px;
+      min-width: 60px; }
+      .flex-inline-view-item a .image-wrapper img {
+        display: block; }
+    .flex-inline-view-item a .text-wrapper {
+      padding: 0.25em 1em;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-flow: column wrap;
+              flex-flow: column wrap;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+    .flex-inline-view-item a h4 {
+      font-weight: 900;
+      margin: 0;
+      font-size: 0.85em; }
+    .flex-inline-view-item a p {
+      color: #000;
+      margin: 0;
+      font-size: 0.75em; }
 
 .view-content.owl-carousel {
   margin: 0 -1rem;
