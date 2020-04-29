@@ -1,0 +1,226 @@
+// Mobile (up to 567px) ---------------------------------
+// ------------------------------------------------------
+.print-view-item {
+  box-shadow: 5px 5px 20px $color-gray-25;
+  margin-bottom: 2em;
+  border-radius: $rad;
+  border: 2px solid $color-gray-25;
+
+  .print-heading {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1em;
+    border: 1px solid $color-gray-10;
+    border-bottom: 0;
+    background: $color-gray-05;
+
+    a {
+      color: $color-black;
+      text-decoration: none;
+    }
+  }
+
+  .image-wrapper {
+    margin-right: 1em;
+
+    img {
+      border-radius: $rad;
+      display: block;
+      max-width: 100px;
+    }
+  }
+
+  .text-wrapper {
+    max-width: calc(100% - 116px);
+  }
+
+  .title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0.5rem 0;
+
+    &:before {
+      content: '\f0c1';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      margin-right: 0.5rem;
+      font-size: 1rem;
+      width: 20px;
+      display: inline-block;
+      text-align: center;
+    }
+  }
+
+  .phone {
+    margin: 0.5rem 0;
+    &:before {
+      content: '\f095';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      margin-right: 0.5rem;
+      font-size: 1rem;
+      width: 20px;
+      display: inline-block;
+      text-align: center;
+    }
+  }
+
+  .website {
+    margin: 0.5rem 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &:before {
+      content: '\f245';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      margin-right: 0.5rem;
+      font-size: 1rem;
+      width: 20px;
+      display: inline-block;
+      text-align: center;
+    }
+  }
+
+  .details-wrapper {
+    padding: 1em;
+  }
+
+  .features {
+    margin-bottom: 1em;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        padding: 0.25em 1em;
+        background: $color-gray-05;
+        border-radius: $rad;
+        margin: 0 0 0.25em;
+      }
+    }
+  }
+
+  .tips {
+    margin-bottom: 1em;
+  }
+
+  .flag-wrapper {
+    font-size: 0.8em;
+    background: $color-gray-05;
+    padding: 0.5em 1em;
+
+    .action-flag,
+    .action-unflag {
+      position: relative;
+
+      a {
+        color: $color-gray-50;
+        text-decoration: none;
+        padding-left: 15px;
+        position: relative;
+
+        &:before {
+          content: '\f00d';
+          font-family: 'Font Awesome 5 Free';
+          font-weight: 900;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: $color-orange-dark;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .js-flag-message {
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      color: $color-white;
+      background: $color-orange-dark;
+      padding: 0.25em 0.75em;
+      border-radius: $rad;
+      box-shadow: 3px 3px 8px $color-gray-10;
+      font-size: 1em;
+      z-index: 1000;
+    }
+
+    .action-flag {
+      a {
+        &:before {
+          content: '\f067';
+        }
+      }
+    }
+  }
+
+  .location-content {
+    display: flex;
+    flex-flow: row wrap;
+
+    > div {
+      width: 100%;
+    }
+  }
+}
+
+// Phablet (568px to 767px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $phab) {
+}
+
+// Tablet (768px to 1023px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $tab) {
+}
+
+// Desktop (1024px to 1339px) ---------------------------
+// ------------------------------------------------------
+@media (min-width: $desk) {
+  .print-view-item {
+    .image-wrapper {
+      img {
+        max-width: 150px;
+      }
+    }
+
+    .text-wrapper {
+      max-width: calc(100% - 166px);
+    }
+
+    .text-content-details {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .features {
+      margin-right: 2%;
+      min-width: 48%;
+    }
+  }
+}
+
+// Wide (over 1340px) -----------------------------------
+// ------------------------------------------------------
+@media (min-width: $wide) {
+}
+
+// Wide (over 1340px) -----------------------------------
+// ------------------------------------------------------
+@media print {
+  .flag-wrapper {
+    display: none;
+  }
+}

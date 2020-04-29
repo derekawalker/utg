@@ -9,7 +9,7 @@ import {
   Icon,
   Divider,
   Header,
-  Placeholder
+  Placeholder,
 } from "semantic-ui-react";
 import _ from "lodash";
 import { formatNumber } from "accounting";
@@ -20,7 +20,7 @@ import { faCloudSun } from "@fortawesome/free-solid-svg-icons";
 import {
   findPropertyValues,
   arrayContainsAnyElementOfArray,
-  filterByString
+  filterByString,
 } from "../../utils/filters/filters";
 import Paginator from "../../common/components/Paginator";
 import ListItem from "../ListItem";
@@ -39,7 +39,7 @@ const defaultFilters = {
   lodging_types: [],
   star_ratings: [],
   hike_type: [],
-  difficulty: []
+  difficulty: [],
 };
 
 let placeTypes = [];
@@ -55,19 +55,19 @@ let hikeDifficulties = [];
 let placeName = "Utah";
 let placeTypePhrase = "Things to do";
 
-const scrollToRef = ref =>
+const scrollToRef = (ref) =>
   window.scrollTo({ left: 0, top: ref.current.offsetTop, behavior: "smooth" });
 
-const Places = props => {
+const Places = (props) => {
   const [places, setPlaces] = useState([]);
   const [filters, setFilters] = useState(defaultFilters);
   const [searchPhrase, setSearchPhrase] = useState("");
   const [paginationSettings, setPaginationSettings] = useState({
     activePage: 1,
-    perPage: 24
+    perPage: 24,
   });
   const [accordion, setAccordion] = useState({
-    activeIndex: -1
+    activeIndex: -1,
   });
 
   const { data, loading, error, type } = props;
@@ -148,7 +148,7 @@ const Places = props => {
         lodging_types: [],
         star_ratings: [],
         hike_type: [],
-        difficulty: []
+        difficulty: [],
       });
     } else {
       setFilters({ ...filters, [name]: value });
@@ -157,14 +157,14 @@ const Places = props => {
     setPaginationSettings({ ...paginationSettings, activePage: 1 });
   };
 
-  const handleSearchChange = e => {
+  const handleSearchChange = (e) => {
     setSearchPhrase(e.target.value);
   };
 
   const handlePageChange = (e, pagerInfo) => {
     setPaginationSettings({
       ...paginationSettings,
-      activePage: pagerInfo.activePage
+      activePage: pagerInfo.activePage,
     });
     scrollToRef(pageHeader);
   };
@@ -178,7 +178,7 @@ const Places = props => {
       if (retrievedObject.location !== filters.location) {
         setFilters({
           ...filters,
-          location: retrievedObject.location
+          location: retrievedObject.location,
         });
       }
     }
@@ -419,7 +419,7 @@ const Places = props => {
   // Data filter funnel starts here: ----------
   if (data.length) {
     if (filters.type !== "all") {
-      filteredData = _.filter(data, place => {
+      filteredData = _.filter(data, (place) => {
         if (place.type) {
           return filters.type === place.type.toLowerCase();
         }
@@ -427,7 +427,7 @@ const Places = props => {
     }
 
     if (filters.location !== "all") {
-      filteredData = _.filter(filteredData, place => {
+      filteredData = _.filter(filteredData, (place) => {
         if (place.location) {
           return filters.location === place.location;
         }
@@ -435,7 +435,7 @@ const Places = props => {
     }
 
     if (filters.indoor.length) {
-      filteredData = _.filter(filteredData, place => {
+      filteredData = _.filter(filteredData, (place) => {
         if (place.indoor) {
           return arrayContainsAnyElementOfArray(filters.indoor, place.indoor);
         }
@@ -443,7 +443,7 @@ const Places = props => {
     }
 
     if (filters.price.length) {
-      filteredData = _.filter(filteredData, place => {
+      filteredData = _.filter(filteredData, (place) => {
         if (place.price) {
           return arrayContainsAnyElementOfArray(filters.price, place.price);
         }
@@ -451,7 +451,7 @@ const Places = props => {
     }
 
     if (filters.hike_type.length) {
-      filteredData = _.filter(filteredData, place => {
+      filteredData = _.filter(filteredData, (place) => {
         if (place.hike_type) {
           return arrayContainsAnyElementOfArray(
             filters.hike_type,
@@ -462,7 +462,7 @@ const Places = props => {
     }
 
     if (filters.difficulty.length) {
-      filteredData = _.filter(filteredData, place => {
+      filteredData = _.filter(filteredData, (place) => {
         if (place.difficulty) {
           return arrayContainsAnyElementOfArray(
             filters.difficulty,
@@ -473,7 +473,7 @@ const Places = props => {
     }
 
     if (filters.star_ratings.length) {
-      filteredData = _.filter(filteredData, place => {
+      filteredData = _.filter(filteredData, (place) => {
         if (place.star_ratings) {
           return arrayContainsAnyElementOfArray(
             filters.star_ratings,
@@ -484,8 +484,10 @@ const Places = props => {
     }
 
     if (filters.food_types.length) {
-      filteredData = _.filter(filteredData, place => {
-        if (place.food_types) {
+      filteredData = _.filter(filteredData, (place) => {
+        console.log(filters.food_types);
+        console.log(place);
+        if (place.cuisine) {
           return arrayContainsAnyElementOfArray(
             filters.food_types,
             place.cuisine
@@ -495,7 +497,7 @@ const Places = props => {
     }
 
     if (filters.lodging_types.length) {
-      filteredData = _.filter(filteredData, place => {
+      filteredData = _.filter(filteredData, (place) => {
         if (place.lodging_types) {
           return arrayContainsAnyElementOfArray(
             filters.lodging_types,
@@ -509,7 +511,7 @@ const Places = props => {
     if (searchPhrase !== "") {
       filteredData = filterByString(filteredData, searchPhrase, [
         "title",
-        "location"
+        "location",
       ]);
     }
 

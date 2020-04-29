@@ -3,11 +3,30 @@
 .flex-inline-view-item {
   margin-bottom: 0.5em;
 
-  &:last-child {
-    margin-bottom: 0;
+  &.flagged-item {
+    margin-bottom: 1em;
+
+    > a {
+      border-radius: $rad $rad 0 0;
+
+      .image-wrapper {
+        max-width: 42px;
+        min-width: 42px;
+      }
+
+      .text-wrapper {
+        max-width: calc(100% - 42px);
+      }
+
+      h4 {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
   }
 
-  a {
+  > a {
     border-radius: $rad;
     position: relative;
     overflow: hidden;
@@ -16,7 +35,7 @@
     flex-flow: row nowrap;
     background: $color-white-85;
     text-decoration: none;
-    border: 1px solid $color-gray-10;
+    border: 2px solid $color-gray-10;
 
     .image-wrapper {
       max-width: 60px;
@@ -32,18 +51,76 @@
       display: flex;
       flex-flow: column wrap;
       justify-content: center;
+      max-width: calc(100% - 60px);
     }
 
     h4 {
       font-weight: 900;
       margin: 0;
       font-size: 0.85em;
+      max-width: 100%;
     }
 
     p {
       color: #000;
       margin: 0;
       font-size: 0.75em;
+    }
+  }
+
+  .flag-wrapper {
+    font-size: 0.8em;
+    background: $color-gray-10;
+    border-radius: 0 0 3px 3px;
+    padding: 0.25em 0.5em;
+
+    .action-flag,
+    .action-unflag {
+      position: relative;
+
+      a {
+        color: $color-gray-50;
+        text-decoration: none;
+        padding-left: 15px;
+        position: relative;
+
+        &:before {
+          content: '\f00d';
+          font-family: 'Font Awesome 5 Free';
+          font-weight: 900;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: $color-orange-dark;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .js-flag-message {
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      color: $color-white;
+      background: $color-orange-dark;
+      padding: 0.25em 0.75em;
+      border-radius: $rad;
+      box-shadow: 3px 3px 8px $color-gray-10;
+      font-size: 1em;
+      z-index: 1000;
+    }
+
+    .action-flag {
+      a {
+        &:before {
+          content: '\f067';
+        }
+      }
     }
   }
 }

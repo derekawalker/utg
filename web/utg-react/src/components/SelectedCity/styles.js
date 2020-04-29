@@ -3,12 +3,14 @@ import Variables from "../../common/styles/variables";
 
 export const Wrapper = styled.div`
   padding: 2em 2em 3em;
-  background: url("https://www.doi.gov/sites/doi.gov/files/uploads/ZionNPTomMorrisSmall.jpg")
+  background: url("/themes/custom/utg/images/Zion_National_Park_Small.jpg")
     center center no-repeat;
   background-size: cover;
 
   @media (min-width: ${Variables.gridTab}) {
     padding: 4% 2em 6%;
+    background: url("/themes/custom/utg/images/Zion_National_Park.jpg") center
+      center no-repeat;
   }
 `;
 
