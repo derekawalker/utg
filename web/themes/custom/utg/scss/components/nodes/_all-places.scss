@@ -21,6 +21,23 @@
     }
   }
 
+  .utg-layout--main-region {
+    .flag-add-to-trip {
+      a {
+        background: linear-gradient(to bottom right, #ffa900, #ff5c00);
+        text-align: center;
+        width: 100%;
+        display: block;
+        padding: 0.5em;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+    }
+  }
+
   .utg-layout--region {
     .field {
       position: relative;

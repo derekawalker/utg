@@ -431,6 +431,27 @@ header {
   .region-subbanner .breadcrumb {
     padding: 0.5rem 1.5rem; } }
 
+.utg-button {
+  background: -webkit-gradient(linear, left top, right bottom, from(#ffa900), to(#ff5c00));
+  background: -o-linear-gradient(top left, #ffa900, #ff5c00);
+  background: linear-gradient(to bottom right, #ffa900, #ff5c00);
+  text-align: center;
+  width: 100%;
+  display: block;
+  padding: 0.5em 1.5em;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  -webkit-box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25); }
+  .utg-button:hover, .utg-button:focus, .utg-button:active {
+    color: #fff;
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    background: #ff5c00; }
+
 .field--name-field-reviews {
   background: rgba(255, 255, 255, 0.5);
   border-radius: 5px;
@@ -1360,6 +1381,23 @@ form .button {
 .page-node-type-hike .region-content .block {
   border-bottom: 0;
   padding: 0; }
+
+.page-node-type-attraction .utg-layout--main-region .flag-add-to-trip a,
+.page-node-type-lodging .utg-layout--main-region .flag-add-to-trip a,
+.page-node-type-restaurant .utg-layout--main-region .flag-add-to-trip a,
+.page-node-type-hike .utg-layout--main-region .flag-add-to-trip a {
+  background: -webkit-gradient(linear, left top, right bottom, from(#ffa900), to(#ff5c00));
+  background: -o-linear-gradient(top left, #ffa900, #ff5c00);
+  background: linear-gradient(to bottom right, #ffa900, #ff5c00);
+  text-align: center;
+  width: 100%;
+  display: block;
+  padding: 0.5em;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em; }
 
 .page-node-type-attraction .utg-layout--region .field,
 .page-node-type-lodging .utg-layout--region .field,

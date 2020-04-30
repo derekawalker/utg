@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
     padding: 4% 2em 6%;
     background: url("/themes/custom/utg/images/Zion_National_Park.jpg") center
       center no-repeat;
+    background-size: cover;
   }
 `;
 
