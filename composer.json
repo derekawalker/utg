@@ -68,6 +68,7 @@
         "drupal/pathauto": "^1.8",
         "drupal/radioactivity": "^3.0@alpha",
         "drupal/recaptcha": "^2.5",
+        "drupal/redirect": "^1.5",
         "drupal/responsive_menu": "^2.6",
         "drupal/rest_views": "^1.0@alpha",
         "drupal/simple_sitemap": "^3.6",

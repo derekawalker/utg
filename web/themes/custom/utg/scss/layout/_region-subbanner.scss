@@ -1,6 +1,9 @@
 // Mobile (up to 567px) ---------------------------------
 // ------------------------------------------------------
 .region-subbanner {
+  position: relative;
+  z-index: 9;
+
   .region-inner {
     padding: 0;
   }

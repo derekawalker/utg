@@ -6,18 +6,21 @@
   background: $color-white;
   display: flex;
   list-style: none;
-  flex-flow: row nowrap;
-  justify-content: center;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
   box-shadow: 0 5px 20px $color-gray-25;
 
   li {
-    min-width: 25%;
+    min-width: 33.3333%;
+    max-width: 33.3333%;
     display: block;
     border-right: 1px solid $site-background;
+    border-bottom: 1px solid $site-background;
     padding-top: 0;
+    background: linear-gradient(to bottom, #e6e6e6, #fff 10%);
 
-    &:last-child {
-      border: 0;
+    &:nth-child(3n) {
+      border-right: 0;
     }
 
     a {
@@ -77,6 +80,18 @@
           content: '\f02c';
         }
       }
+
+      &[href='/map'] {
+        &:before {
+          content: '\f3c5';
+        }
+      }
+
+      &[href='/tools/itinerary-builder'] {
+        &:before {
+          content: '\f5e4';
+        }
+      }
     }
   }
 }
@@ -90,7 +105,21 @@
 // ------------------------------------------------------
 @media (min-width: $tab) {
   .menu--subnav ul.menu {
+    flex-flow: row nowrap;
+
     li {
+      min-width: 0;
+      max-width: 100%;
+      width: 100%;
+
+      &:nth-child(3n) {
+        border-right: 1px solid $site-background;
+      }
+
+      &:last-child {
+        border-right: 0;
+      }
+
       a {
         padding: 1.15em;
         font-size: 0.6em;

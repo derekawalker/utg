@@ -303,7 +303,9 @@ table {
 
 header {
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); }
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10; }
 
 .region-header {
   background: #fff; }
@@ -358,8 +360,11 @@ header {
 .layout-sidebar-second {
   background: rgba(0, 0, 0, 0.025); }
 
-.region-subbanner .region-inner {
-  padding: 0; }
+.region-subbanner {
+  position: relative;
+  z-index: 9; }
+  .region-subbanner .region-inner {
+    padding: 0; }
 
 .block-system-branding-block {
   margin: 0 0.75rem 0 0; }
@@ -1096,20 +1101,25 @@ header {
   list-style: none;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
           box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25); }
   .menu--subnav ul.menu li {
-    min-width: 25%;
+    min-width: 33.3333%;
+    max-width: 33.3333%;
     display: block;
     border-right: 1px solid #e6e6e6;
-    padding-top: 0; }
-    .menu--subnav ul.menu li:last-child {
-      border: 0; }
+    border-bottom: 1px solid #e6e6e6;
+    padding-top: 0;
+    background: -webkit-gradient(linear, left top, left bottom, from(#e6e6e6), color-stop(10%, #fff));
+    background: -o-linear-gradient(top, #e6e6e6, #fff 10%);
+    background: linear-gradient(to bottom, #e6e6e6, #fff 10%); }
+    .menu--subnav ul.menu li:nth-child(3n) {
+      border-right: 0; }
     .menu--subnav ul.menu li a {
       display: block;
       text-align: center;
@@ -1147,11 +1157,28 @@ header {
         content: '\f6ec'; }
       .menu--subnav ul.menu li a[href='/coupons']:before {
         content: '\f02c'; }
+      .menu--subnav ul.menu li a[href='/map']:before {
+        content: '\f3c5'; }
+      .menu--subnav ul.menu li a[href='/tools/itinerary-builder']:before {
+        content: '\f5e4'; }
 
 @media (min-width: 768px) {
-  .menu--subnav ul.menu li a {
-    padding: 1.15em;
-    font-size: 0.6em; } }
+  .menu--subnav ul.menu {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap; }
+    .menu--subnav ul.menu li {
+      min-width: 0;
+      max-width: 100%;
+      width: 100%; }
+      .menu--subnav ul.menu li:nth-child(3n) {
+        border-right: 1px solid #e6e6e6; }
+      .menu--subnav ul.menu li:last-child {
+        border-right: 0; }
+      .menu--subnav ul.menu li a {
+        padding: 1.15em;
+        font-size: 0.6em; } }
 
 @media (min-width: 1024px) {
   .menu--subnav ul.menu li a {
