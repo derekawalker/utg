@@ -316,6 +316,10 @@
                 max-width: 50px;
                 margin-right: 1em;
               }
+
+              &:last-child {
+                width: calc(100% - 1em - 50px);
+              }
             }
 
             img {

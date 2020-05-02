@@ -1,0 +1,83 @@
+// Mobile (up to 567px) ---------------------------------
+// ------------------------------------------------------
+.coupon-view-item {
+  a {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    border-radius: $rad;
+    border: 1px solid $color-teal-dark;
+    margin-bottom: 1em;
+    text-decoration: none;
+    color: #000;
+    font-size: 0.9rem;
+
+    .item-image {
+      max-width: 30%;
+      min-width: 30%;
+      background: $gradient-teal-transparent;
+      border-radius: $rad-inner 0 0 $rad-inner;
+      border-right: 1px solid $color-teal-dark;
+
+      img {
+        display: block;
+        border-radius: $rad-inner 0 0 $rad-inner;
+        width: 100%;
+      }
+    }
+
+    .item-text {
+      width: 70%;
+      padding: 2em 1.5em 1.5em;
+      line-height: 1.4;
+      position: relative;
+    }
+
+    .item-title {
+      font-size: 1.25em;
+      text-decoration: underline;
+      color: $color-orange-dark;
+    }
+
+    .item-date {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 0.75em;
+      padding: 0.25em 1em;
+      color: #fff;
+      background: $gradient-orange-transparent;
+      text-transform: uppercase;
+      border-radius: 0 $rad-inner 0 $rad-inner;
+
+      .datetime {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+// Phablet (568px to 767px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $phab) {
+}
+
+// Tablet (768px to 1023px) -----------------------------
+// ------------------------------------------------------
+@media (min-width: $tab) {
+  .coupon-view-item {
+    a {
+      font-size: 1rem;
+    }
+  }
+}
+
+// Desktop (1024px to 1339px) ---------------------------
+// ------------------------------------------------------
+@media (min-width: $desk) {
+}
+
+// Wide (over 1340px) -----------------------------------
+// ------------------------------------------------------
+@media (min-width: $wide) {
+}

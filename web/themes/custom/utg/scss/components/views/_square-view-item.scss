@@ -81,71 +81,6 @@
   }
 }
 
-.square-view-item-description {
-  a {
-    display: block;
-    position: relative;
-    border-radius: $rad;
-    text-decoration: none;
-    overflow: hidden;
-
-    .item-text {
-      height: 100%;
-      display: flex;
-      flex-flow: row wrap;
-      position: absolute;
-      top: 0;
-    }
-
-    .item-title {
-      padding: 0.65em 1em;
-      font-weight: 900;
-      color: $color-white;
-      background: $gradient-teal-transparent;
-      margin: 0;
-      font-size: 1em;
-      width: 100%;
-      border-radius: $rad $rad 0 0;
-      display: flex;
-      align-items: flex-end;
-    }
-
-    .item-description {
-      padding: 0.65em 1em;
-      color: $color-black;
-      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8));
-      margin: 0;
-      font-size: 0.9em;
-      width: 100%;
-      border-radius: 0 0 $rad $rad;
-      display: flex;
-      align-items: flex-start;
-    }
-
-    .item-date {
-      position: absolute;
-      top: 0;
-      right: 0;
-      font-size: 0.7em;
-      font-weight: 700;
-      color: $color-white;
-      background: $gradient-orange;
-      border-radius: 0 $rad 0 $rad;
-      padding: 0.125em 0.75em;
-      box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25);
-    }
-
-    .item-image {
-      border-radius: $rad;
-
-      img {
-        display: block;
-        border-radius: $rad;
-      }
-    }
-  }
-}
-
 .square-view-item-product {
   a {
     display: flex;
@@ -160,11 +95,12 @@
 
     .item-image {
       padding: 5%;
+      max-width: 40%;
+      min-width: 40%;
 
       img {
         display: block;
-        max-width: 80px;
-        min-width: 80px;
+        width: 100%;
       }
     }
 
@@ -176,6 +112,7 @@
       flex-flow: row wrap;
       padding: 5% 5% 5% 0;
       align-items: center;
+      width: 60%;
 
       &:after {
         $icon-size: 30px;
@@ -257,17 +194,6 @@
       }
     }
   }
-
-  .square-view-item-product {
-    a {
-      .item-image {
-        img {
-          max-width: 120px;
-          min-width: 120px;
-        }
-      }
-    }
-  }
 }
 
 // Desktop (1024px to 1339px) ---------------------------
@@ -295,10 +221,16 @@
   .square-view-item-product {
     a {
       .item-image {
-        img {
-          max-width: 150px;
-          min-width: 150px;
-        }
+        padding: 3%;
+        max-width: 30%;
+        min-width: 30%;
+      }
+
+      $icon-size: 30px;
+
+      .item-text {
+        padding: 3% 3% 3% 0;
+        width: 70%;
       }
     }
   }
@@ -311,17 +243,6 @@
     .view-content {
       .views-row {
         max-width: calc(25% - 1em);
-      }
-    }
-  }
-
-  .square-view-item-product {
-    a {
-      .item-image {
-        img {
-          max-width: 200px;
-          min-width: 200px;
-        }
       }
     }
   }

@@ -6,28 +6,24 @@
   background: $color-white;
   display: flex;
   list-style: none;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   justify-content: space-evenly;
   box-shadow: 0 5px 20px $color-gray-25;
 
   li {
-    min-width: 33.3333%;
-    max-width: 33.3333%;
+    min-width: 16.6666%;
+    max-width: 16.6666%;
     display: block;
     border-right: 1px solid $site-background;
     border-bottom: 1px solid $site-background;
     padding-top: 0;
     background: linear-gradient(to bottom, #e6e6e6, #fff 10%);
 
-    &:nth-child(3n) {
-      border-right: 0;
-    }
-
     a {
       display: block;
       text-align: center;
       color: $color-black;
-      padding: 1em 0.5em;
+      padding: 1em 1.125em;
       text-decoration: none;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -111,10 +107,6 @@
       min-width: 0;
       max-width: 100%;
       width: 100%;
-
-      &:nth-child(3n) {
-        border-right: 1px solid $site-background;
-      }
 
       &:last-child {
         border-right: 0;
