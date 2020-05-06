@@ -1109,8 +1109,8 @@ header {
   -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
           box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25); }
   .menu--subnav ul.menu li {
-    min-width: 16.6666%;
-    max-width: 16.6666%;
+    min-width: 20%;
+    max-width: 20%;
     display: block;
     border-right: 1px solid #e6e6e6;
     border-bottom: 1px solid #e6e6e6;
