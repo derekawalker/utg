@@ -17,3 +17,6 @@
 @media (min-width: 1024px) {
   #layout-tabs > div {
     padding: 1.5rem; } }
+
+.utg-layout--one-column .utg-layout--main-region .block-views-blocknearby-places-block-1 {
+  padding: 0 1em; }

@@ -35,6 +35,37 @@
         text-transform: uppercase;
         letter-spacing: 0.1em;
       }
+
+      .ajax-progress-throbber {
+        background-color: $color-orange-dark;
+        text-align: center;
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0.25em 1em;
+        font-size: 0.8em;
+        color: #fff;
+        font-weight: 400;
+
+        .throbber {
+          background: none;
+          &:before {
+            content: 'Loading...';
+          }
+        }
+      }
+
+      .js-flag-message {
+        background-color: $color-orange-dark;
+        text-align: center;
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0.25em 1em;
+        font-size: 0.8em;
+        color: #fff;
+        font-weight: 400;
+      }
     }
   }
 

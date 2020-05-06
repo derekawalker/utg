@@ -1422,6 +1422,44 @@ form .button {
   text-transform: uppercase;
   letter-spacing: 0.1em; }
 
+.page-node-type-attraction .utg-layout--main-region .flag-add-to-trip .ajax-progress-throbber,
+.page-node-type-lodging .utg-layout--main-region .flag-add-to-trip .ajax-progress-throbber,
+.page-node-type-restaurant .utg-layout--main-region .flag-add-to-trip .ajax-progress-throbber,
+.page-node-type-hike .utg-layout--main-region .flag-add-to-trip .ajax-progress-throbber {
+  background-color: #ff5c00;
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0.25em 1em;
+  font-size: 0.8em;
+  color: #fff;
+  font-weight: 400; }
+  .page-node-type-attraction .utg-layout--main-region .flag-add-to-trip .ajax-progress-throbber .throbber,
+  .page-node-type-lodging .utg-layout--main-region .flag-add-to-trip .ajax-progress-throbber .throbber,
+  .page-node-type-restaurant .utg-layout--main-region .flag-add-to-trip .ajax-progress-throbber .throbber,
+  .page-node-type-hike .utg-layout--main-region .flag-add-to-trip .ajax-progress-throbber .throbber {
+    background: none; }
+    .page-node-type-attraction .utg-layout--main-region .flag-add-to-trip .ajax-progress-throbber .throbber:before,
+    .page-node-type-lodging .utg-layout--main-region .flag-add-to-trip .ajax-progress-throbber .throbber:before,
+    .page-node-type-restaurant .utg-layout--main-region .flag-add-to-trip .ajax-progress-throbber .throbber:before,
+    .page-node-type-hike .utg-layout--main-region .flag-add-to-trip .ajax-progress-throbber .throbber:before {
+      content: 'Loading...'; }
+
+.page-node-type-attraction .utg-layout--main-region .flag-add-to-trip .js-flag-message,
+.page-node-type-lodging .utg-layout--main-region .flag-add-to-trip .js-flag-message,
+.page-node-type-restaurant .utg-layout--main-region .flag-add-to-trip .js-flag-message,
+.page-node-type-hike .utg-layout--main-region .flag-add-to-trip .js-flag-message {
+  background-color: #ff5c00;
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0.25em 1em;
+  font-size: 0.8em;
+  color: #fff;
+  font-weight: 400; }
+
 .page-node-type-attraction .utg-layout--region .field,
 .page-node-type-lodging .utg-layout--region .field,
 .page-node-type-restaurant .utg-layout--region .field,
